@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Assignment 5 - Global Warning</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+
+<body>
+
+	<div id="line"class="responsive-svg-container">
+    <h1> GHG Emissions per geographical categories during time </h1>
+  </div>
+
+  <h1 class="center"> GHG emissions per country per year </h1>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="js/choropleth-map.js"></script>
+  <script src="js/linechart.js"></script>
+
+  <div class="slidecontainer" >
+    <input type="range" min="1850" max="2019" step="1" value="1850" class="slider" id="slider">
+    <br>
+    <p> Year: <span id="demo"></span></p>
+  </div>
+
+  <script>
+    var slider = document.getElementById("slider");
+    var output = document.getElementById("demo");
+    output.innerHTML = slider.value;
+
+    slider.oninput = function() {
+      output.innerHTML = this.value;
+    }
+  </script>
+  
+
+</body>
+</html>
