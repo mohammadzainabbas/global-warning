@@ -2,7 +2,7 @@ const parseTime = d3.timeParse("%Y");
 const BIG_CATEGS = ["WORLD", "ANNEXI", "NONANNEXI", "BASIC", "UMBRELLA", "EUU", "LDC", "AOSIS"]
 
 // load the data
-d3.csv("../data/CW_emissions.csv", d => {
+d3.csv("/data/CW_emissions.csv", d => {
   return {
     'country': d.country,
     'gas': d.gas,

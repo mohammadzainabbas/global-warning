@@ -53,7 +53,7 @@ legend.append("text")
 // data
 Promise.all([
   d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson"),
-  d3.csv("../data/CW_emissions.csv", d => d)
+  d3.csv("/data/CW_emissions.csv", d => d)
 ]).then(function(promises){
   const world = promises[0];
   const csv = promises[1];
