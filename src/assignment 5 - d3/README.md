@@ -1,4 +1,5 @@
 # Assignment 5 Visual Analytics - Basic Layout with D3
 
-![Alt text](/img/screenshot1.png?raw=true "Screenshot 1")
-![Alt text](/img/screenshot2.png?raw=true "Screenshot 2")
+![Settings Window](https://github.com/mohammadzainabbas/global-warning/blob/main/src/assignment%205%20-%20d3/img/screenshot1.png)
+
+![Settings Window](https://github.com/mohammadzainabbas/global-warning/blob/main/src/assignment%205%20-%20d3/img/screenshot2.png)
