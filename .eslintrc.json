@@ -16,7 +16,7 @@
         "project": "./tsconfig.json"
     },
     "plugins": [
-        "react",
+        // "react",
         "prettier"
     ],
     "rules": {
