@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./styles";
+import styles from "./style";
 import {withStyles} from "@mui/material/styles";
 
 const Home = ({ emissions, disasters }) => {
