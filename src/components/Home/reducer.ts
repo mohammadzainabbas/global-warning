@@ -16,6 +16,6 @@ export const reducer = (state: any = [], action: any) => {
 		}
 
 		default:
-			return state;
+			return { ...state };
 	}
 };
