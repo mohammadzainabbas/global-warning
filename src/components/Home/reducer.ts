@@ -11,7 +11,7 @@ export const reducer = (state: any = [], action: any) => {
 		case UPDATE_NATURAL_DISASTERS: {
 			return {
 				...state,
-				...action.payload,
+				...action.naturalDisasters,
 			};
 		}
 
