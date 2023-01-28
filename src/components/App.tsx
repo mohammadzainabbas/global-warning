@@ -4,8 +4,8 @@ import "./App.css";
 import { fetchDisasters, fetchEmissions } from "../api/api";
 
 const App = () => {
-	const [disasters, setDisasters] = React.useState([]);
-	const [emissions, setEmissions] = React.useState([]);
+	const [disasters, setDisasters] = React.useState<DSVParsedArray<object>>([]);
+	const [emissions, setEmissions] = React.useState<DSVParsedArray<object>>([]);
 
 	useEffect(() => {
 		(async () => {
