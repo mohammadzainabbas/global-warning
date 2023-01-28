@@ -1,3 +1,3 @@
-export const ACTION_MANAGEMENT = {};
+export const HOME = {};
 
-export default ACTION_MANAGEMENT;
+export default HOME;
