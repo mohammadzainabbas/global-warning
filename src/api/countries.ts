@@ -432,6 +432,4 @@ export const countries: readonly CountryType[] = [
 
 export const getFlag = (code: string) => {
 	return `https://flagcdn.com/w20/${code.toLowerCase()}.png`;
-	const country = countries.find((country) => country.code === code);
-	return country ? country.label : "";
 };
