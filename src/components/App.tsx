@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./App.css";
-import Home from "./Home";
+import Home from "./Home/index";
 
 import { fetchDisasters, fetchEmissions } from "../api/api";
 import { DSVParsedArray } from "d3";
