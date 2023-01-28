@@ -1,6 +1,8 @@
 import React from "react";
 
-const Home = ({ emissions, disasters }) => {
+const Home = ({ data }) => {
+	const {emissions, disasters} = data;
+	
 	return (
 		<React.Fragment>
 			<h1>Home</h1>
