@@ -4,13 +4,13 @@ export const UPDATE_NATURAL_DISASTERS = "UPDATE_NATURAL_DISASTERS";
 export const updateEmissions = (emissions) => dispatch => {
     dispatch({
         type: UPDATE_EMISSIONS,
-        emissions,
+        payload: emissions,
     });
 };
 
 export const updateNaturalDisasters = (naturalDisasters) => dispatch => {
     dispatch({
         type: UPDATE_NATURAL_DISASTERS,
-        naturalDisasters,
+        payload: naturalDisasters,
     });
 };
