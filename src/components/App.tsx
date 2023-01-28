@@ -8,8 +8,10 @@ import { fetchDisasters, fetchEmissions } from "../api/api";
 import { DSVParsedArray } from "d3";
 
 const App = (props: any) => {
-	// const [disasters, setDisasters] = React.useState<DSVParsedArray<object> | []>([]);
-	// const [emissions, setEmissions] = React.useState<DSVParsedArray<object> | []>([]);
+	const [disasters, setDisasters] = React.useState<DSVParsedArray<object> | []>([]);
+	const [emissions, setEmissions] = React.useState<DSVParsedArray<object> | []>([]);
+
+	const { updateEmissions, updateNaturalDisasters } = props;
 
 	useEffect(() => {
 		(async () => {
@@ -18,6 +20,10 @@ const App = (props: any) => {
 
 			setDisasters(_disasters);
 			setEmissions(_emissions);
+
+			props.updateEmissions(_emissions);
+			props.updateNaturalDisasters(_disasters);
+
 			// console.group("disasters");
 			// console.table(disasters);
 			// console.groupEnd();
