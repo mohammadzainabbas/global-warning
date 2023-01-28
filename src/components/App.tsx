@@ -9,8 +9,13 @@ const App = () => {
 		(async () => {
 			const disasters = await fetchDisasters();
 			const emissions = await fetchEmissions();
-			console.log(disasters);
-			console.log(emissions);
+			console.groupCollapsed("disasters");
+			console.table(disasters);
+			console.groupEnd();
+
+			console.groupCollapsed("emissions");
+			console.table(emissions);
+			console.groupEnd();
 		})();
 	}, []);
 
