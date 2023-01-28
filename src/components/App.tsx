@@ -32,8 +32,8 @@ const App = (props: any) => {
 			// console.table(emissions);
 			// console.groupEnd();
 		})();
-		return () => {};
-	}, [updateEmissions, updateNaturalDisasters]);
+		return () => resetData();
+	}, [updateEmissions, updateNaturalDisasters, resetData]);
 
 	return (
 		<React.Fragment>
@@ -53,6 +53,7 @@ const mergeProps = (stateProps: any, dispatchProps: any, ownProps: any) => ({
 	...stateProps,
 	...dispatchProps,
 	...ownProps,
+	resetData,
 });
 
 export default connect(mapStateToProps, mapDispatchToProps, mergeProps)(App);
