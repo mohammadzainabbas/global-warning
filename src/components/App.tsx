@@ -25,7 +25,7 @@ const App = () => {
 		})();
 	}, []);
 
-	return <React.Fragment></React.Fragment>;
+	return <></>;
 };
 
 export default App;
