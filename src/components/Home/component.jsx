@@ -1,6 +1,4 @@
 import React from "react";
-import {styles} from "./styles";
-import {withStyles} from "@mui/styles";
 
 const Home = ({ emissions, disasters }) => {
 	console.group("emissions");
@@ -18,4 +16,4 @@ const Home = ({ emissions, disasters }) => {
 	);
 };
 
-export default withStyles(styles)(Home);;
+export default Home;
