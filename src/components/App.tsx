@@ -4,6 +4,9 @@ import "./App.css";
 import { fetchDisasters, fetchEmissions } from "../api/api";
 
 const App = () => {
+	const [disasters, setDisasters] = React.useState([]);
+	const [emissions, setEmissions] = React.useState([]);
+
 	useEffect(() => {
 		(async () => {
 			const disasters = await fetchDisasters();
