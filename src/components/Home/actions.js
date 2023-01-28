@@ -1,5 +1,8 @@
 
-const updateEmissions = (emissions) => ({
-    type: UPDATE_EMISSIONS,
-    emissions
-});
+
+export const updateEmissions = (emissions) => dispatch => {
+    dispatch({
+        type: UPDATE_EMISSIONS,
+        emissions,
+    });
+};
