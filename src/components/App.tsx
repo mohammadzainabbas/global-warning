@@ -6,10 +6,12 @@ import { fetchDisasters, fetchEmissions } from "../api/api";
 
 const App = () => {
 	useEffect(() => {
-		const disasters = await fetchDisasters();
-		const emissions = await fetchEmissions();
-		console.log(disasters);
-		console.log(emissions);
+		(async () => {
+			const disasters = await fetchDisasters();
+			const emissions = await fetchEmissions();
+			console.log(disasters);
+			console.log(emissions);
+		})();
 	}, []);
 
 	return (
