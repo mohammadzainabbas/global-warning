@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import Home from "./component";
 
 const mapStateToProps = (state: any) => ({
-	data: state.ACTION_MANAGEMENT.data,
+	data: state.HOME.data,
 });
 
 const mapDispatchToProps = (dispatch: any, props: any) => ({
