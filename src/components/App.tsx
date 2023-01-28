@@ -34,9 +34,7 @@ const App = () => {
 	);
 };
 
-const mapStateToProps = (state: any) => ({
-	// data: state.ACTION_MANAGEMENT.data,
-});
+const mapStateToProps = (state: any) => ({});
 
 const mapDispatchToProps = (dispatch: any, props: any) => ({
 	// dispatchAction: () => dispatch(ACTION_MANAGEMENT()),
