@@ -1,6 +1,4 @@
-
-
-import {applyMiddleware, createStore} from "redux";
+import {applyMiddleware, legacy_createStore as createStore} from "redux";
 import rootReducer from "../reducers/rootReducer";
 import thunk from "redux-thunk";
 import initialState from "./initialState";
