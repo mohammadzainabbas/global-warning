@@ -1,4 +1,5 @@
 export const UPDATE_EMISSIONS = "UPDATE_EMISSIONS";
+export const UPDATE_NATURAL_DISASTERS = "UPDATE_NATURAL_DISASTERS";
 
 export const updateEmissions = (emissions) => dispatch => {
     dispatch({
