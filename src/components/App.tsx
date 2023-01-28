@@ -25,7 +25,11 @@ const App = () => {
 		})();
 	}, []);
 
-	return <></>;
+	return (
+		<>
+			<Home data={...disasters, ...emissions} />
+		</>
+	);
 };
 
 export default App;
