@@ -7,3 +7,10 @@ export const updateEmissions = (emissions) => dispatch => {
         emissions,
     });
 };
+
+export const updateNaturalDisasters = (naturalDisasters) => dispatch => {
+    dispatch({
+        type: UPDATE_EMISSIONS,
+        emissions,
+    });
+};
