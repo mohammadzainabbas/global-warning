@@ -5,6 +5,6 @@ const mapStateToProps = (state) => ({
 	// data: state.ACTION_MANAGEMENT.data,
 });
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = (dispatch, props) => ({
 	// dispatchAction: () => dispatch(ACTION_MANAGEMENT()),
 });
