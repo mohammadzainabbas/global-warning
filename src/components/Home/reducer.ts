@@ -6,6 +6,7 @@ export const reducer = (state: any = [], action: any) => {
 			return {
 				...state,
 				data: {
+					...state.data,
 					emissions: action.payload,
 				},
 			};
@@ -14,6 +15,7 @@ export const reducer = (state: any = [], action: any) => {
 			return {
 				...state,
 				data: {
+					...state.data,
 					naturalDisasters: action.payload,
 				},
 			};
