@@ -1,7 +1,7 @@
 import React from "react";
 
 const Home = ({ data }) => {
-	const {emissions, disasters} = data;
+	const {emissions, naturalDisasters} = data;
 
 	return (
 		<React.Fragment>
@@ -11,9 +11,9 @@ const Home = ({ data }) => {
 					<h2>{`Total ${emissions.length} emissions`}</h2>
 				</>
 			 )}
-			{disasters && (
+			{naturalDisasters && (
 				<>
-					<h2>{`Total ${disasters.length} disasters`}</h2>
+					<h2>{`Total ${naturalDisasters.length} naturalDisasters`}</h2>
 				</>
 			 )}
 		</React.Fragment>
