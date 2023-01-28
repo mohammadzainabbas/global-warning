@@ -1,15 +1,15 @@
 import { connect } from "react-redux";
 import { Home } from "./component";
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state: any) => ({
 	// data: state.ACTION_MANAGEMENT.data,
 });
 
-const mapDispatchToProps = (dispatch, props) => ({
+const mapDispatchToProps = (dispatch: any, props: any) => ({
 	// dispatchAction: () => dispatch(ACTION_MANAGEMENT()),
 });
 
-const mergeProps = (stateProps, dispatchProps, ownProps) => ({
+const mergeProps = (stateProps: any, dispatchProps: any, ownProps: any) => ({
 	...stateProps,
 	...dispatchProps,
 	...ownProps,
