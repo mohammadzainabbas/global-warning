@@ -4,7 +4,7 @@ import "./App.css";
 
 const App = () => {
 	return (
-		<></>
+		<React.Fragment></React.Fragment>
 
 		// <div className="App">
 		// 	<header className="App-header">
