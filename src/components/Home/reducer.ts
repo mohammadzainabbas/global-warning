@@ -5,7 +5,7 @@ export const reducer = (state: any = [], action: any) => {
 		case UPDATE_EMISSIONS: {
 			return {
 				...state,
-				...action.emissions,
+				emissions: action.emissions,
 			};
 		}
 		case UPDATE_NATURAL_DISASTERS: {
