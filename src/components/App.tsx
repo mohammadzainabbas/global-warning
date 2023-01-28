@@ -9,11 +9,11 @@ const App = () => {
 
 	useEffect(() => {
 		(async () => {
-			const disasters = await fetchDisasters();
-			const emissions = await fetchEmissions();
+			const _disasters = await fetchDisasters();
+			const _emissions = await fetchEmissions();
 
-			setDisasters(disasters);
-			setEmissions(emissions);
+			setDisasters(_disasters);
+			setEmissions(_emissions);
 			// console.group("disasters");
 			// console.table(disasters);
 			// console.groupEnd();
