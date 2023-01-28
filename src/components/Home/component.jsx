@@ -13,7 +13,7 @@ const Home = ({ data }) => {
 			 )}
 			{naturalDisasters && (
 				<>
-					<h2>{`Total ${naturalDisasters.length} naturalDisasters`}</h2>
+					<h2>{`Total ${naturalDisasters.length} disasters`}</h2>
 				</>
 			 )}
 		</React.Fragment>
