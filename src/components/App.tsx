@@ -5,7 +5,7 @@ import "./App.css";
 import { fetchDisasters, fetchEmissions } from "../api/api";
 
 const App = () => {
-	useEffect(async () => {
+	useEffect(() => {
 		const disasters = await fetchDisasters();
 		const emissions = await fetchEmissions();
 		console.log(disasters);
