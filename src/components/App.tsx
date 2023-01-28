@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import React, { useEffect } from "react";
 import "./App.css";
 import Home from "./Home/component";
-import { updateEmissions } from "./Home/actions";
+import { updateEmissions, updateNaturalDisasters } from "./Home/actions";
 
 import { fetchDisasters, fetchEmissions } from "../api/api";
 import { DSVParsedArray } from "d3";
@@ -38,7 +38,7 @@ const App = () => {
 const mapStateToProps = (state: any) => ({});
 
 const mapDispatchToProps = (dispatch: any, props: any) => ({
-	updateEmissions: (data) => dispatch(updateEmissions(data)),
+	updateEmissions: (data: any) => dispatch(updateEmissions(data)),
 });
 
 const mergeProps = (stateProps: any, dispatchProps: any, ownProps: any) => ({
