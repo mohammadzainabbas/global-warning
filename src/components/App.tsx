@@ -37,7 +37,7 @@ const App = () => {
 const mapStateToProps = (state: any) => ({});
 
 const mapDispatchToProps = (dispatch: any, props: any) => ({
-	// dispatchAction: () => dispatch(ACTION_MANAGEMENT()),
+	dispatchAction: () => dispatch(ACTION_MANAGEMENT()),
 });
 
 const mergeProps = (stateProps: any, dispatchProps: any, ownProps: any) => ({
