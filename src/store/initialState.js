@@ -1,5 +1,7 @@
+import {HOME} from "../components/Home/initialState";
+
 const initialState = {
-    HOME: home
+    HOME,
 }
 
 export default initialState;
