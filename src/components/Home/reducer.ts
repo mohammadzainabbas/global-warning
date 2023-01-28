@@ -8,6 +8,12 @@ export const reducer = (state: any = [], action: any) => {
 				...action.payload,
 			};
 		}
+		case UPDATE_NATURAL_DISASTERS: {
+			return {
+				...state,
+				...action.payload,
+			};
+		}
 
 		default:
 			return state;
