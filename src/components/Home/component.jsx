@@ -1,6 +1,6 @@
 import React from "react";
 import {styles} from "./styles";
-import {withStyles} from "@mui/material/styles";
+import {withStyles} from "@mui/styles";
 
 const Home = ({ emissions, disasters }) => {
 	console.group("emissions");
