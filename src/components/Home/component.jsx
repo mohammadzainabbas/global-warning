@@ -1,4 +1,6 @@
 import React from "react";
+import {withStyles} from "@material-ui/core/styles";
+
 
 const Home = ({ emissions, disasters }) => {
 	console.group("emissions");
