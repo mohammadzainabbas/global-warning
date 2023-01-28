@@ -1,1 +1,1 @@
-export const styles = (theme) => {};
+export const styles = (theme: any) => {};
