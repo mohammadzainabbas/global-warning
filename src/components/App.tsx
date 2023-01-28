@@ -27,9 +27,9 @@ const App = () => {
 	}, []);
 
 	return (
-		<>
+		<React.Fragment>
 			<Home emissions={emissions} disasters={disasters} />
-		</>
+		</React.Fragment>
 	);
 };
 

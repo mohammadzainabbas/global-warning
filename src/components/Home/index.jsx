@@ -10,9 +10,9 @@ const Home = ({ emissions, disasters }) => {
 	console.groupEnd();
 
 	return (
-		<>
+		<React.Fragment>
 			<h1>Home</h1>
-		</>
+		</React.Fragment>
 	);
 };
 
