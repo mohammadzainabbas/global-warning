@@ -1,7 +1,6 @@
-const initialState = [
-    "data": {
-        
-    }
-]
+const initialState = {
+    data: {},
+    
+}
 
 export default initialState;
