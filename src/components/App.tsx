@@ -21,8 +21,8 @@ const App = (props: any) => {
 			setDisasters(_disasters);
 			setEmissions(_emissions);
 
-			props.updateEmissions(_emissions);
-			props.updateNaturalDisasters(_disasters);
+			updateEmissions(_emissions);
+			updateNaturalDisasters(_disasters);
 
 			// console.group("disasters");
 			// console.table(disasters);
