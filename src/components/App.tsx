@@ -32,7 +32,7 @@ const App = (props: any) => {
 			// console.table(emissions);
 			// console.groupEnd();
 		})();
-	}, []);
+	}, [updateEmissions, updateNaturalDisasters]);
 
 	return (
 		<React.Fragment>
