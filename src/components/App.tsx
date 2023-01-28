@@ -28,7 +28,7 @@ const App = () => {
 
 	return (
 		<>
-			<Home />
+			<Home emissions={emissions} disasters={disasters} />
 		</>
 	);
 };
