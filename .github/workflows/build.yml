@@ -32,7 +32,7 @@ jobs:
                   path: |
                       node_modules
                       */*/node_modules
-                  key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+                  key: ${{ runner.os }}-node_${{ matrix.node-version }}-${{ hashFiles('**/yarn.lock') }}
 
             - name: Install dependencies
               run: npm install
