@@ -2,10 +2,15 @@ import React, { useEffect } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 
-import "../api/api";
+import { fetchDisasters, fetchEmissions } from "../api/api";
 
 const App = () => {
-	useEffect(() => {}, []);
+	useEffect(async () => {
+		const disasters = await fetchDisasters();
+		const emissions = await fetchEmissions();
+		console.log(disasters);
+		console.log(emissions);
+	}, []);
 
 	return (
 		<React.Fragment>
