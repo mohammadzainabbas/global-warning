@@ -2,7 +2,6 @@
 import { csv } from 'd3-fetch';
 
 export const fetchCSV = async () => {
-    return await csv('./data/owid-covid-data.csv').then((data) => {
-        return data;
-    }
+    return await csv('./data/owid-covid-data.csv', (d) => {
+        
 };
