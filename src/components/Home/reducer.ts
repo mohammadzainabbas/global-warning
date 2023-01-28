@@ -11,7 +11,7 @@ export const reducer = (state: any = [], action: any) => {
 				},
 			};
 		}
-		case UPDATE_EMISSIONS: {
+		case RESET_DATA: {
 			return {
 				...state,
 				data: {},
