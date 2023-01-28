@@ -12,8 +12,6 @@ const App = () => {
 			const _disasters = await fetchDisasters();
 			const _emissions = await fetchEmissions();
 
-			setDisasters(_disasters);
-			setEmissions(_emissions);
 			// console.group("disasters");
 			// console.table(disasters);
 			// console.groupEnd();
@@ -22,6 +20,8 @@ const App = () => {
 			// console.table(emissions);
 			// console.groupEnd();
 		})();
+		setDisasters(_disasters);
+		setEmissions(_emissions);
 	}, []);
 
 	return (
