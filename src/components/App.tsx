@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import React, { useEffect } from "react";
 import "./App.css";
-import Home from "./Home/component";
+import Home from "./Home/container";
 import { updateEmissions, updateNaturalDisasters, resetData } from "./Home/actions";
 
 import { fetchDisasters, fetchEmissions } from "../api/api";
