@@ -18,7 +18,6 @@ export const updateNaturalDisasters = (naturalDisasters) => dispatch => {
 
 export const resetData = () => dispatch => {
     dispatch({
-        type: UPDATE_NATURAL_DISASTERS,
-        payload: naturalDisasters,
+        type: RESET_DATA,
     });
 };

@@ -1,4 +1,4 @@
-import { UPDATE_EMISSIONS, UPDATE_NATURAL_DISASTERS } from "./actions";
+import { UPDATE_EMISSIONS, UPDATE_NATURAL_DISASTERS, RESET_DATA } from "./actions";
 
 export const reducer = (state: any = [], action: any) => {
 	switch (action.type) {
