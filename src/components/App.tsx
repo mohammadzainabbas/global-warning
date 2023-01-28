@@ -11,7 +11,7 @@ const App = (props: any) => {
 	const [disasters, setDisasters] = React.useState<DSVParsedArray<object> | []>([]);
 	const [emissions, setEmissions] = React.useState<DSVParsedArray<object> | []>([]);
 
-	const { updateEmissions, updateNaturalDisasters } = props;
+	const { updateEmissions, updateNaturalDisasters, resetData } = props;
 
 	useEffect(() => {
 		(async () => {
@@ -32,6 +32,7 @@ const App = (props: any) => {
 			// console.table(emissions);
 			// console.groupEnd();
 		})();
+		return () => {};
 	}, [updateEmissions, updateNaturalDisasters]);
 
 	return (
