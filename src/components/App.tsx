@@ -11,13 +11,16 @@ const App = () => {
 		(async () => {
 			const disasters = await fetchDisasters();
 			const emissions = await fetchEmissions();
-			console.group("disasters");
-			console.table(disasters);
-			console.groupEnd();
 
-			console.groupCollapsed("emissions");
-			console.table(emissions);
-			console.groupEnd();
+			setDisasters(disasters);
+			setEmissions(emissions);
+			// console.group("disasters");
+			// console.table(disasters);
+			// console.groupEnd();
+
+			// console.groupCollapsed("emissions");
+			// console.table(emissions);
+			// console.groupEnd();
 		})();
 	}, []);
 
