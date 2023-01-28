@@ -430,6 +430,10 @@ export const countries: readonly CountryType[] = [
 	{ code: "ZW", label: "Zimbabwe", phone: "263" },
 ];
 
+export const getCountry = (code: string) => {
+	return countries.find((country) => country.code === code);
+};
+
 export const getFlag = (code: string) => {
 	return `https://flagcdn.com/w20/${code.toLowerCase()}.png`;
 };
