@@ -3,6 +3,7 @@ import { UPDATE_EMISSIONS, UPDATE_NATURAL_DISASTERS, RESET_DATA } from "./action
 export const reducer = (state: any = [], action: any) => {
 	switch (action.type) {
 		case UPDATE_EMISSIONS: {
+			if 
 			return {
 				...state,
 				data: {
