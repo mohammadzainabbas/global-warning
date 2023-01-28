@@ -2,6 +2,7 @@ import { connect } from "react-redux";
 import React, { useEffect } from "react";
 import "./App.css";
 import Home from "./Home/component";
+import { updateEmissions } from "./Home/actions";
 
 import { fetchDisasters, fetchEmissions } from "../api/api";
 import { DSVParsedArray } from "d3";
