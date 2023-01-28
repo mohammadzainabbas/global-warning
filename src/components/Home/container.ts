@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { Home } from "./component";
+import Home from "./component";
 
 const mapStateToProps = (state: any) => ({
 	// data: state.ACTION_MANAGEMENT.data,
