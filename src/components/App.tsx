@@ -23,14 +23,6 @@ const App = (props: any) => {
 
 			updateEmissions(_emissions);
 			updateNaturalDisasters(_disasters);
-
-			// console.group("disasters");
-			// console.table(disasters);
-			// console.groupEnd();
-
-			// console.groupCollapsed("emissions");
-			// console.table(emissions);
-			// console.groupEnd();
 		})();
 		return () => resetData();
 	}, [updateEmissions, updateNaturalDisasters, resetData]);
