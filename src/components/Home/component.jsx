@@ -3,6 +3,8 @@ import React from "react";
 const Home = ({ data }) => {
 	const {emissions, naturalDisasters} = data;
 
+	debugger
+
 	return (
 		<React.Fragment>
 			<h1>Home</h1>
