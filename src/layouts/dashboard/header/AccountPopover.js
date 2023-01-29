@@ -4,14 +4,9 @@ import { alpha } from '@mui/material/styles';
 import { Box, Divider, Typography, Stack, MenuItem, Avatar, IconButton, Popover } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 
-import { GITHUB_REPO_LINK } from "../../../common/constants";
+import { GITHUB_REPO_LINK, ACCOUNT } from "../../../common/constants";
 
-const account = {
-  displayName: 'Mohammad Zain Abbas',
-  email: 'mohammadzainabbas@gmail.com',
-  photoURL: 'https://avatars.githubusercontent.com/u/19189095?v=4',
-};
-
+const account = ACCOUNT;
 // ----------------------------------------------------------------------
 
 const MENU_OPTIONS = [
