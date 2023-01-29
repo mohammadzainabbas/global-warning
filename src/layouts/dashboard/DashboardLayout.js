@@ -48,6 +48,9 @@ export default function DashboardLayout() {
             sx={{
               position: "fixed",
               top: 0,
+              left: 0,
+              zIndex: 100,
+              
               // alignSelf: "flex-start",
               // m: 2,
               // mr: 0,
