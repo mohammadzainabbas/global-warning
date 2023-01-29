@@ -40,7 +40,7 @@ const App = (props: any) => {
 				<BrowserRouter>
 					<ThemeProvider>
 						{/* <ScrollToTop /> */}
-						<StyledChart />
+						{/* <StyledChart /> */}
 						<Router />
 						{/* <Home emissions={emissions} disasters={disasters} /> */}
 					</ThemeProvider>
