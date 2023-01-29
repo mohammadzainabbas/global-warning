@@ -41,28 +41,6 @@ export default function DashboardLayout() {
     <StyledRoot>
       <Header onOpenNav={() => setOpen(true)} />
 
-      {!open && (
-        <>
-          <IconButton
-            onClick={() => setOpen(true)}
-            sx={{
-              position: "fixed",
-              top: 0,
-              left: 0,
-              zIndex: 100,
-              
-              // alignSelf: "flex-start",
-              // m: 2,
-              // mr: 0,
-              // pt: APP_BAR_DESKTOP + 2,
-              color: 'text.primary',
-            }}
-          >
-            <MenuIcon />
-          </IconButton>
-        </>
-      )}
-
       <Nav openNav={open} onCloseNav={() => setOpen(false)} />
 
       <Main>
