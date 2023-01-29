@@ -21,7 +21,7 @@ const Logo = forwardRef(({ disabledLink = false, sx, ...other }, ref) => {
   const logo = (
     <Box
       component="img"
-      src="../../../assets/climate-change-icon.png"
+      src="https://raw.githubusercontent.com/mohammadzainabbas/global-warning/main/public/favicon/favicon-32x32.png"
       sx={{ width: 40, height: 40, cursor: 'pointer', ...sx }}
     />
   );
