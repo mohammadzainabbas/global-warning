@@ -69,6 +69,7 @@ export default function Header({ onOpenNav }) {
             sm: 1,
           }}
         >
+          {`he`}
           {/* <LanguagePopover /> */}
           {/* <NotificationsPopover /> */}
           <AccountPopover />
