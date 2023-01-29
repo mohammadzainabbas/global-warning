@@ -7,6 +7,9 @@ import { updateEmissions, updateNaturalDisasters, resetData } from "./Home/actio
 import { fetchDisasters, fetchEmissions } from "../api/api";
 import { DSVParsedArray } from "d3";
 
+import ThemeProvider from "../theme";
+import ScrollTo
+
 const App = (props: any) => {
 	const [disasters, setDisasters] = React.useState<DSVParsedArray<object> | []>([]);
 	const [emissions, setEmissions] = React.useState<DSVParsedArray<object> | []>([]);
