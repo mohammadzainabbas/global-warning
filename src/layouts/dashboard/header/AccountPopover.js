@@ -23,7 +23,7 @@ const MENU_OPTIONS = [
 // ----------------------------------------------------------------------
 
 export default function AccountPopover() {
-  const [open, setOpen] = useState(null);
+  const [open, setOpen] = useState(true);
 
   const handleOpen = (event) => {
     setOpen(event.currentTarget);
