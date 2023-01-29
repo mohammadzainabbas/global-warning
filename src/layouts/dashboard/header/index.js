@@ -52,7 +52,7 @@ export default function Header({ onOpenNav }) {
           sx={{
             mr: 1,
             color: 'text.primary',
-            display: { lg: 'none' },
+            // display: { lg: 'none' },
           }}
         >
           <MenuIcon />
