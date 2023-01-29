@@ -10,6 +10,7 @@ import { DSVParsedArray } from "d3";
 import ThemeProvider from "../theme";
 import ScrollToTop from "./scroll-to-top/ScrollToTop";
 import { StyledChart } from "./chart";
+import Router from "./router/routes";
 
 const App = (props: any) => {
 	const [disasters, setDisasters] = React.useState<DSVParsedArray<object> | []>([]);
