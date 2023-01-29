@@ -14,9 +14,9 @@ import NavSection from '../../../components/nav-section';
 import navConfig from './config';
 
 const account = {
-  displayName: 'Jaydon Frankie',
-  email: 'demo@minimals.cc',
-  photoURL: '/assets/images/avatars/avatar_default.jpg',
+  displayName: 'Mohammad Zain Abbas',
+  email: 'mohammadzainabbas@gmail.com',
+  photoURL: 'https://avatars.githubusercontent.com/u/19189095?v=4',
 };
 
 // ----------------------------------------------------------------------
