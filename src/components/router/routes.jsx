@@ -25,10 +25,10 @@ export default function Router() {
         // { path: 'blog', element: <BlogPage /> },
       ],
     },
-    {
-      path: 'login',
-      element: <LoginPage />,
-    },
+    // {
+    //   path: 'login',
+    //   element: <LoginPage />,
+    // },
     {
       element: <SimpleLayout />,
       children: [
