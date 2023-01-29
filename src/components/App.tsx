@@ -1,5 +1,7 @@
 import { connect } from "react-redux";
 import React, { useEffect } from "react";
+import { BrowserRouter } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import "./App.css";
 import Home from "./home/container";
 import { updateEmissions, updateNaturalDisasters, resetData } from "./home/actions";
