@@ -46,7 +46,9 @@ function NavItem({ item }) {
     >
       <StyledNavItemIcon>{icon && icon}</StyledNavItemIcon>
 
-      <ListItemText secondary={title} />
+      <ListItemText secondary={title} sx={{
+        textTransform: "none"
+      }} />
 
       {info && info}
     </StyledNavItem>
