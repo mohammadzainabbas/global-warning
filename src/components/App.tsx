@@ -1,43 +1,51 @@
 import { connect } from "react-redux";
 import React, { useEffect } from "react";
-import "./App.css";
-import Home from "./Home/container";
-import { updateEmissions, updateNaturalDisasters, resetData } from "./Home/actions";
+import { BrowserRouter } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
+// import "./App.css";
+// import Home from "./home/container";
+// import { updateEmissions, updateNaturalDisasters, resetData } from "./home/actions";
 
-import { fetchDisasters, fetchEmissions } from "../api/api";
-import { DSVParsedArray } from "d3";
+// import { fetchDisasters, fetchEmissions } from "../api/api";
+// import { DSVParsedArray } from "d3";
+
+import ThemeProvider from "../theme";
+// import ScrollToTop from "./scroll-to-top/ScrollToTop";
+// import { StyledChart } from "./chart";
+import Router from "./router/routes";
 
 const App = (props: any) => {
-	const [disasters, setDisasters] = React.useState<DSVParsedArray<object> | []>([]);
-	const [emissions, setEmissions] = React.useState<DSVParsedArray<object> | []>([]);
+	// const [disasters, setDisasters] = React.useState<DSVParsedArray<object> | []>([]);
+	// const [emissions, setEmissions] = React.useState<DSVParsedArray<object> | []>([]);
 
-	const { updateEmissions, updateNaturalDisasters, resetData } = props;
+	// const { updateEmissions, updateNaturalDisasters, resetData } = props;
 
-	useEffect(() => {
-		(async () => {
-			const _disasters = await fetchDisasters();
-			const _emissions = await fetchEmissions();
+	// useEffect(() => {
+	// 	(async () => {
+	// 		const _disasters = await fetchDisasters();
+	// 		const _emissions = await fetchEmissions();
 
-			setDisasters(_disasters);
-			setEmissions(_emissions);
+	// 		setDisasters(_disasters);
+	// 		setEmissions(_emissions);
 
-			updateEmissions(_emissions);
-			updateNaturalDisasters(_disasters);
-
-			// console.group("disasters");
-			// console.table(disasters);
-			// console.groupEnd();
-
-			// console.groupCollapsed("emissions");
-			// console.table(emissions);
-			// console.groupEnd();
-		})();
-		return () => resetData();
-	}, [updateEmissions, updateNaturalDisasters, resetData]);
+	// 		updateEmissions(_emissions);
+	// 		updateNaturalDisasters(_disasters);
+	// 	})();
+	// 	return () => resetData();
+	// }, [updateEmissions, updateNaturalDisasters, resetData]);
 
 	return (
 		<React.Fragment>
-			<Home emissions={emissions} disasters={disasters} />
+			<HelmetProvider>
+				<BrowserRouter>
+					<ThemeProvider>
+						{/* <ScrollToTop /> */}
+						{/* <StyledChart /> */}
+						<Router />
+						{/* <Home emissions={emissions} disasters={disasters} /> */}
+					</ThemeProvider>
+				</BrowserRouter>
+			</HelmetProvider>
 		</React.Fragment>
 	);
 };
@@ -45,15 +53,15 @@ const App = (props: any) => {
 const mapStateToProps = (state: any) => ({});
 
 const mapDispatchToProps = (dispatch: any, props: any) => ({
-	updateEmissions: (data: any) => dispatch(updateEmissions(data)),
-	updateNaturalDisasters: (data: any) => dispatch(updateNaturalDisasters(data)),
+	// updateEmissions: (data: any) => dispatch(updateEmissions(data)),
+	// updateNaturalDisasters: (data: any) => dispatch(updateNaturalDisasters(data)),
 });
 
 const mergeProps = (stateProps: any, dispatchProps: any, ownProps: any) => ({
 	...stateProps,
 	...dispatchProps,
 	...ownProps,
-	resetData,
+	// resetData,
 });
 
 export default connect(mapStateToProps, mapDispatchToProps, mergeProps)(App);
