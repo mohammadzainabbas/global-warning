@@ -47,6 +47,8 @@ export default function DashboardLayout() {
             onClick={() => setOpen(true)}
             sx={{
               mr: 1,
+              pt: 1,
+              mt: 0,
               color: 'text.primary',
             }}
           >
