@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 // @mui
 import { styled, alpha } from '@mui/material/styles';
-import { Box, Link, Button, Drawer, Typography, Avatar, Stack } from '@mui/material';
+import { Box, Link, Button, Drawer, Typography, Avatar, Stack, Divider } from '@mui/material';
 // hooks
 import useResponsive from '../../../hooks/useResponsive';
 // components
@@ -57,6 +57,8 @@ export default function Nav({ openNav, onCloseNav }) {
       <Box sx={{ px: 2.5, py: 3, display: 'inline-flex' }}>
         <Logo />
       </Box>
+
+      <Divider sx={{ borderStyle: 'dashed' }} />
 
       <Box sx={{ mb: 5, mx: 2.5 }}>
         <Link underline="none">
