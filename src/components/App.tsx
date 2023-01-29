@@ -39,7 +39,7 @@ const App = (props: any) => {
 			<HelmetProvider>
 				<BrowserRouter>
 					<ThemeProvider>
-						<ScrollToTop />
+						{/* <ScrollToTop /> */}
 						<StyledChart />
 						<Router />
 						{/* <Home emissions={emissions} disasters={disasters} /> */}
