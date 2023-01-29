@@ -14,7 +14,7 @@ import NotificationsPopover from './NotificationsPopover';
 
 // ----------------------------------------------------------------------
 
-const NAV_WIDTH = 280;
+const NAV_WIDTH = 0;
 
 const HEADER_MOBILE = 64;
 
