@@ -15,7 +15,7 @@ const account = {
 const MENU_OPTIONS = [
   {
     label: 'View on Github',
-    icon: 'eva:home-fill',
+    icon: <GitHubIcon />,
     link: 'https://github.com/mohammadzainabbas/global-warning/'
   },
 ];
