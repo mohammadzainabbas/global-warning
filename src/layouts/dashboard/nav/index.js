@@ -12,12 +12,9 @@ import Scrollbar from '../../../components/scrollbar';
 import NavSection from '../../../components/nav-section';
 //
 import navConfig from './config';
+import { ACCOUNT } from '../../../common/constants';
 
-const account = {
-  displayName: 'Mohammad Zain Abbas',
-  email: 'mohammadzainabbas@gmail.com',
-  photoURL: 'https://avatars.githubusercontent.com/u/19189095?v=4',
-};
+const account = ACCOUNT;
 
 // ----------------------------------------------------------------------
 
