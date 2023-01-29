@@ -48,7 +48,8 @@ export default function DashboardLayout() {
             sx={{
               alignSelf: "flex-start",
               m: 2,
-              pt: APP_BAR_DESKTOP + 24,
+              mr: 0,
+              pt: APP_BAR_DESKTOP + 2,
               color: 'text.primary',
             }}
           >
