@@ -33,6 +33,11 @@ export default function AccountPopover() {
     setOpen(null);
   };
 
+  const gotoLink = (link) => {
+    window.open(link, '_blank');
+    handleClose();
+  };
+
   return (
     <>
       <IconButton
