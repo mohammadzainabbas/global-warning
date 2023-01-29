@@ -57,7 +57,7 @@ export default function Nav({ openNav, onCloseNav }) {
       <Box sx={{ px: 2.5, py: 1.5, display: 'inline-flex' }}>
         <Logo />
       </Box>
-      <Divider sx={{ pb: 1.5, borderStyle: 'dashed' }} />
+      <Divider sx={{ mb: 1.5, borderStyle: 'dashed' }} />
       <Box sx={{ mb: 1.5, mx: 2.5 }}>
         <Link underline="none">
           <StyledAccount>
