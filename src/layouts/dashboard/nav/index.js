@@ -95,7 +95,7 @@ export default function Nav({ openNav, onCloseNav }) {
           ModalProps={{
             keepMounted: true,
           }}
-          // variant="permanent"
+          variant="persistent"
           PaperProps={{
             sx: {
               width: NAV_WIDTH,
