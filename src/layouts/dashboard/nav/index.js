@@ -74,6 +74,8 @@ export default function Nav({ openNav, onCloseNav }) {
         </Link>
       </Box>
 
+      <Divider sx={{ m: 1.5, borderStyle: 'dashed' }} />
+      
       <NavSection data={navConfig} />
     </Scrollbar>
   );
