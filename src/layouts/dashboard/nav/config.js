@@ -1,5 +1,6 @@
 // component
 import SvgColor from '../../../components/svg-color';
+import { HOME } from '../../../common/constants';
 
 // ----------------------------------------------------------------------
 
@@ -8,7 +9,7 @@ const icon = (name) => <SvgColor src={`/assets/icons/navbar/${name}.svg`} sx={{ 
 const navConfig = [
   {
     title: 'home',
-    path: '/dashboard/app',
+    path: HOME,
     icon: icon('ic_analytics'),
   },
   {
