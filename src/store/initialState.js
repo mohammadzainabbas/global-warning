@@ -1,4 +1,4 @@
-import {HOME} from "../components/home/initialState";
+import {HOME} from "../components/Home/initialState";
 
 const initialState = {
     HOME,
