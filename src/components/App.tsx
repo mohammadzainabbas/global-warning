@@ -36,12 +36,16 @@ const App = (props: any) => {
 
 	return (
 		<React.Fragment>
-			<ThemeProvider>
-				<ScrollToTop />
-				<StyledChart />
-				<Router />
-				{/* <Home emissions={emissions} disasters={disasters} /> */}
-			</ThemeProvider>
+			<HelmetProvider>
+				<BrowserRouter>
+					<ThemeProvider>
+						<ScrollToTop />
+						<StyledChart />
+						<Router />
+						{/* <Home emissions={emissions} disasters={disasters} /> */}
+					</ThemeProvider>
+				</BrowserRouter>
+			</HelmetProvider>
 		</React.Fragment>
 	);
 };
