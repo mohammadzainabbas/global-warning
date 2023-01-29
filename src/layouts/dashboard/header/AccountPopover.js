@@ -4,6 +4,8 @@ import { alpha } from '@mui/material/styles';
 import { Box, Divider, Typography, Stack, MenuItem, Avatar, IconButton, Popover } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 
+import { GITHUB_REPO_LINK } from '../../../constants';
+
 const account = {
   displayName: 'Mohammad Zain Abbas',
   email: 'mohammadzainabbas@gmail.com',
@@ -16,7 +18,7 @@ const MENU_OPTIONS = [
   {
     label: 'View on Github',
     icon: <GitHubIcon />,
-    link: 'https://github.com/mohammadzainabbas/global-warning/'
+    link: GITHUB_REPO_LINK,
   },
 ];
 
