@@ -91,6 +91,10 @@ export default function Nav({ openNav, onCloseNav }) {
       {isDesktop ? (
         <Drawer
           open={openNav}
+          onClose={onCloseNav}
+          ModalProps={{
+            keepMounted: true,
+          }}
           // variant="permanent"
           PaperProps={{
             sx: {
