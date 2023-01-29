@@ -4,9 +4,8 @@ import { useState } from 'react';
 import { Container, Stack, Typography } from '@mui/material';
 // components
 import { ProductSort, ProductList, ProductCartWidget, ProductFilterSidebar } from '../sections/@dashboard/products';
-// mock
-import PRODUCTS from '../_mock/products';
 
+const PRODUCTS = []
 // ----------------------------------------------------------------------
 
 export default function ProductsPage() {
