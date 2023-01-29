@@ -15,7 +15,6 @@ const APP_BAR_DESKTOP = 92;
 
 const StyledRoot = styled('div')({
   display: 'flex',
-  flexDirection: 'row',
   minHeight: '100%',
   overflow: 'hidden',
 });
@@ -47,10 +46,12 @@ export default function DashboardLayout() {
           <IconButton
             onClick={() => setOpen(true)}
             sx={{
-              alignSelf: "flex-start",
-              m: 2,
-              mr: 0,
-              pt: APP_BAR_DESKTOP + 2,
+              position: "fixed",
+              top: 0,
+              // alignSelf: "flex-start",
+              // m: 2,
+              // mr: 0,
+              // pt: APP_BAR_DESKTOP + 2,
               color: 'text.primary',
             }}
           >
