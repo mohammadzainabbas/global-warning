@@ -5,7 +5,9 @@ const getUnique = (arr, comp) => [...new Set(arr.map(x => x[comp]))];
 const Home = ({ data }) => {
 	const {emissions, naturalDisasters} = data;
 
+	const disaster_type = getUnique(naturalDisasters, "disaster_type");
 	
+
 
 	return (
 		<React.Fragment>
