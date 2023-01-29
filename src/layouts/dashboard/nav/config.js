@@ -1,6 +1,6 @@
 // component
 import SvgColor from '../../../components/svg-color';
-import { HOME } from '../../../common/constants';
+import { HOME, GITHUB_REPO_LINK } from '../../../common/constants';
 
 // ----------------------------------------------------------------------
 
@@ -8,13 +8,13 @@ const icon = (name) => <SvgColor src={`/assets/icons/navbar/${name}.svg`} sx={{ 
 
 const navConfig = [
   {
-    title: 'home',
+    title: 'Home',
     path: HOME,
     icon: icon('ic_analytics'),
   },
   {
     title: 'View on Github',
-    path: '/404',
+    path: GITHUB_REPO_LINK,
     icon: icon('ic_disabled'),
   },
 ];
