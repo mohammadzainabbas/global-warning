@@ -19,8 +19,8 @@ const Logo = forwardRef(({ disabledLink = false, sx, ...other }, ref) => {
           {`Global Warning`}
         </Typography>
         <Typography variant="caption" sx={{ color: 'text.secondary' }}>
-                {`Visual Analytics Project`}
-              </Typography>
+          {`Visual Analytics Project`}
+        </Typography>
     </Box>
     </>
   );
