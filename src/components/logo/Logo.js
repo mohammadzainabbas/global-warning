@@ -12,16 +12,16 @@ const Logo = forwardRef(({ disabledLink = false, sx, ...other }, ref) => {
 
   const logo = (
     <>
-    <Box
-      component="img"
-      src="https://raw.githubusercontent.com/mohammadzainabbas/global-warning/main/public/favicon/android-chrome-512x512.png"
-      sx={{ width: 40, height: 40, cursor: 'pointer', ...sx }}
-    />
-  <Box sx={{ my: 1.5, px: 2.5 }}>
-<Typography variant="subtitle2" noWrap>
-  {`Global Warning`}
-</Typography>
-</Box>
+      <Box
+        component="img"
+        src="https://raw.githubusercontent.com/mohammadzainabbas/global-warning/main/public/favicon/android-chrome-512x512.png"
+        sx={{ width: 40, height: 40, cursor: 'pointer', ...sx }}
+      />
+      <Box sx={{ my: 1.5, px: 2.5 }}>
+        <Typography variant="subtitle2" noWrap>
+          {`Global Warning`}
+        </Typography>
+    </Box>
     </>
   );
 
