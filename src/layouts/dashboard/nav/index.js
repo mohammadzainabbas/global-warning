@@ -90,8 +90,8 @@ export default function Nav({ openNav, onCloseNav }) {
     >
       {isDesktop ? (
         <Drawer
-          open
-          variant="permanent"
+          open={openNav}
+          // variant="permanent"
           PaperProps={{
             sx: {
               width: NAV_WIDTH,
