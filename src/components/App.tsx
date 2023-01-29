@@ -33,7 +33,11 @@ const App = (props: any) => {
 
 	return (
 		<React.Fragment>
-			<Home emissions={emissions} disasters={disasters} />
+			<ThemeProvider>
+				<ScrollToTop />
+				<StyledChart />
+				<Home emissions={emissions} disasters={disasters} />
+			</ThemeProvider>
 		</React.Fragment>
 	);
 };
