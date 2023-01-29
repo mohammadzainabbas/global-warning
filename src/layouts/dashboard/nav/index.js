@@ -40,6 +40,8 @@ export default function Nav({ openNav, onCloseNav }) {
 
   const isDesktop = useResponsive('up', 'lg');
 
+  debugger
+
   useEffect(() => {
     if (openNav) {
       onCloseNav();
