@@ -1,8 +1,7 @@
 // component
 import SvgColor from '../../../components/svg-color';
 import { HOME, GITHUB_REPO_LINK } from '../../../common/constants';
-import HomeIcon from '@mui/icons-material/Home';
-import GitHubIcon from '@mui/icons-material/GitHub';
+import {HomeIcon, GitHubIcon} from '@mui/icons-material';
 
 // ----------------------------------------------------------------------
 
@@ -12,12 +11,12 @@ const navConfig = [
   {
     title: 'Home',
     path: HOME,
-    icon: icon('ic_analytics'),
+    icon: <HomeIcon />,
   },
   {
     title: 'View on Github',
     path: GITHUB_REPO_LINK,
-    icon: icon('ic_disabled'),
+    icon: <GitHubIcon />,
   },
 ];
 
