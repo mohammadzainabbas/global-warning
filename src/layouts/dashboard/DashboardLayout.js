@@ -5,6 +5,7 @@ import { styled } from '@mui/material/styles';
 //
 import Header from './header';
 import Nav from './nav';
+import { IconButton } from '@mui/material';
 
 // ----------------------------------------------------------------------
 
@@ -38,6 +39,19 @@ export default function DashboardLayout() {
   return (
     <StyledRoot>
       <Header onOpenNav={() => setOpen(true)} />
+
+      {!open && (
+        <>
+          <IconButton
+            onClick={() => setOpen(true)}
+            sx={{
+              mr: 1,
+              color: 'text.primary',
+              display: { lg: 'none' },
+            }}
+          />
+        </>
+      )}
 
       <Nav openNav={open} onCloseNav={() => setOpen(false)} />
 
