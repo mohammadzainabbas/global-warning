@@ -46,9 +46,7 @@ export default function DashboardLayout() {
           <IconButton
             onClick={() => setOpen(true)}
             sx={{
-              mr: 1,
-              pt: 1,
-              mt: 0,
+              alignSelf: "flex-start",
               color: 'text.primary',
             }}
           >
