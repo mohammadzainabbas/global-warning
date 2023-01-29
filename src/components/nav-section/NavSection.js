@@ -38,7 +38,7 @@ function NavItem({ item }) {
       to={path}
       sx={{
         '&.active': {
-          color: 'text.primary',
+          color: 'text.secondary',
           bgcolor: 'action.selected',
           fontWeight: 'fontWeightBold',
         },
@@ -46,7 +46,7 @@ function NavItem({ item }) {
     >
       <StyledNavItemIcon>{icon && icon}</StyledNavItemIcon>
 
-      <ListItemText primary={title} />
+      <ListItemText secondary={title} />
 
       {info && info}
     </StyledNavItem>
