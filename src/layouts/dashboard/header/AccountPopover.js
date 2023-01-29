@@ -4,7 +4,7 @@ import { alpha } from '@mui/material/styles';
 import { Box, Divider, Typography, Stack, MenuItem, Avatar, IconButton, Popover } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 
-import { GITHUB_REPO_LINK } from '//../../../constants';
+import { GITHUB_REPO_LINK } from '../../../../constants';
 
 const account = {
   displayName: 'Mohammad Zain Abbas',
