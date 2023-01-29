@@ -49,7 +49,9 @@ export default function DashboardLayout() {
               color: 'text.primary',
               display: { lg: 'none' },
             }}
-          />
+          >
+            <MenuIcon />
+          </IconButton>
         </>
       )}
 
