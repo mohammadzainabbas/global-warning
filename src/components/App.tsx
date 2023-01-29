@@ -6,12 +6,12 @@ import { HelmetProvider } from "react-helmet-async";
 // import Home from "./home/container";
 // import { updateEmissions, updateNaturalDisasters, resetData } from "./home/actions";
 
-import { fetchDisasters, fetchEmissions } from "../api/api";
-import { DSVParsedArray } from "d3";
+// import { fetchDisasters, fetchEmissions } from "../api/api";
+// import { DSVParsedArray } from "d3";
 
 import ThemeProvider from "../theme";
-import ScrollToTop from "./scroll-to-top/ScrollToTop";
-import { StyledChart } from "./chart";
+// import ScrollToTop from "./scroll-to-top/ScrollToTop";
+// import { StyledChart } from "./chart";
 import Router from "./router/routes";
 
 const App = (props: any) => {
@@ -61,7 +61,7 @@ const mergeProps = (stateProps: any, dispatchProps: any, ownProps: any) => ({
 	...stateProps,
 	...dispatchProps,
 	...ownProps,
-	resetData,
+	// resetData,
 });
 
 export default connect(mapStateToProps, mapDispatchToProps, mergeProps)(App);
