@@ -4,8 +4,8 @@ import { alpha } from '@mui/material/styles';
 import { Box, Divider, Typography, Stack, MenuItem, Avatar, IconButton, Popover } from '@mui/material';
 
 const account = {
-  displayName: 'Jaydon Frankie',
-  email: 'demo@minimals.cc',
+  displayName: 'Mohammad Zain Abbas',
+  email: 'mohammadzainabbas@gmail.com',
   photoURL: '/assets/images/avatars/avatar_default.jpg',
 };
 
