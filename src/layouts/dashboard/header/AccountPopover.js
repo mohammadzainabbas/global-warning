@@ -6,7 +6,7 @@ import { Box, Divider, Typography, Stack, MenuItem, Avatar, IconButton, Popover 
 const account = {
   displayName: 'Mohammad Zain Abbas',
   email: 'mohammadzainabbas@gmail.com',
-  photoURL: '/assets/images/avatars/avatar_default.jpg',
+  photoURL: 'https://avatars.githubusercontent.com/u/19189095?v=4',
 };
 
 // ----------------------------------------------------------------------
