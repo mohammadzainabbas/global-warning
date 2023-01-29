@@ -6,5 +6,7 @@ export const NOT_FOUND = "/404";
 
 // Account details
 export const ACCOUNT = {
-    name: "Mohammad Zain Abbas",
-    email:
+	displayName: "Mohammad Zain Abbas",
+	email: "mohammadzainabbas@gmail.com",
+	photoURL: "https://avatars.githubusercontent.com/u/19189095?v=4",
+};
