@@ -58,7 +58,7 @@ export default function Nav({ openNav, onCloseNav }) {
         <Logo />
       </Box>
       
-      <Divider sx={{ m: 1.5, borderStyle: 'dashed' }} />
+      <Divider sx={{ m: 1.5, borderStyle: 'groove' }} />
 
       <Box sx={{ mb: 1.5, mx: 2.5 }}>
         <Link underline="none">
@@ -74,7 +74,7 @@ export default function Nav({ openNav, onCloseNav }) {
         </Link>
       </Box>
 
-      <Divider sx={{ m: 1.5, mt: 0, borderStyle: 'dashed' }} />
+      <Divider sx={{ m: 1.5, mt: 0, borderStyle: 'dotted' }} />
 
       <NavSection data={navConfig} />
     </Scrollbar>
