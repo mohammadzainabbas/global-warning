@@ -15,14 +15,7 @@ const MENU_OPTIONS = [
   {
     label: 'View on Github',
     icon: 'eva:home-fill',
-  },
-  {
-    label: 'Profile',
-    icon: 'eva:person-fill',
-  },
-  {
-    label: 'Settings',
-    icon: 'eva:settings-2-fill',
+    link: 'https://github.com/mohammadzainabbas/global-warning/'
   },
 ];
 
