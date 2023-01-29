@@ -94,7 +94,9 @@ export default function AccountPopover() {
           {MENU_OPTIONS.map((option) => (
             <MenuItem key={option.label} onClick={() => gotoLink(option.link)}>
               {option.icon}
-              {option.label}
+              <Typography variant="body2" sx={{ color: 'text.secondary' }} noWrap>
+                {option.label}
+              </Typography>
             </MenuItem>
           ))}
         </Stack>
