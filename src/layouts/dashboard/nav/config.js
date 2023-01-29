@@ -1,6 +1,8 @@
 // component
 import SvgColor from '../../../components/svg-color';
 import { HOME, GITHUB_REPO_LINK } from '../../../common/constants';
+import HomeIcon from '@mui/icons-material/Home';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 // ----------------------------------------------------------------------
 
