@@ -84,8 +84,8 @@ export default function Nav({ openNav, onCloseNav }) {
     <Box
       component="nav"
       sx={{
-        flexShrink: { lg: 0 },
-        width: { lg: NAV_WIDTH },
+        // flexShrink: { lg: 0 },
+        // width: { lg: NAV_WIDTH },
       }}
     >
       {isDesktop ? (
@@ -98,7 +98,7 @@ export default function Nav({ openNav, onCloseNav }) {
           // variant="permanent"
           PaperProps={{
             sx: {
-              // width: NAV_WIDTH,
+              width: NAV_WIDTH,
               // bgcolor: 'background.default',
               // borderRightStyle: 'dashed',
             },
