@@ -13,7 +13,7 @@ const account = {
 
 const MENU_OPTIONS = [
   {
-    label: 'Home',
+    label: 'View on Github',
     icon: 'eva:home-fill',
   },
   {
