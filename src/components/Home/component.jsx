@@ -15,7 +15,7 @@ import {
   AppWidgetSummary,
   AppCurrentSubject,
   AppConversionRates,
-} from '../sections/@dashboard/app';
+} from '../../sections/@dashboard/app';
 
 const getUnique = (arr, comp) => [...new Set(arr.map(x => x[comp]))];
 
