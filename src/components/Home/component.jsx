@@ -25,7 +25,6 @@ const Home = ({ data }) => {
 
 	return (
 		<React.Fragment>
-			<h1>Home</h1>
 			<Container maxWidth="xl">
         <Typography variant="h4" sx={{ mb: 5 }}>
           Hi, Welcome back
