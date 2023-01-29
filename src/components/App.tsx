@@ -1,8 +1,8 @@
 import { connect } from "react-redux";
 import React, { useEffect } from "react";
 import "./App.css";
-import Home from "./Home/container";
-import { updateEmissions, updateNaturalDisasters, resetData } from "./Home/actions";
+import Home from "./home/container";
+import { updateEmissions, updateNaturalDisasters, resetData } from "./home/actions";
 
 import { fetchDisasters, fetchEmissions } from "../api/api";
 import { DSVParsedArray } from "d3";
