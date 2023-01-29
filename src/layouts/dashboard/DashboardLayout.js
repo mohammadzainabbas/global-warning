@@ -48,7 +48,6 @@ export default function DashboardLayout() {
             sx={{
               mr: 1,
               color: 'text.primary',
-              display: { lg: 'none' },
             }}
           >
             <MenuIcon />
