@@ -117,7 +117,7 @@ export default function Nav({ openNav, onCloseNav }) {
         width: { lg: NAV_WIDTH },
       }}
     >
-      {isDesktop ? (
+      {/* {isDesktop ? (
         <Drawer
           open
           variant="permanent"
@@ -131,7 +131,7 @@ export default function Nav({ openNav, onCloseNav }) {
         >
           {renderContent}
         </Drawer>
-      ) : (
+      ) : ( */}
         <Drawer
           open={openNav}
           onClose={onCloseNav}
@@ -144,7 +144,7 @@ export default function Nav({ openNav, onCloseNav }) {
         >
           {renderContent}
         </Drawer>
-      )}
+      {/* )} */}
     </Box>
   );
 }
