@@ -17,6 +17,7 @@ const Logo = forwardRef(({ disabledLink = false, sx, ...other }, ref) => {
       src="https://raw.githubusercontent.com/mohammadzainabbas/global-warning/main/public/favicon/android-chrome-512x512.png"
       sx={{ width: 40, height: 40, cursor: 'pointer', ...sx }}
     />
+    
     {`Global Warning`}
     </>
   );
