@@ -8,7 +8,8 @@ import { fetchDisasters, fetchEmissions } from "../api/api";
 import { DSVParsedArray } from "d3";
 
 import ThemeProvider from "../theme";
-import ScrollTo
+import ScrollToTop from "./scroll-to-top/ScrollToTop";
+import { StyledChart } from "./chart";
 
 const App = (props: any) => {
 	const [disasters, setDisasters] = React.useState<DSVParsedArray<object> | []>([]);
