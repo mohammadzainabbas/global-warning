@@ -1,6 +1,6 @@
 import React from "react";
 
-const Home = ({ emissions, disasters }) => {
+const PieChart = ({ emissions, disasters }) => {
 	console.group("emissions");
 	console.table(emissions);
 	console.groupEnd();
@@ -11,9 +11,9 @@ const Home = ({ emissions, disasters }) => {
 
 	return (
 		<React.Fragment>
-			<h1>Home</h1>
+			<h1>PieChart</h1>
 		</React.Fragment>
 	);
 };
 
-export default Home;
+export default PieChart;
