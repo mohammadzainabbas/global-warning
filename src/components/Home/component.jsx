@@ -11,7 +11,7 @@ import {
   AppConversionRates,
 } from '../../sections/@dashboard/app';
 
-const getUnique = (arr, comp) => [...new Set(arr.map(x => x[comp]))];
+// const getUnique = (arr, comp) => [...new Set(arr.map(x => x[comp]))];
 
 const Home = ({ data }) => {
 
@@ -19,7 +19,7 @@ const Home = ({ data }) => {
 
 	const {emissions, naturalDisasters} = data;
 
-	const disaster_type = getUnique(naturalDisasters, "disaster_type");
+	// const disaster_type = getUnique(naturalDisasters, "disaster_type");
 
 
 
