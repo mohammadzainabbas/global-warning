@@ -19,13 +19,9 @@ const Logo = forwardRef(({ disabledLink = false, sx, ...other }, ref) => {
     />
             <Box sx={{ my: 1.5, px: 2.5 }}>
           <Typography variant="subtitle2" noWrap>
-            {account.displayName}
+            {`Global Warning`}
           </Typography>
-          <Typography variant="body2" sx={{ color: 'text.secondary' }} noWrap>
-            {account.email}
-          </Typography>
-        </Box>
-
+          </Box>
     </>
   );
 
