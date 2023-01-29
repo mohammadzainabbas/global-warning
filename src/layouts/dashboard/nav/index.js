@@ -92,9 +92,9 @@ export default function Nav({ openNav, onCloseNav }) {
         <Drawer
           open={openNav}
           onClose={onCloseNav}
-          ModalProps={{
-            keepMounted: true,
-          }}
+          // ModalProps={{
+          //   keepMounted: true,
+          // }}
           variant="persistent"
           PaperProps={{
             sx: {
