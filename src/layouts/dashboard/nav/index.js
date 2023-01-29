@@ -71,7 +71,7 @@ export default function Nav({ openNav, onCloseNav }) {
                 {account.displayName}
               </Typography>
 
-              <Typography variant="body1" sx={{ color: 'text.secondary' }}>
+              <Typography variant="caption" sx={{ color: 'text.secondary' }}>
                 {account.role}
               </Typography>
             </Box>
