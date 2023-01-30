@@ -78,6 +78,7 @@ const Home = (props) => {
 
 	const onSliderChange = (e, newValue, activeThumb) => {
 		if (!Array.isArray(newValue)) { return; }
+		const min_year = min(years);
 		let _min_year = yearRange[0];
 		let _max_year = yearRange[1];
 
@@ -99,6 +100,7 @@ const Home = (props) => {
 			return disaster.year >= _min_year && disaster.year <= _max_year;
 		});
 		debugger
+		_min_year = min(_disasters, "year");
 		setDisasters(_disasters);
 		setYearRange([_min_year, _max_year]);
 	};
