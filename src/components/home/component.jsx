@@ -31,8 +31,8 @@ const Home = ({ data }) => {
       updateEmissions(_emissions);
       updateNaturalDisasters(_disasters);
     })();
-  return () => resetData();
-}, [updateEmissions, updateNaturalDisasters, resetData]);
+  // return () => resetData();
+}, [updateEmissions, updateNaturalDisasters]);
 
 
 
