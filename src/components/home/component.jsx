@@ -79,7 +79,7 @@ const Home = (props) => {
 	const affected_countries = getUnique(disasters, "country")?.length || 0;
 	const total_disasters = disasters.length || 0;
 
-	debugger
+	// debugger
 
 	// console.log(disaster_type);
 
