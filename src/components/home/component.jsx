@@ -40,6 +40,7 @@ export const Loading = () => {
 const MIN_DISTANCE = 10; // min years to show
 const PICK_TOP = 5; // top n disasters to show
 const DECAY_VALUE = 0; // decay value for each year
+const PICK_TOP_COUNTRIES = 10; // top n countries to show
 
 const Home = (props) => {
 	const theme = useTheme();
@@ -103,7 +104,6 @@ const Home = (props) => {
 
 		if (newValue[1] - newValue[0] < MIN_DISTANCE) {
 			if (activeThumb === 0) {
-				debugger
 				const clamped = Math.min(newValue[0], max_year - MIN_DISTANCE);
 				_min_year = clamped;
 				_max_year = clamped + MIN_DISTANCE;
@@ -111,7 +111,6 @@ const Home = (props) => {
 				const clamped = Math.max(newValue[1], min_year + MIN_DISTANCE);
 				_min_year = clamped - MIN_DISTANCE;
 				_max_year = clamped;
-				debugger
 			}
 		} else {
 			_min_year = newValue[0];
@@ -131,8 +130,8 @@ const Home = (props) => {
 	const total_disasters = disasters.length || 0;
 
 	const display_years = generateList(yearRange[0], yearRange[1]);
-
 	const disaster_type = getUnique(disasters, "disaster_type");
+
 	let disaster_type_count = disaster_type.map((type) => {
 		return {
 			name: type,
@@ -173,9 +172,36 @@ const Home = (props) => {
 		}
 	});
 
+	// Continent wise deaths
+	const continents = getUnique(disasters, "continent");
+	const continent_wise_deaths = continents.map((continent) => {
+		return {
+			label: continent,
+			value: sumBy(disasters.filter((disaster) => disaster.continent === continent), "total_deaths"),
+		}
+	});
 
+	// Country wise most affected
+	const countries = getUnique(disasters, "country");
+	let country_wise_affected = countries.map((country) => {
+		return {
+			label: country,
+			value: sumBy(disasters.filter((disaster) => disaster.country === country), "total_affected"),
+		}
+	});
 
-	console.log(chartData);
+	country_wise_affected = slice(reverse(sortBy(country_wise_affected, (r) => r.value)), 0, PICK_TOP_COUNTRIES);
+
+	// Disaster type wise deaths/affected
+	const disaster_wise = [
+		{ label: "Deaths", value: "total_deaths", },
+		{ label: "Affected", value: "total_affected", }
+	]
+	const disaster_type_wise = disaster_wise.map((type) => {
+		let data = disaster_type.map((disaster_type) => sumBy(disasters.filter((disaster) => disaster.disaster_type === disaster_type), type.value));
+		data = data.map(r => Math.log(r))
+		return { name: type.label, data, }
+	});
 
 	return (
 		<React.Fragment>
@@ -227,54 +253,16 @@ const Home = (props) => {
 							<Grid item xs={12} md={6} lg={8}>
 								<AppWebsiteVisits
 									title={`Frequency of disasters`}
-									subheader={`(+43%) than last year`}
+									subheader={`Total deaths per year`}
 									chartLabels={chartLabels}
 									chartData={chartData}
-								// chartLabels={[
-								// 	'01/01/2003',
-								// 	'02/01/2003',
-								// 	'03/01/2003',
-								// 	'04/01/2003',
-								// 	'05/01/2003',
-								// 	'06/01/2003',
-								// 	'07/01/2003',
-								// 	'08/01/2003',
-								// 	'09/01/2003',
-								// 	'10/01/2003',
-								// 	'11/01/2003',
-								// ]}
-								// chartData={[
-								// 	{
-								// 		name: 'Team A',
-								// 		type: 'column',
-								// 		fill: 'solid',
-								// 		data: [23, 11, 22, 27, 13, 22, 37, 21, 44, 22, 30],
-								// 	},
-								// 	{
-								// 		name: 'Team B',
-								// 		type: 'area',
-								// 		fill: 'gradient',
-								// 		data: [44, 55, 41, 67, 22, 43, 21, 41, 56, 27, 43],
-								// 	},
-								// 	{
-								// 		name: 'Team C',
-								// 		type: 'line',
-								// 		fill: 'solid',
-								// 		data: [30, 25, 36, 30, 45, 35, 64, 52, 59, 36, 39],
-								// 	},
-								// ]}
 								/>
 							</Grid>
 
 							<Grid item xs={12} md={6} lg={4}>
 								<AppCurrentVisits
-									title="Current Visits"
-									chartData={[
-										{ label: 'America', value: 4344 },
-										{ label: 'Asia', value: 5435 },
-										{ label: 'Europe', value: 1443 },
-										{ label: 'Africa', value: 4443 },
-									]}
+									title={`Deaths by continent`}
+									chartData={continent_wise_deaths}
 									chartColors={[
 										theme.palette.primary.main,
 										theme.palette.info.main,
@@ -286,32 +274,17 @@ const Home = (props) => {
 
 							<Grid item xs={12} md={6} lg={8}>
 								<AppConversionRates
-									title="Conversion Rates"
-									subheader="(+43%) than last year"
-									chartData={[
-										{ label: 'Italy', value: 400 },
-										{ label: 'Japan', value: 430 },
-										{ label: 'China', value: 448 },
-										{ label: 'Canada', value: 470 },
-										{ label: 'France', value: 540 },
-										{ label: 'Germany', value: 580 },
-										{ label: 'South Korea', value: 690 },
-										{ label: 'Netherlands', value: 1100 },
-										{ label: 'United States', value: 1200 },
-										{ label: 'United Kingdom', value: 1380 },
-									]}
+									title={`Top ${PICK_TOP_COUNTRIES} most affected countries`}
+									subheader={`Total affected per country (from ${yearRange[0]} to ${yearRange[1]})`}
+									chartData={country_wise_affected}
 								/>
 							</Grid>
 
 							<Grid item xs={12} md={6} lg={4}>
 								<AppCurrentSubject
-									title="Current Subject"
-									chartLabels={['English', 'History', 'Physics', 'Geography', 'Chinese', 'Math']}
-									chartData={[
-										{ name: 'Series 1', data: [80, 50, 30, 40, 100, 20] },
-										{ name: 'Series 2', data: [20, 30, 40, 80, 20, 80] },
-										{ name: 'Series 3', data: [44, 76, 78, 13, 43, 10] },
-									]}
+									title={`Disasters by type`}
+									chartLabels={disaster_type}
+									chartData={disaster_type_wise}
 									chartColors={[...Array(6)].map(() => theme.palette.text.secondary)}
 								/>
 							</Grid>
