@@ -19,6 +19,9 @@ import { AppTasks } from '../../sections/@dashboard/app';
 // ----------------------------------------------------------------------
 
 export default function Router() {
+
+  const DEFAULT_ROUTE = `${HOME}/dashboard`;
+
   const routes = useRoutes([
     {
       path: HOME,
