@@ -3,6 +3,7 @@ import SvgColor from '../../../components/svg-color';
 import { HOME, GITHUB_REPO_LINK, TASKS } from '../../../common/constants';
 import HomeIcon from '@mui/icons-material/Home';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import TaskIcon from '@mui/icons-material/Task';
 
 // ----------------------------------------------------------------------
 
@@ -15,15 +16,15 @@ const navConfig = [
     icon: <HomeIcon />,
   },
   {
+    title: 'Tasks',
+    path: `${HOME}/${TASKS}`,
+    icon: <TaskIcon />,
+  },
+  {
     title: 'View on Github',
     path: GITHUB_REPO_LINK,
     icon: <GitHubIcon />,
   },
-  {
-    title: 'Tasks',
-    path: `${HOME}/${TASKS}`,
-    icon: <TaskIcon />,
-  }
 ];
 
 export default navConfig;
