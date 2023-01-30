@@ -208,7 +208,7 @@ const Home = (props) => {
 	]
 	const disaster_type_wise = disaster_wise.map((type) => {
 		return {
-			label: type,
+			label: type.label,
 			value: sumBy(disasters.filter((disaster) => disaster.disaster_type === type), "total_deaths"),
 		}
 	});
