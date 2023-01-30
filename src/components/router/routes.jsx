@@ -27,7 +27,7 @@ export default function Router() {
       path: HOME,
       element: <DashboardLayout />,
       children: [
-        { element: <Navigate to={`${HOME_DASHBOARD}`} />, index: true },
+        { element: <Navigate to={`${DEFAULT_ROUTE}`} />, index: true },
         { path: 'dashboard', element: <Home /> },
         { path: 'tasks', element: <Tasks /> },
         // { path: 'products', element: <ProductsPage /> },
@@ -41,7 +41,7 @@ export default function Router() {
     {
       element: <SimpleLayout />,
       children: [
-        { element: <Navigate to={`${HOME_DASHBOARD}`} />, index: true },
+        { element: <Navigate to={`${DEFAULT_ROUTE}`} />, index: true },
         { path: '404', element: <Page404 /> },
         { path: '*', element: <Navigate to={`${NOT_FOUND}`} /> },
       ],
