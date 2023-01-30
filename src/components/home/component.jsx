@@ -61,18 +61,18 @@ const Home = (props) => {
 		// return () => resetData();
 	}, [updateEmissions, updateNaturalDisasters]);
 
-	useEffect(() => {
+	// useEffect(() => {
 
-		const _disasters = totalDisasters.filter((disaster) => {
-			return disaster.year >= yearRange[0] && disaster.year <= yearRange[1];
-		});
-		setLoading(true);
-		setDisasters(_disasters);
-		setYearRange(yearRange);
+	// 	const _disasters = totalDisasters.filter((disaster) => {
+	// 		return disaster.year >= yearRange[0] && disaster.year <= yearRange[1];
+	// 	});
+	// 	setLoading(true);
+	// 	setDisasters(_disasters);
+	// 	setYearRange(yearRange);
 
-		setLoading(false);
+	// 	setLoading(false);
 
-	}, [yearRange, totalDisasters]);
+	// }, [yearRange, totalDisasters]);
 
 	const MIN_DISTANCE = 5; // min years to show
 
