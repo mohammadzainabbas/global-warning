@@ -200,7 +200,7 @@ const Home = (props) => {
 										getAriaValueText={(value) => `Year: ${value}`}
 										valueLabelFormat={(value) => `Year: ${value}`}
 										disableSwap
-										marks
+										marks={years.map((year) => ({ value: year, label: year }))}
 										min={min(years)}
 										max={max(years)}
 									/>
