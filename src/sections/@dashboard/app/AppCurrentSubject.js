@@ -45,15 +45,15 @@ export default function AppCurrentSubject({ title, subheader, chartData, chartCo
     stroke: { width: 2 },
     fill: { opacity: 0.48 },
     legend: { floating: true, horizontalAlign: 'center' },
-    yaxis: [
-      {
-        logarithmic: false,
-      },
-      {
-        logarithmic: true,
-      }
+    // yaxis: [
+    //   {
+    //     logarithmic: false,
+    //   },
+    //   {
+    //     logarithmic: true,
+    //   }
 
-    ],
+    // ],
     xaxis: {
       categories: chartLabels,
       labels: {

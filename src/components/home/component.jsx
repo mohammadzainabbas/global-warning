@@ -201,10 +201,10 @@ const Home = (props) => {
 			label: "Deaths",
 			value: "total_deaths",
 		},
-		{
-			label: "Affected",
-			value: "total_affected",
-		}
+		// {
+		// 	label: "Affected",
+		// 	value: "total_affected",
+		// }
 	]
 	const disaster_type_wise = disaster_wise.map((type) => {
 		const data = disaster_type.map((disaster_type) => sumBy(disasters.filter((disaster) => disaster.disaster_type === disaster_type), type.value));
