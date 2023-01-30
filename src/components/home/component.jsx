@@ -206,7 +206,7 @@ const Home = (props) => {
 
 							<Grid item xs={12} md={6} lg={8}>
 								<AppWebsiteVisits
-									title="Website Visits"
+									title="Frequency of disasters"
 									subheader="(+43%) than last year"
 									chartLabels={[
 										'01/01/2003',
