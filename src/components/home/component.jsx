@@ -34,7 +34,7 @@ const Home = (props) => {
 			const _emissions = await fetchEmissions();
 
 			setDisasters(_disasters);
-
+			setYearRange(getUnique(_disasters, "year")
 			setEmissions(_emissions);
 
 			updateEmissions(_emissions);
