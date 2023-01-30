@@ -192,9 +192,6 @@ const Home = (props) => {
 		}
 	});
 
-	const result = {};
-
-	top_disasters;
 	debugger
 
 
