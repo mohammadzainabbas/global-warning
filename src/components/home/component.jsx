@@ -17,8 +17,8 @@ const Home = ({ data }) => {
 
 	const theme = useTheme();
 
-  const [disasters, setDisasters] = React.useState<DSVParsedArray<object> | []>([]);
-  const [emissions, setEmissions] = React.useState<DSVParsedArray<object> | []>([]);
+  const [disasters, setDisasters] = React.useState([]);
+  const [emissions, setEmissions] = React.useState([]);
 
 
   	// useEffect(() => {
