@@ -14,7 +14,7 @@ import { fetchDisasters, fetchEmissions } from "../../api/api";
 import { styled } from '@mui/material/styles';
 import { sumBy, sortBy, reverse, min, max, slice, forEach } from 'lodash';
 
-const FILLS = ['gradient', 'solid', 'image'];
+const FILLS = ['gradient', 'solid', 'pattern'];
 // const FILLS = ['gradient', 'solid', 'pattern', 'image'];
 
 const getUnique = (arr, comp) => [...new Set(arr.map(x => x[comp]))];
