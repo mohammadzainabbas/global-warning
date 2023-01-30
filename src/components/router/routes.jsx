@@ -14,7 +14,6 @@ import Home from '../home/container';
 import Tasks from '../tasks/component';
 
 import { HOME, NOT_FOUND, TASKS, DASHBOARD } from '../../common/constants';
-import { AppTasks } from '../../sections/@dashboard/app';
 
 // ----------------------------------------------------------------------
 
