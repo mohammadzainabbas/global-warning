@@ -160,7 +160,7 @@ const Home = (props) => {
 	const disaster_type_count = disaster_type.map((type) => {
 		return {
 			name: type,
-			data: disasters.filter((disaster) => disaster.disaster_type === type).map((disaster) => disaster.total_deaths),
+			data: disasters.filter((disaster) => disaster.disaster_type === type).map(({ total_deaths, year }) => ({ total_deaths, year })),
 		}
 	});
 
