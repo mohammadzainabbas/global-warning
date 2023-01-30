@@ -13,12 +13,14 @@ import {
 
 // const getUnique = (arr, comp) => [...new Set(arr.map(x => x[comp]))];
 
-const Home = ({ data }) => {
+const Home = ( props ) => {
 
 	const theme = useTheme();
 
   const [disasters, setDisasters] = useState([]);
   const [emissions, setEmissions] = useState([]);
+
+  const { updateEmissions, updateNaturalDisasters } = props;
 
   useEffect(() => {
     (async () => {
