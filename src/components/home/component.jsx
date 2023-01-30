@@ -175,8 +175,6 @@ const Home = (props) => {
 	});
 	const PICK_TOP = 3;
 	let top_disasters = slice(reverse(sortBy(disaster_type_count, (r) => r.data.length)), 0, PICK_TOP);
-
-	// debugger
 	top_disasters = top_disasters.map((disaster_type) => {
 		let result = {};
 		disaster_type.data.forEach(({ year, total_deaths }) => {
@@ -184,7 +182,6 @@ const Home = (props) => {
 				result[year] = 0;
 			}
 			result[year] += total_deaths;
-			// debugger
 		})
 
 		let last_year = 0;
@@ -195,15 +192,11 @@ const Home = (props) => {
 			last_year = result[year];
 		})
 
-		// debugger
-
 		Object.keys(result).forEach((year) => {
 			if (!display_years.includes(parseInt(year)) && !!result[year]) {
 				delete result[year];
 			}
 		})
-
-		debugger
 
 		return {
 			...disaster_type,
