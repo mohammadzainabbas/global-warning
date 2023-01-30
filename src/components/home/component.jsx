@@ -164,7 +164,7 @@ const Home = (props) => {
 		}
 	});
 
-	const top_disasters = disasters.sort((a, b) => b.total_deaths - a.total_deaths).slice(0, 5);
+	const top_disasters = reverse(sortBy(disaster_type_count, (r) => r.data.length))
 	debugger
 
 
