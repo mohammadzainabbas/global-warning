@@ -40,7 +40,7 @@ export default function useChart(options) {
 
     // Chart
     chart: {
-      toolbar: { show: false },
+      // toolbar: { show: false },
       // zoom: { enabled: false },
       // animations: { enabled: false },
       foreColor: theme.palette.text.disabled,
