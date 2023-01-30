@@ -92,7 +92,7 @@ const Home = (props) => {
 				_min_year = clamped;
 				_max_year = clamped + MIN_DISTANCE;
 			} else {
-				const clamped = Math.max(newValue[1], MIN_DISTANCE);
+				const clamped = Math.max(newValue[1], min_year + MIN_DISTANCE);
 				_min_year = clamped - MIN_DISTANCE;
 				_max_year = clamped;
 				debugger
