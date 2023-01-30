@@ -27,7 +27,6 @@ const Home = (props) => {
 
 	const [yearRange, setYearRange] = useState([]);
 
-
 	const { updateEmissions, updateNaturalDisasters } = props;
 
 	useEffect(() => {
