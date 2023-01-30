@@ -100,14 +100,15 @@ const Home = (props) => {
 			_max_year = newValue[1];
 		}
 
-		setYearRange([_min_year, _max_year]);
+		debugger
 		_min_year = (_min_year + min_year) < min_year ? min_year : _min_year + min_year;
 		_max_year = (_max_year + min_year) > max_year ? max_year : _max_year + min_year;
-		// debugger
+		debugger
 		const _disasters = totalDisasters.filter((disaster) => {
 			return disaster.year >= _min_year && disaster.year <= _max_year;
 		});
 		setDisasters(_disasters);
+		setYearRange([_min_year, _max_year]);
 	};
 
 	const disaster_type = getUnique(disasters, "disaster_type");
