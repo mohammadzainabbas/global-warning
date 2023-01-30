@@ -115,7 +115,7 @@ const Home = (props) => {
 								<Box sx={{ height: '100%' }}>
 									<Slider
 										getAriaLabel={() => 'Minimum distance shift'}
-										value={value2}
+										value={yearRange}
 										onChange={handleChange2}
 										valueLabelDisplay="auto"
 										getAriaValueText={valuetext}
