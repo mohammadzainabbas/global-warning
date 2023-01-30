@@ -19,6 +19,10 @@ const navConfig = [
     path: GITHUB_REPO_LINK,
     icon: <GitHubIcon />,
   },
+  {
+    title: 'Tasks',
+    path: `${HOME}/tasks`,
+  }
 ];
 
 export default navConfig;
