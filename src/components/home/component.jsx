@@ -163,6 +163,10 @@ const Home = (props) => {
 			data: disasters.filter((disaster) => disaster.disaster_type === type).map((disaster) => disaster.total_deaths),
 		}
 	});
+
+	const top_disasters = disasters.sort((a, b) => b.total_deaths - a.total_deaths).slice(0, 5);
+
+
 	console.log(disaster_type_count);
 
 	return (
