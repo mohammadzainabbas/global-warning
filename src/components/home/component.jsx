@@ -12,7 +12,7 @@ import {
 } from '../../sections/@dashboard/app';
 import { fetchDisasters, fetchEmissions } from "../../api/api";
 
-import { sumBy, uniqBy, minBy, maxBy } from 'lodash';
+import { sumBy, uniqBy, min, max } from 'lodash';
 
 // const getUnique = (arr, comp) => [...new Set(arr.map(x => x[comp]))];
 const getUnique = (arr, comp) => uniqBy(arr, comp);
@@ -37,8 +37,8 @@ const Home = (props) => {
 			const _years = getUnique(_disasters, "year");
 
 			setDisasters(_disasters);
-			setYearRange(getUnique(_disasters, "year")
-			setEmissions(_emissions);
+			setYearRange(
+				setEmissions(_emissions);
 
 			updateEmissions(_emissions);
 			updateNaturalDisasters(_disasters);
