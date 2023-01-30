@@ -17,7 +17,7 @@ import { sumBy, uniqBy, min, max } from 'lodash';
 const getUnique = (arr, comp) => [...new Set(arr.map(x => x[comp]))];
 // const getUnique = (arr, comp) => uniqBy(arr, comp);
 
-const PrettoSlider = styled(Slider)({
+const StyledSlider = styled(Slider)({
 	color: '#52af77',
 	height: 8,
 	'& .MuiSlider-track': {
@@ -193,7 +193,7 @@ const Home = (props) => {
 
 							<Grid item xs={12}>
 								<Box sx={{ height: '100%' }}>
-									<Slider
+									<StyledSlider
 										getAriaLabel={() => 'Minimum distance shift'}
 										value={yearRange}
 										onChange={onSliderChange}
