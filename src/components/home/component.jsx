@@ -17,7 +17,13 @@ import { sumBy, uniqBy, min, max } from 'lodash';
 // const getUnique = (arr, comp) => [...new Set(arr.map(x => x[comp]))];
 const getUnique = (arr, comp) => uniqBy(arr, comp);
 
-
+export default function Loading() {
+	return (
+		<Box sx={{ display: 'flex' }}>
+			<CircularProgress />
+		</Box>
+	);
+}
 
 
 const Home = (props) => {
