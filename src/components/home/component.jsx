@@ -212,7 +212,7 @@ const Home = (props) => {
 
 		return {
 			...disaster_type,
-			data: result,
+			data,
 			// data: Object.keys(result).map((year) => ({ year, total_deaths: result[year] }))
 		}
 	});
