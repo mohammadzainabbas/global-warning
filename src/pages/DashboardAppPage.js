@@ -43,7 +43,7 @@ export default function DashboardAppPage() {
           </Grid>
 
           <Grid item xs={12} sm={6} md={3}>
-            <AppWidgetSummary title={`Total natural disasters since 1900`} total={1723315} color={`secondary`} icon={'ant-design:windows-filled'} />
+            <AppWidgetSummary title={`Total natural disasters since 1900`} total={1723315} color={`secondary`} icon={'mdi:home-climate-outline'} />
           </Grid>
 
           <Grid item xs={12} sm={6} md={3}>
