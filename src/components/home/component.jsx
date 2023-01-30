@@ -195,6 +195,8 @@ const Home = (props) => {
 			last_year = result[year];
 		})
 
+
+
 		return {
 			...disaster_type,
 			data: result,
