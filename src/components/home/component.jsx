@@ -223,7 +223,7 @@ const Home = (props) => {
 							<Grid item xs={12} md={6} lg={8}>
 								<AppWebsiteVisits
 									title={`Frequency of disasters`}
-									subheader={`(+43%) than last year`}
+									subheader={`Total deaths per year`}
 									chartLabels={chartLabels}
 									chartData={chartData}
 								// chartLabels={[
