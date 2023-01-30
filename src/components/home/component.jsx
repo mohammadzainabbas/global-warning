@@ -201,7 +201,7 @@ const Home = (props) => {
 	const chartLabels = display_years.map((year) => `${year}`);
 	const chartData = top_disasters.map((disaster_type) => {
 		return {
-			label: disaster_type.name,
+			name: disaster_type.name,
 			data: chartLabels.map((year) => disaster_type.data[year]),
 			fill: false,
 			backgroundColor: getRandomColor(),
