@@ -231,7 +231,7 @@ const Home = (props) => {
 
 							<Grid item xs={12} md={6} lg={4}>
 								<AppCurrentVisits
-									title="Current Visits"
+									title={`Deaths by continent`}
 									chartData={[
 										{ label: 'America', value: 4344 },
 										{ label: 'Asia', value: 5435 },
