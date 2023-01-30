@@ -178,6 +178,7 @@ export default function DashboardAppPage() {
                 { id: '4', label: 'Scoping & Estimations' },
                 { id: '5', label: 'Sprint Showcase' },
               ]}
+              taskCompleted={['1', '2', '3']}
             />
           </Grid>
         </Grid>
