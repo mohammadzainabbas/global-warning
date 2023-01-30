@@ -13,6 +13,7 @@ import DashboardAppPage from '../../pages/DashboardAppPage';
 import Home from '../home/container';
 
 import { HOME, NOT_FOUND, TASKS, HOME_DASHBOARD } from '../../common/constants';
+import { AppTasks } from '../../sections/@dashboard/app';
 
 // ----------------------------------------------------------------------
 
@@ -29,10 +30,10 @@ export default function Router() {
         // { path: 'blog', element: <BlogPage /> },
       ],
     },
-    // {
-    //   path: 'login',
-    //   element: <LoginPage />,
-    // },
+    {
+      path: TASKS,
+      element: <AppTasks />,
+    },
     {
       element: <SimpleLayout />,
       children: [
