@@ -197,7 +197,7 @@ const Home = (props) => {
 
 		debugger
 
-		result = Object.keys(result).map((year) => {
+		result = Object.keys(result).forEach((year) => {
 			if (display_years.includes(parseInt(year))) {
 				return {
 					year: parseInt(year),
