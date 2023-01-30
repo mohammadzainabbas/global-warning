@@ -78,17 +78,28 @@ const Home = (props) => {
 
 	const onSliderChange = (e, newValue, activeThumb) => {
 		if (!Array.isArray(newValue)) { return; }
+		let _min_year = yearRange[0];
+		let _max_year = yearRange[1];
+
 		if (newValue[1] - newValue[0] < MIN_DISTANCE) {
 			if (activeThumb === 0) {
 				const clamped = Math.min(newValue[0], 100 - MIN_DISTANCE);
-				setYearRange([clamped, clamped + MIN_DISTANCE]);
+				_min_year = clamped;
+				_max_year = clamped + MIN_DISTANCE;
 			} else {
 				const clamped = Math.max(newValue[1], MIN_DISTANCE);
-				setYearRange([clamped - MIN_DISTANCE, clamped]);
+				_min_year = clamped - MIN_DISTANCE;
+				_max_year = clamped;
 			}
 		} else {
-			setYearRange(newValue);
+			_min_year = newValue[0];
+			_max_year = newValue[1];
 		}
+		const _disasters = totalDisasters.filter((disaster) => {
+			return disaster.year >= _min_year && disaster.year <= _max_year;
+		});
+		setDisasters(_disasters);
+		setYearRange([_min_year, _max_year]);
 	};
 
 	const disaster_type = getUnique(disasters, "disaster_type");
