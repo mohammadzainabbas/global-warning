@@ -25,26 +25,30 @@ const Home = ({ data }) => {
 
 	return (
 		<React.Fragment>
-			<Container maxWidth="xl">
+      <Helmet>
+        <title> Home | Global Warning </title>
+      </Helmet>
+
+      <Container maxWidth="xl">
         <Typography variant="h4" sx={{ mb: 5 }}>
-          Hi, Welcome back
+          {`Hi, Welcome back`}
         </Typography>
 
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6} md={3}>
-            <AppWidgetSummary title="Weekly Sales" total={714000} icon={'ant-design:android-filled'} />
+            <AppWidgetSummary title={`Total deaths`} total={714000} color={`error`} icon={'mdi:emoticon-dead'} />
           </Grid>
 
           <Grid item xs={12} sm={6} md={3}>
-            <AppWidgetSummary title="New Users" total={1352831} color="info" icon={'ant-design:apple-filled'} />
+            <AppWidgetSummary title={`Total affected`} total={1352831} color={`warning`} icon={'material-symbols:personal-injury'} />
           </Grid>
 
           <Grid item xs={12} sm={6} md={3}>
-            <AppWidgetSummary title="Item Orders" total={1723315} color="warning" icon={'ant-design:windows-filled'} />
+            <AppWidgetSummary title={`Total natural disasters`} total={1723315} color={`secondary`} icon={'mdi:home-climate-outline'} />
           </Grid>
 
           <Grid item xs={12} sm={6} md={3}>
-            <AppWidgetSummary title="Bug Reports" total={234} color="error" icon={'ant-design:bug-filled'} />
+            <AppWidgetSummary title={`Countries affected`} total={234} color={`info`} icon={'ph:globe-hemisphere-west-fill'} />
           </Grid>
 
           <Grid item xs={12} md={6} lg={8}>
@@ -137,7 +141,35 @@ const Home = ({ data }) => {
             />
           </Grid>
 
-          <Grid item xs={12}>
+          <Grid item xs={12} md={6} lg={4}>
+            <AppTrafficBySite
+              title="Traffic by Site"
+              list={[
+                {
+                  name: 'FaceBook',
+                  value: 323234,
+                  icon: <Iconify icon={'eva:facebook-fill'} color="#1877F2" width={32} />,
+                },
+                {
+                  name: 'Google',
+                  value: 341212,
+                  icon: <Iconify icon={'eva:google-fill'} color="#DF3E30" width={32} />,
+                },
+                {
+                  name: 'Linkedin',
+                  value: 411213,
+                  icon: <Iconify icon={'eva:linkedin-fill'} color="#006097" width={32} />,
+                },
+                {
+                  name: 'Twitter',
+                  value: 443232,
+                  icon: <Iconify icon={'eva:twitter-fill'} color="#1C9CEA" width={32} />,
+                },
+              ]}
+            />
+          </Grid>
+
+          <Grid item xs={12} md={6} lg={8}>
             <AppTasks
               title="Tasks"
               list={[
