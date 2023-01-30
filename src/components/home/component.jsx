@@ -157,6 +157,8 @@ const Home = (props) => {
 										valueLabelDisplay="auto"
 										getAriaValueText={(value) => `${value}°C`}
 										disableSwap
+										min={min(years)}
+										max={max(years)}
 									/>
 								</Box>
 							</Grid>
