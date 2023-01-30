@@ -3,7 +3,7 @@ import ReactApexChart from 'react-apexcharts';
 // @mui
 import { Box, Card, CardHeader } from '@mui/material';
 // utils
-import { fNumber } from '../../../utils/formatNumber';
+import { fShortenNumber } from '../../../utils/formatNumber';
 // components
 import { useChart } from '../../../components/chart';
 
@@ -24,7 +24,7 @@ export default function AppConversionRates({ title, subheader, chartData, ...oth
     tooltip: {
       marker: { show: false },
       y: {
-        formatter: (seriesName) => fNumber(seriesName),
+        formatter: (seriesName) => fShortenNumber(seriesName),
         title: {
           formatter: () => '',
         },
