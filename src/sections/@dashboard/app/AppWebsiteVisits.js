@@ -37,6 +37,7 @@ export default function AppWebsiteVisits({ title, subheader, chartLabels, chartD
           return y;
         },
       },
+      x: { format: 'yyyy' },
     },
   });
 
