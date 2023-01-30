@@ -66,7 +66,7 @@ const Home = (props) => {
 			return disaster.year >= yearRange[0] && disaster.year <= yearRange[1];
 		});
 		setLoading(true);
-		debugger
+		// debugger
 		console.log(_disasters);
 		setDisasters(_disasters);
 		setLoading(false);
