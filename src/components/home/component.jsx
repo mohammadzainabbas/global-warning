@@ -193,11 +193,11 @@ const Home = (props) => {
 							<Grid item xs={12}>
 								<Box sx={{ height: '100%' }}>
 									<Slider
-										getAriaLabel={() => 'Minimum distance shift'}
+										getAriaLabel={() => 'Years'}
 										value={yearRange}
 										onChange={onSliderChange}
-										valueLabelDisplay="auto"
-										getAriaValueText={(value) => `${value}°C`}
+										valueLabelDisplay={`auto`}
+										getAriaValueText={(value) => `Year: ${value}`}
 										valueLabelFormat={(value) => `Year: ${value}`}
 										disableSwap
 										marks
