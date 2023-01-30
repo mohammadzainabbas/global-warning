@@ -192,6 +192,7 @@ const Home = (props) => {
 			if (!result[year]) {
 				result[year] = last_year;
 			}
+			last_year = result[year];
 		})
 
 		return {
