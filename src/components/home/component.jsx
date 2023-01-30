@@ -154,7 +154,7 @@ const Home = (props) => {
 		})
 		let last_year = 0;
 		display_years.forEach((year) => {
-			if (!result[year]) { result[year] = last_year; }
+			if (!result[year]) { result[year] = Number(last_year * DECAY_VALUE); }
 			last_year = result[year];
 		})
 		Object.keys(result).forEach((year) => { if (!display_years.includes(parseInt(year)) && !!result[year]) { delete result[year]; } })
