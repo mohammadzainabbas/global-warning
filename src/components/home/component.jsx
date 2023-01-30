@@ -255,7 +255,7 @@ const Home = (props) => {
 							<Grid item xs={12} md={6} lg={8}>
 								<AppConversionRates
 									title={`Top 10 countries affected`}
-									subheader={`Total deaths`}
+									subheader={`Total deaths per country (from ${yearRange[0]} to ${yearRange[1]})`}
 									chartData={[
 										{ label: 'Italy', value: 400 },
 										{ label: 'Japan', value: 430 },
