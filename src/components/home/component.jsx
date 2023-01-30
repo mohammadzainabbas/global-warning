@@ -103,7 +103,6 @@ const Home = (props) => {
 
 		if (newValue[1] - newValue[0] < MIN_DISTANCE) {
 			if (activeThumb === 0) {
-				debugger
 				const clamped = Math.min(newValue[0], max_year - MIN_DISTANCE);
 				_min_year = clamped;
 				_max_year = clamped + MIN_DISTANCE;
@@ -111,7 +110,6 @@ const Home = (props) => {
 				const clamped = Math.max(newValue[1], min_year + MIN_DISTANCE);
 				_min_year = clamped - MIN_DISTANCE;
 				_max_year = clamped;
-				debugger
 			}
 		} else {
 			_min_year = newValue[0];
