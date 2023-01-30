@@ -12,7 +12,7 @@ import {
 } from '../../sections/@dashboard/app';
 import { fetchDisasters, fetchEmissions } from "../../api/api";
 import { styled } from '@mui/material/styles';
-import { sumBy, sortBy, reverse, min, max } from 'lodash';
+import { sumBy, sortBy, reverse, min, max, slice } from 'lodash';
 
 const getUnique = (arr, comp) => [...new Set(arr.map(x => x[comp]))];
 // const getUnique = (arr, comp) => uniqBy(arr, comp);
@@ -164,7 +164,8 @@ const Home = (props) => {
 		}
 	});
 
-	const top_disasters = reverse(sortBy(disaster_type_count, (r) => r.data.length))
+	const PICK_TOP = 3;
+	const top_disasters = slice(reverse(sortBy(disaster_type_count, (r) => r.data.length)), 0, PICK_TOP);
 	debugger
 
 
