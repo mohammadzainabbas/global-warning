@@ -35,6 +35,9 @@ export default function AppConversionRates({ title, subheader, chartData, ...oth
     },
     xaxis: {
       categories: chartLabels,
+      labels: {
+        formatter: (x) => fShortenNumber(x),
+      },
     },
   });
 
