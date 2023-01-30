@@ -80,7 +80,7 @@ const Home = (props) => {
 
 	debugger
 
-	console.log(disaster_type);
+	// console.log(disaster_type);
 
 	return (
 		<React.Fragment>
