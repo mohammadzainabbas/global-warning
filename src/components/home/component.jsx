@@ -190,6 +190,9 @@ const Home = (props) => {
 		return { ...disaster_type, data: result, }
 	});
 
+	const chartLabels = display_years.map((year) => year.toString());
+
+
 
 	console.log(top_disasters);
 
