@@ -116,6 +116,16 @@ const Home = (props) => {
 	// }, [yearRange, totalDisasters]);
 
 	const MIN_DISTANCE = 5; // min years to show
+	const marks = [
+		{
+			value: min(years),
+			label: min(years),
+		},
+		{
+			value: max(years),
+			label: max(years),
+		},
+	]
 
 	const onSliderChange = (e, newValue, activeThumb) => {
 		if (!Array.isArray(newValue)) { return; }
