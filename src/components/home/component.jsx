@@ -40,6 +40,7 @@ export const Loading = () => {
 const MIN_DISTANCE = 10; // min years to show
 const PICK_TOP = 5; // top n disasters to show
 const DECAY_VALUE = 0; // decay value for each year
+const PICK_TOP_COUNTRIES = 10; // top n countries to show
 
 const Home = (props) => {
 	const theme = useTheme();
@@ -254,7 +255,7 @@ const Home = (props) => {
 
 							<Grid item xs={12} md={6} lg={8}>
 								<AppConversionRates
-									title={`Top 10 countries affected`}
+									title={`Top ${PICK_TOP_COUNTRIES} countries affected`}
 									subheader={`Total deaths per country (from ${yearRange[0]} to ${yearRange[1]})`}
 									chartData={[
 										{ label: 'Italy', value: 400 },
