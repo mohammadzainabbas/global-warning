@@ -19,10 +19,6 @@ const getUnique = (arr, comp) => uniqBy(arr, comp);
 
 export const Loading = () => {
 	return (
-		// q: how to make this centered?
-
-
-
 		<Box sx={{ display: 'flex' }}>
 			<CircularProgress />
 		</Box>
