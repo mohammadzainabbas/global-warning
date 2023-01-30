@@ -74,7 +74,7 @@ const Home = (props) => {
 
 	const MIN_DISTANCE = 5; // min years to show
 
-	const onSliderChange = (event, newValue) => {
+	const onSliderChange = (event, newValue, activeThumb) => {
 
 		if (!Array.isArray(newValue)) {
 			return;
