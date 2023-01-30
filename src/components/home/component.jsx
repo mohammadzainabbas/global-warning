@@ -98,7 +98,7 @@ const Home = (props) => {
 		const _disasters = totalDisasters.filter((disaster) => {
 			return disaster.year >= _min_year && disaster.year <= _max_year;
 		});
-		// debugger
+		debugger
 		setDisasters(_disasters);
 		setYearRange([_min_year, _max_year]);
 	};
