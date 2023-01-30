@@ -37,9 +37,9 @@ const Home = ( props ) => {
   // return () => resetData();
 }, [updateEmissions, updateNaturalDisasters]);
 
-  debugger
+const disaster_type = getUnique(naturalDisasters, "disaster_type");
+debugger
 
-	// const disaster_type = getUnique(naturalDisasters, "disaster_type");
 
 
 
