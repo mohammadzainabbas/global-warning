@@ -16,6 +16,14 @@ import { sumBy, sortBy, reverse, min, max, slice, forEach } from 'lodash';
 
 const getUnique = (arr, comp) => [...new Set(arr.map(x => x[comp]))];
 const generateList = (a, b) => Array.from({ length: b - a + 1 }, (_, i) => a + i);
+const getRandomColor = () => {
+	const letters = '0123456789ABCDEF';
+	let color = '#';
+	for (let i = 0; i < 6; i++) {
+		color += letters[Math.floor(Math.random() * 16)];
+	}
+	return color;
+}
 // const getUnique = (arr, comp) => uniqBy(arr, comp);
 
 const StyledSlider = styled(Slider)({
