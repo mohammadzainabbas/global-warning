@@ -43,6 +43,7 @@ const Home = (props) => {
 	const total_deaths = sumBy(disasters, "total_deaths");
 	const total_affected = sumBy(disasters, "total_affected");
 
+	const countries = getUnique(disasters, "disaster_type");
 	debugger
 
 	console.log(disaster_type);
