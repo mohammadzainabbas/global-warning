@@ -145,7 +145,7 @@ const Home = (props) => {
 			data: sortBy(disaster_type.data, (r) => r.year),
 		}
 	});
-	let top_disasters = slice(reverse(sortBy(disaster_type_count, (r) => r.data.length)), 2, PICK_TOP);
+	let top_disasters = slice(reverse(sortBy(disaster_type_count, (r) => r.data.length)), 0, PICK_TOP);
 	top_disasters = top_disasters.map((disaster_type) => {
 		let result = {};
 		disaster_type.data.forEach(({ year, total_deaths }) => {
