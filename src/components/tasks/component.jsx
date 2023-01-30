@@ -16,7 +16,7 @@ const Tasks = () => {
     return (
         <React.Fragment>
         <Helmet>
-            <title> Future Tasks | Global Warning </title>
+            <title> {`Tasks | Global Warning`} </title>
         </Helmet>
     
         <Container maxWidth="xl">
