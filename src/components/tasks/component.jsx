@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { Helmet } from 'react-helmet-async';
 
 import { useTheme } from '@mui/material/styles';
@@ -14,7 +16,7 @@ const Tasks = () => {
     return (
         <React.Fragment>
         <Helmet>
-            <title> Tasks | Global Warning </title>
+            <title> Future Tasks | Global Warning </title>
         </Helmet>
     
         <Container maxWidth="xl">
