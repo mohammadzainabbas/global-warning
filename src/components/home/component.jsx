@@ -130,10 +130,7 @@ const Home = (props) => {
 	const total_disasters = disasters.length || 0;
 
 	const display_years = generateList(yearRange[0], yearRange[1]);
-
 	const disaster_type = getUnique(disasters, "disaster_type");
-
-	debugger
 
 	let disaster_type_count = disaster_type.map((type) => {
 		return {
