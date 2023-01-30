@@ -35,7 +35,7 @@ export default function DashboardAppPage() {
 
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6} md={3}>
-            <AppWidgetSummary title="Weekly Sales" total={714000} icon={'healthicons:death'} />
+            <AppWidgetSummary title="Weekly Sales" total={714000} icon={'mdi:death'} />
           </Grid>
 
           <Grid item xs={12} sm={6} md={3}>
