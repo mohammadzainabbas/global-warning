@@ -163,7 +163,7 @@ const Home = (props) => {
 			data: disasters.filter((disaster) => disaster.disaster_type === type).map((disaster) => disaster.total_deaths),
 		}
 	});
-	debugger
+	console.log(disaster_type_count);
 
 	return (
 		<React.Fragment>
