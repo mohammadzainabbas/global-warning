@@ -206,7 +206,7 @@ const Home = (props) => {
 		return {
 			name: disaster_type.name,
 			data: chartLabels.map((year) => disaster_type.data[year]),
-			fill: false,
+			fill: getRandomElement(FILLS),
 			backgroundColor: getRandomColor(),
 			borderColor: getRandomColor(),
 		}
