@@ -45,6 +45,13 @@ export default function AppCurrentSubject({ title, subheader, chartData, chartCo
     stroke: { width: 2 },
     fill: { opacity: 0.48 },
     legend: { floating: true, horizontalAlign: 'center' },
+    yaxis: {
+      labels: {
+        style: {
+          colors: chartColors,
+        },
+      },
+    },
     xaxis: {
       categories: chartLabels,
       labels: {
