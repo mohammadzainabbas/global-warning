@@ -186,13 +186,8 @@ const Home = (props) => {
 			if (!result[year]) { result[year] = last_year; }
 			last_year = result[year];
 		})
-
 		Object.keys(result).forEach((year) => { if (!display_years.includes(parseInt(year)) && !!result[year]) { delete result[year]; } })
-
-		return {
-			...disaster_type,
-			data: result,
-		}
+		return { ...disaster_type, data: result, }
 	});
 
 
