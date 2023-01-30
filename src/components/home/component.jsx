@@ -193,8 +193,7 @@ const Home = (props) => {
 		}
 	});
 
-	country_wise_affected = slice(reverse(sortBy(country_wise_affected, (r) => r.value)), 0, PICK_TOP);
-
+	country_wise_affected = slice(reverse(sortBy(country_wise_affected, (r) => r.value)), 0, PICK_TOP_COUNTRIES);
 
 	return (
 		<React.Fragment>
@@ -269,18 +268,7 @@ const Home = (props) => {
 								<AppConversionRates
 									title={`Top ${PICK_TOP_COUNTRIES} countries affected`}
 									subheader={`Total deaths per country (from ${yearRange[0]} to ${yearRange[1]})`}
-									chartData={[
-										{ label: 'Italy', value: 400 },
-										{ label: 'Japan', value: 430 },
-										{ label: 'China', value: 448 },
-										{ label: 'Canada', value: 470 },
-										{ label: 'France', value: 540 },
-										{ label: 'Germany', value: 580 },
-										{ label: 'South Korea', value: 690 },
-										{ label: 'Netherlands', value: 1100 },
-										{ label: 'United States', value: 1200 },
-										{ label: 'United Kingdom', value: 1380 },
-									]}
+									chartData={country_wise_affected}
 								/>
 							</Grid>
 
