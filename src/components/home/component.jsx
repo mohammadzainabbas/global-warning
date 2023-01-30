@@ -37,6 +37,9 @@ export const Loading = () => {
 	);
 }
 
+const MIN_DISTANCE = 5; // min years to show
+const PICK_TOP = 5; // top n disasters to show
+
 const Home = (props) => {
 	const theme = useTheme();
 
@@ -71,7 +74,6 @@ const Home = (props) => {
 		// return () => resetData();
 	}, [updateEmissions, updateNaturalDisasters]);
 
-	const MIN_DISTANCE = 5; // min years to show
 	const marks = [
 		{
 			value: min(years),
