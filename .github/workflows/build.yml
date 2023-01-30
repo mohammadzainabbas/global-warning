@@ -39,3 +39,4 @@ jobs:
               run: npm run build
               env:
                   CI: false
+    automerge:
