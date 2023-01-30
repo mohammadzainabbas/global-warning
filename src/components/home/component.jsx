@@ -122,7 +122,7 @@ const Home = (props) => {
 			label: min(years),
 		},
 		{
-			value: 1940,
+			value: min(years) + 40,
 			label: "After first 40 years",
 		},
 		{
