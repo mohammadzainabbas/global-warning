@@ -186,12 +186,14 @@ const Home = (props) => {
 
 	// Country wise most affected
 	const countries = getUnique(disasters, "country");
-	const country_wise_affected = countries.map((country) => {
+	let country_wise_affected = countries.map((country) => {
 		return {
 			label: country,
 			value: sumBy(disasters.filter((disaster) => disaster.country === country), "total_affected"),
 		}
 	});
+
+	country_wise_affected = slice(reverse(sortBy(country_wise_affected, (r) => r.value)), 0, PICK_TOP);
 
 
 	return (
