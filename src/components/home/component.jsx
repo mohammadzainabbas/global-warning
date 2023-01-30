@@ -195,7 +195,7 @@ const Home = (props) => {
 			last_year = result[year];
 		})
 
-
+		result = Object.keys(result).filter((year) => display_years.includes(year));
 
 		return {
 			...disaster_type,
