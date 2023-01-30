@@ -211,7 +211,7 @@ const Home = (props) => {
 
 
 
-	console.log(top_disasters);
+	console.log(chartData);
 
 	return (
 		<React.Fragment>
