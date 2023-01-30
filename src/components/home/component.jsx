@@ -175,7 +175,7 @@ const Home = (props) => {
 	debugger
 
 
-	console.log(disaster_type_count);
+	console.log(top_disasters);
 
 	return (
 		<React.Fragment>
