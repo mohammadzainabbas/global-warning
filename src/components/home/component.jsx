@@ -37,10 +37,10 @@ const Home = (props) => {
 	}, [updateEmissions, updateNaturalDisasters]);
 
 	const disaster_type = getUnique(disasters, "disaster_type");
+
 	debugger
 
-
-
+	console.log(disaster_type);
 
 	return (
 		<React.Fragment>
