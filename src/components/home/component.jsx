@@ -80,7 +80,7 @@ const Home = (props) => {
 			return;
 		}
 
-		if (newValue[1] - newValue[0] < minDistance) {
+		if (newValue[1] - newValue[0] < MIN_DISTANCE) {
 			if (activeThumb === 0) {
 				const clamped = Math.min(newValue[0], 100 - minDistance);
 				setValue2([clamped, clamped + minDistance]);
