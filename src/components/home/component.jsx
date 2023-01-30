@@ -12,7 +12,7 @@ import {
 } from '../../sections/@dashboard/app';
 import { fetchDisasters, fetchEmissions } from "../../api/api";
 
-import { sumBy, uniqBy, min, max } from 'lodash';
+import { sumBy, uniqBy, minBy, maxBy } from 'lodash';
 
 // const getUnique = (arr, comp) => [...new Set(arr.map(x => x[comp]))];
 const getUnique = (arr, comp) => uniqBy(arr, comp);
