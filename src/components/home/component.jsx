@@ -27,7 +27,6 @@ export const Loading = () => {
 	);
 }
 
-
 const Home = (props) => {
 	const theme = useTheme();
 
