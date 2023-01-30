@@ -197,14 +197,10 @@ const Home = (props) => {
 
 		// debugger
 
-		const data = Object.keys(result).forEach((year) => {
+		Object.keys(result).forEach((year) => {
 			debugger
-			if (display_years.includes(parseInt(year))) {
-				debugger
-				return {
-					year: parseInt(year),
-					total_deaths: result[year]
-				}
+			if (!display_years.includes(parseInt(year))) {
+				delete result[year];
 			}
 		})
 
@@ -212,7 +208,7 @@ const Home = (props) => {
 
 		return {
 			...disaster_type,
-			data,
+			data: result,
 			// data: Object.keys(result).map((year) => ({ year, total_deaths: result[year] }))
 		}
 	});
