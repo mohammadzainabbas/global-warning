@@ -118,7 +118,7 @@ const Home = (props) => {
 										value={yearRange}
 										onChange={handleChange2}
 										valueLabelDisplay="auto"
-										getAriaValueText={valuetext}
+										getAriaValueText={() => }
 										disableSwap
 									/>
 								</Box>
