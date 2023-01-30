@@ -23,7 +23,11 @@ export default function AppWebsiteVisits({ title, subheader, chartLabels, chartD
     yaxis: {
       labels: {
         formatter: (y) => {
-
+          y = typeof y === 'number' ? fShortenNumber(y) : y;
+          return y;
+        },
+      },
+    },
     tooltip: {
       shared: true,
       intersect: false,
