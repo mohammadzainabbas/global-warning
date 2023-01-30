@@ -46,9 +46,7 @@ export default function AppCurrentSubject({ title, subheader, chartData, chartCo
     fill: { opacity: 0.48 },
     legend: { floating: true, horizontalAlign: 'center' },
     yaxis: {
-      labels: {
-        show: false,
-      }
+      show: false,
     },
     xaxis: {
       categories: chartLabels,
