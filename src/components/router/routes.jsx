@@ -28,8 +28,8 @@ export default function Router() {
       element: <DashboardLayout />,
       children: [
         { element: <Navigate to={`${DEFAULT_ROUTE}`} />, index: true },
-        { path: 'dashboard', element: <Home /> },
-        { path: 'tasks', element: <Tasks /> },
+        { path: DASHBOARD, element: <Home /> },
+        { path: TASKS, element: <Tasks /> },
         // { path: 'products', element: <ProductsPage /> },
         // { path: 'blog', element: <BlogPage /> },
       ],
