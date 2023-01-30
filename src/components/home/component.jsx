@@ -199,6 +199,7 @@ const Home = (props) => {
 
 		const data = Object.keys(result).forEach((year) => {
 			if (display_years.includes(parseInt(year))) {
+				debugger
 				return {
 					year: parseInt(year),
 					total_deaths: result[year]
