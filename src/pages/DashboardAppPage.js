@@ -39,7 +39,7 @@ export default function DashboardAppPage() {
           </Grid>
 
           <Grid item xs={12} sm={6} md={3}>
-            <AppWidgetSummary title={`Total affected`} total={1352831} color="info" icon={'ant-design:apple-filled'} />
+            <AppWidgetSummary title={`Total affected`} total={1352831} color="info" icon={'material-symbols:personal-injury'} />
           </Grid>
 
           <Grid item xs={12} sm={6} md={3}>
