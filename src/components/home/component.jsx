@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { Helmet } from 'react-helmet-async';
 import { useTheme } from '@mui/material/styles';
 import { Grid, Container, Typography } from '@mui/material';
@@ -17,23 +17,23 @@ const Home = ({ data }) => {
 
 	const theme = useTheme();
 
-  const [disasters, setDisasters] = React.useState([]);
-  const [emissions, setEmissions] = React.useState([]);
+  const [disasters, setDisasters] = useState([]);
+  const [emissions, setEmissions] = useState([]);
 
 
-  	// useEffect(() => {
-	// 	(async () => {
-	// 		const _disasters = await fetchDisasters();
-	// 		const _emissions = await fetchEmissions();
+  useEffect(() => {
+    (async () => {
+      const _disasters = await fetchDisasters();
+      const _emissions = await fetchEmissions();
 
-	// 		setDisasters(_disasters);
-	// 		setEmissions(_emissions);
+      setDisasters(_disasters);
+      setEmissions(_emissions);
 
-	// 		updateEmissions(_emissions);
-	// 		updateNaturalDisasters(_disasters);
-	// 	})();
-	// 	return () => resetData();
-	// }, [updateEmissions, updateNaturalDisasters, resetData]);
+      updateEmissions(_emissions);
+      updateNaturalDisasters(_disasters);
+  })();
+  return () => resetData();
+}, [updateEmissions, updateNaturalDisasters, resetData]);
 
 
 
