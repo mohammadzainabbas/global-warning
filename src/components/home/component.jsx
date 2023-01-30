@@ -12,9 +12,10 @@ import {
 } from '../../sections/@dashboard/app';
 import { fetchDisasters, fetchEmissions } from "../../api/api";
 
-import { sumBy } from 'lodash';
+import { sumBy, uniqBy } from 'lodash';
 
-const getUnique = (arr, comp) => [...new Set(arr.map(x => x[comp]))];
+// const getUnique = (arr, comp) => [...new Set(arr.map(x => x[comp]))];
+const getUnique = (arr, comp) => uniqBy(arr, comp);
 
 const Home = (props) => {
 	const theme = useTheme();
