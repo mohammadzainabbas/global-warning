@@ -85,6 +85,8 @@ const Home = (props) => {
 				<title> Home | Global Warning </title>
 			</Helmet>
 
+			{loading && <Loading />}
+
 			<Container maxWidth="xl">
 				<Typography variant="h4" sx={{ mb: 5 }}>
 					{`Hi, Welcome back`}
