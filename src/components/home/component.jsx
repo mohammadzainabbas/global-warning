@@ -189,12 +189,7 @@ const Home = (props) => {
 		})
 		return {
 			...disaster_type,
-			data: disaster_type.data.forEach(({ year, total_affected }) => {
-				if (!result[year]) {
-					result[year] = 0;
-				}
-				result[year] += total_affected;
-			}),
+			data: Object.keys(result).map((year) => ({ year, total_affected: result[year] }))
 		}
 	});
 
