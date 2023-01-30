@@ -31,10 +31,10 @@ export default function Router() {
         // { path: 'blog', element: <BlogPage /> },
       ],
     },
-    {
-      path: TASKS,
-      element: <Tasks />,
-    },
+    // {
+    //   path: TASKS,
+    //   element: <Tasks />,
+    // },
     {
       element: <SimpleLayout />,
       children: [
