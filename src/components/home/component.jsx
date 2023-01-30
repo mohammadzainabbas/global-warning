@@ -74,7 +74,7 @@ const Home = (props) => {
 	const disaster_type = getUnique(disasters, "disaster_type");
 	const total_deaths = sumBy(disasters, "total_deaths") || 0;
 	const total_affected = sumBy(disasters, "total_affected") || 0;
-	const affected_countries = getUnique(disasters, "disaster_type") || 0;
+	const affected_countries = getUnique(disasters, "country")?.length || 0;
 	const total_disasters = disasters.length || 0;
 
 	debugger
