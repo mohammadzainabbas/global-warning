@@ -35,11 +35,11 @@ export default function DashboardAppPage() {
 
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6} md={3}>
-            <AppWidgetSummary title={`Total deaths`} total={714000} co icon={'mdi:emoticon-dead'} />
+            <AppWidgetSummary title={`Total deaths`} total={714000} color={`error`} icon={'mdi:emoticon-dead'} />
           </Grid>
 
           <Grid item xs={12} sm={6} md={3}>
-            <AppWidgetSummary title={`Total affected`} total={1352831} color="info" icon={'material-symbols:personal-injury'} />
+            <AppWidgetSummary title={`Total affected`} total={1352831} color={`warning`} icon={'material-symbols:personal-injury'} />
           </Grid>
 
           <Grid item xs={12} sm={6} md={3}>
