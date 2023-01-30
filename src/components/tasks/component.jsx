@@ -21,7 +21,7 @@ const Tasks = () => {
     
         <Container maxWidth="xl">
             <Typography variant="h4" sx={{ mb: 5 }}>
-            {`Here are some tasks to complete`}
+            {`List of tasks to be completed`}
             </Typography>
     
             <Grid container spacing={3}>
