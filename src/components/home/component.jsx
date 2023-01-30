@@ -76,17 +76,14 @@ const Home = (props) => {
 
 	const onSliderChange = (event, newValue, activeThumb) => {
 
-		if (!Array.isArray(newValue)) {
-			return;
-		}
-
+		if (!Array.isArray(newValue)) { return; }
 		if (newValue[1] - newValue[0] < MIN_DISTANCE) {
 			if (activeThumb === 0) {
-				const clamped = Math.min(newValue[0], 100 - minDistance);
-				setYearRange([clamped, clamped + minDistance]);
+				const clamped = Math.min(newValue[0], 100 - MIN_DISTANCE);
+				setYearRange([clamped, clamped + MIN_DISTANCE]);
 			} else {
-				const clamped = Math.max(newValue[1], minDistance);
-				setYearRange([clamped - minDistance, clamped]);
+				const clamped = Math.max(newValue[1], MIN_DISTANCE);
+				setYearRange([clamped - MIN_DISTANCE, clamped]);
 			}
 		} else {
 			setYearRange(newValue);
