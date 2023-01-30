@@ -198,8 +198,8 @@ const Home = (props) => {
 		// debugger
 
 		Object.keys(result).forEach((year) => {
-			debugger
 			if (!display_years.includes(parseInt(year))) {
+				debugger
 				delete result[year];
 			}
 		})
