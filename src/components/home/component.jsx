@@ -72,6 +72,8 @@ const Home = (props) => {
 
 	}, [yearRange, totalDisasters]);
 
+	const MIN_DISTANCE = 5; // min years to show
+
 	const onSliderChange = (event, newValue) => {
 
 		if (!Array.isArray(newValue)) {
