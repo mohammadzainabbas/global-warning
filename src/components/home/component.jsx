@@ -23,7 +23,8 @@ const Home = (props) => {
 	const [disasters, setDisasters] = useState([]);
 	const [emissions, setEmissions] = useState([]);
 
-	const [range, setRange] = useState([]);
+	const [yearRange, setYearRange] = useState([]);
+
 
 	const { updateEmissions, updateNaturalDisasters } = props;
 
@@ -33,6 +34,7 @@ const Home = (props) => {
 			const _emissions = await fetchEmissions();
 
 			setDisasters(_disasters);
+
 			setEmissions(_emissions);
 
 			updateEmissions(_emissions);
