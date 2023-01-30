@@ -10,12 +10,14 @@ import Page404 from '../../pages/Page404';
 import ProductsPage from '../../pages/ProductsPage';
 import DashboardAppPage from '../../pages/DashboardAppPage';
 
+import { HOME } from '../../common/constants';
+
 // ----------------------------------------------------------------------
 
 export default function Router() {
   const routes = useRoutes([
     {
-      path: '/home',
+      path: HOME,
       element: <DashboardLayout />,
       children: [
         { element: <Navigate to="/dashboard/app" />, index: true },
