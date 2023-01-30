@@ -210,7 +210,7 @@ const Home = (props) => {
 		const data = disaster_type.map((disaster_type) => sumBy(disasters.filter((disaster) => disaster.disaster_type === disaster_type), type.value));
 
 		return {
-			label: type.label,
+			name: type.label,
 			data,
 		}
 	});
@@ -298,11 +298,7 @@ const Home = (props) => {
 								<AppCurrentSubject
 									title={`Disasters by type`}
 									chartLabels={disaster_type}
-									chartData={[
-										{ name: 'Series 1', data: generateList(0, disaster_type.length - 1) },
-										// { name: 'Series 2', data: [20, 30, 40, 80, 20, 80] },
-										// { name: 'Series 3', data: [44, 76, 78, 13, 43, 10] },
-									]}
+									chartData={disaster_type_wise}
 									chartColors={[...Array(6)].map(() => theme.palette.text.secondary)}
 								/>
 							</Grid>
