@@ -187,7 +187,7 @@ const Home = (props) => {
 			debugger
 		})
 
-		display_years.forEach((year) => {
+		display_years.forEach((year, idx) => {
 			if (!result[year]) {
 				result[year] = 0;
 			}
