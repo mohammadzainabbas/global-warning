@@ -144,10 +144,8 @@ const Home = (props) => {
 			_max_year = newValue[1];
 		}
 
-		// debugger
 		_min_year = _min_year < min_year ? min_year : _min_year;
 		_max_year = _max_year > max_year ? max_year : _max_year;
-		// debugger
 		const _disasters = totalDisasters.filter((disaster) => {
 			return disaster.year >= _min_year && disaster.year <= _max_year;
 		});
@@ -160,8 +158,6 @@ const Home = (props) => {
 	const total_affected = sumBy(disasters, "total_affected") || 0;
 	const affected_countries = getUnique(disasters, "country")?.length || 0;
 	const total_disasters = disasters.length || 0;
-
-	// debugger
 
 	return (
 		<React.Fragment>
