@@ -179,7 +179,7 @@ const Home = (props) => {
 	const continent_wise_deaths = continents.map((continent) => {
 		return {
 			label: continent,
-			value: disasters.filter((disaster) => disaster.continent === continent).map(({ total_deaths, year }) => ({ total_deaths, year })),
+			value: sumBy(disasters.filter((disaster) => disaster.continent === continent), "total_deaths"),
 		}
 	});
 
@@ -242,12 +242,7 @@ const Home = (props) => {
 							<Grid item xs={12} md={6} lg={4}>
 								<AppCurrentVisits
 									title={`Deaths by continent`}
-									chartData={[
-										{ label: 'America', value: 4344 },
-										{ label: 'Asia', value: 5435 },
-										{ label: 'Europe', value: 1443 },
-										{ label: 'Africa', value: 4443 },
-									]}
+									chartData={continent_wise_deaths}
 									chartColors={[
 										theme.palette.primary.main,
 										theme.palette.info.main,
