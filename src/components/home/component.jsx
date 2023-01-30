@@ -215,6 +215,8 @@ const Home = (props) => {
 		}
 	});
 
+	console.log(disaster_type_wise);
+
 	return (
 		<React.Fragment>
 			<Helmet>
