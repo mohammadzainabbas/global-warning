@@ -283,7 +283,7 @@ const Home = (props) => {
 							<Grid item xs={12} md={6} lg={4}>
 								<AppCurrentSubject
 									title={`Disasters by type`}
-									chartLabels={['English', 'History', 'Physics', 'Geography', 'Chinese', 'Math']}
+									chartLabels={disaster_type}
 									chartData={[
 										{ name: 'Series 1', data: [80, 50, 30, 40, 100, 20] },
 										{ name: 'Series 2', data: [20, 30, 40, 80, 20, 80] },
