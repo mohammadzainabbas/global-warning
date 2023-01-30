@@ -20,7 +20,9 @@ const getUnique = (arr, comp) => uniqBy(arr, comp);
 export const Loading = () => {
 	return (
 		<Box sx={{ display: 'flex' }}>
-			<CircularProgress />
+			<CircularProgress sx={{
+				margin: 'auto',
+			}} />
 		</Box>
 	);
 }
