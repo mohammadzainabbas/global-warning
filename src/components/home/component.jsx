@@ -12,7 +12,7 @@ import {
 } from '../../sections/@dashboard/app';
 import { fetchDisasters, fetchEmissions } from "../../api/api";
 import { styled } from '@mui/material/styles';
-import { sumBy, sortBy, reverse, min, max, slice } from 'lodash';
+import { sumBy, sortBy, reverse, min, max, slice, forEach } from 'lodash';
 
 const getUnique = (arr, comp) => [...new Set(arr.map(x => x[comp]))];
 const generateList = (a, b) => Array.from({ length: b - a + 1 }, (_, i) => a + i);
@@ -187,10 +187,11 @@ const Home = (props) => {
 			debugger
 		})
 
-		Object.keys(result).forEach((year) => {
-			result[year] = Math.round(result[year] / 1000);
+		display_years.forEach((year) => {
+			if (!result[year]) {
+				result[year] = 0;
+			}
 		})
-
 
 		return {
 			...disaster_type,
