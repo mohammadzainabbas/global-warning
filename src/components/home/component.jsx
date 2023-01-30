@@ -23,6 +23,8 @@ const Home = (props) => {
 	const [disasters, setDisasters] = useState([]);
 	const [emissions, setEmissions] = useState([]);
 
+	const [range, setRange] = useState([]);
+
 	const { updateEmissions, updateNaturalDisasters } = props;
 
 	useEffect(() => {
