@@ -17,7 +17,25 @@ const Home = ({ data }) => {
 
 	const theme = useTheme();
 
-  
+  const [disasters, setDisasters] = React.useState<DSVParsedArray<object> | []>([]);
+  const [emissions, setEmissions] = React.useState<DSVParsedArray<object> | []>([]);
+
+
+  	// useEffect(() => {
+	// 	(async () => {
+	// 		const _disasters = await fetchDisasters();
+	// 		const _emissions = await fetchEmissions();
+
+	// 		setDisasters(_disasters);
+	// 		setEmissions(_emissions);
+
+	// 		updateEmissions(_emissions);
+	// 		updateNaturalDisasters(_disasters);
+	// 	})();
+	// 	return () => resetData();
+	// }, [updateEmissions, updateNaturalDisasters, resetData]);
+
+
 
 	const {emissions, naturalDisasters} = data;
 
