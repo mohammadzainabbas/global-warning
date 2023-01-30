@@ -34,7 +34,6 @@ const Home = (props) => {
 		(async () => {
 			const _disasters = await fetchDisasters();
 			const _emissions = await fetchEmissions();
-
 			const _years = getUnique(_disasters, "year");
 
 			setDisasters(_disasters);
@@ -44,6 +43,8 @@ const Home = (props) => {
 
 			updateEmissions(_emissions);
 			updateNaturalDisasters(_disasters);
+
+			setLoading(false);
 		})();
 		// return () => resetData();
 	}, [updateEmissions, updateNaturalDisasters]);
