@@ -184,6 +184,16 @@ const Home = (props) => {
 		}
 	});
 
+	// Country wise most affected
+	const countries = getUnique(disasters, "country");
+	const country_wise_affected = countries.map((country) => {
+		return {
+			label: country,
+			value: sumBy(disasters.filter((disaster) => disaster.country === country), "total_affected"),
+		}
+	});
+
+
 	return (
 		<React.Fragment>
 			<Helmet>
