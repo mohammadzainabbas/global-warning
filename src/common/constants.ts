@@ -1,5 +1,5 @@
 // Route Links
-export const HOME = "/#";
+export const HOME = "/home";
 export const HOME_DASHBOARD = "/#/home";
 export const GITHUB_REPO_LINK = "https://github.com/mohammadzainabbas/global-warning/";
 export const TASKS = "/tasks";
