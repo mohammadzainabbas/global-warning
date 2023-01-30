@@ -192,7 +192,7 @@ const Home = (props) => {
 
 							<Grid item xs={12}>
 								<Box sx={{ height: '100%' }}>
-									<StyledSlider
+									<Slider
 										getAriaLabel={() => 'Minimum distance shift'}
 										value={yearRange}
 										onChange={onSliderChange}
