@@ -1,7 +1,7 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: Build (CI)
+name: Build (CI) and Auto-Merge (when Ready)
 
 on:
     pull_request:
@@ -39,3 +39,13 @@ jobs:
               run: npm run build
               env:
                   CI: false
+    automerge:
+        runs-on: ubuntu-latest
+        needs:
+            - build
+        steps:
+            - id: automerge
+              name: automerge
+              uses: "pascalgn/automerge-action@v0.15.5"
+              env:
+                  GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
