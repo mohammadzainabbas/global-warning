@@ -23,7 +23,7 @@ export default function Router() {
       element: <DashboardLayout />,
       children: [
         { element: <Navigate to={`${HOME_DASHBOARD}`} />, index: true },
-        { path: 'dashboard', element: <DashboardAppPage /> },
+        { path: 'dashboard', element: <Home /> },
         // { path: 'user', element: <UserPage /> },
         // { path: 'products', element: <ProductsPage /> },
         // { path: 'blog', element: <BlogPage /> },
