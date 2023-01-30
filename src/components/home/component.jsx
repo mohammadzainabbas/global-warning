@@ -22,6 +22,7 @@ const Home = (props) => {
 
 	const [disasters, setDisasters] = useState([]);
 	const [emissions, setEmissions] = useState([]);
+	const [years, setYears] = useState([]);
 
 	const [yearRange, setYearRange] = useState([]);
 
