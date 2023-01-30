@@ -48,8 +48,6 @@ const Home = (props) => {
 			const max_year = max(_years);
 			const min_year = min(_years);
 
-			debugger
-
 			setTotalDisasters(_disasters);
 			setDisasters(_disasters);
 			setEmissions(_emissions);
@@ -70,8 +68,6 @@ const Home = (props) => {
 			return disaster.year >= yearRange[0] && disaster.year <= yearRange[1];
 		});
 		setLoading(true);
-		// debugger
-		console.log(_disasters);
 		setDisasters(_disasters);
 		setLoading(false);
 
