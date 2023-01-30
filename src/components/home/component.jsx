@@ -274,7 +274,7 @@ const Home = (props) => {
 
 							<Grid item xs={12} md={6} lg={4}>
 								<AppCurrentSubject
-									title="Current Subject"
+									title={``}
 									chartLabels={['English', 'History', 'Physics', 'Geography', 'Chinese', 'Math']}
 									chartData={[
 										{ name: 'Series 1', data: [80, 50, 30, 40, 100, 20] },
