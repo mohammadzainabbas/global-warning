@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 // @mui
 import { styled, alpha } from '@mui/material/styles';
-import { Box, Link, Button, Drawer, Typography, Avatar, Stack } from '@mui/material';
+import { Box, Link, Button, Drawer, Typography, Avatar, Stack, Divider } from '@mui/material';
 // hooks
 import useResponsive from '../../../hooks/useResponsive';
 // components
@@ -12,12 +12,9 @@ import Scrollbar from '../../../components/scrollbar';
 import NavSection from '../../../components/nav-section';
 //
 import navConfig from './config';
+import { ACCOUNT } from '../../../common/constants';
 
-const account = {
-  displayName: 'Mohammad Zain Abbas',
-  email: 'mohammadzainabbas@gmail.com',
-  photoURL: 'https://avatars.githubusercontent.com/u/19189095?v=4',
-};
+const account = ACCOUNT;
 
 // ----------------------------------------------------------------------
 
@@ -57,11 +54,13 @@ export default function Nav({ openNav, onCloseNav }) {
         '& .simplebar-content': { height: 1, display: 'flex', flexDirection: 'column' },
       }}
     >
-      <Box sx={{ px: 2.5, py: 3, display: 'inline-flex' }}>
+      <Box sx={{ px: 2.5, pt: 1.5, pb: 1, display: 'inline-flex' }}>
         <Logo />
       </Box>
+      
+      <Divider sx={{ m: 1.5, borderStyle: 'groove' }} />
 
-      <Box sx={{ mb: 5, mx: 2.5 }}>
+      <Box sx={{ mb: 1.5, mx: 2.5 }}>
         <Link underline="none">
           <StyledAccount>
             <Avatar src={account.photoURL} alt="photoURL" />
@@ -70,42 +69,14 @@ export default function Nav({ openNav, onCloseNav }) {
               <Typography variant="subtitle2" sx={{ color: 'text.primary' }}>
                 {account.displayName}
               </Typography>
-
-              <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                {account.role}
-              </Typography>
             </Box>
           </StyledAccount>
         </Link>
       </Box>
 
+      <Divider sx={{ m: 1.5, mt: 0, borderStyle: 'dashed' }} />
+
       <NavSection data={navConfig} />
-
-      <Box sx={{ flexGrow: 1 }} />
-
-      <Box sx={{ px: 2.5, pb: 3, mt: 10 }}>
-        <Stack alignItems="center" spacing={3} sx={{ pt: 5, borderRadius: 2, position: 'relative' }}>
-          <Box
-            component="img"
-            src="/assets/illustrations/illustration_avatar.png"
-            sx={{ width: 100, position: 'absolute', top: -50 }}
-          />
-
-          <Box sx={{ textAlign: 'center' }}>
-            <Typography gutterBottom variant="h6">
-              Get more?
-            </Typography>
-
-            <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-              From only $69
-            </Typography>
-          </Box>
-
-          <Button href="https://material-ui.com/store/items/minimal-dashboard/" target="_blank" variant="contained">
-            Upgrade to Pro
-          </Button>
-        </Stack>
-      </Box>
     </Scrollbar>
   );
 
@@ -113,19 +84,23 @@ export default function Nav({ openNav, onCloseNav }) {
     <Box
       component="nav"
       sx={{
-        flexShrink: { lg: 0 },
-        width: { lg: NAV_WIDTH },
+        // flexShrink: { lg: 0 },
+        // width: { lg: NAV_WIDTH },
       }}
     >
       {isDesktop ? (
         <Drawer
-          open
-          variant="permanent"
+          open={openNav}
+          onClose={onCloseNav}
+          // ModalProps={{
+          //   keepMounted: true,
+          // }}
+          // variant="persistent"
           PaperProps={{
             sx: {
               width: NAV_WIDTH,
-              bgcolor: 'background.default',
-              borderRightStyle: 'dashed',
+              // bgcolor: 'background.default',
+              // borderRightStyle: 'dashed',
             },
           }}
         >

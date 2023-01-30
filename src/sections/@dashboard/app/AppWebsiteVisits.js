@@ -4,7 +4,7 @@ import ReactApexChart from 'react-apexcharts';
 import { Card, CardHeader, Box } from '@mui/material';
 // components
 import { useChart } from '../../../components/chart';
-
+import { fShortenNumber } from '../../../utils/formatNumber';
 // ----------------------------------------------------------------------
 
 AppWebsiteVisits.propTypes = {
@@ -20,17 +20,24 @@ export default function AppWebsiteVisits({ title, subheader, chartLabels, chartD
     fill: { type: chartData.map((i) => i.fill) },
     labels: chartLabels,
     xaxis: { type: 'datetime' },
+    yaxis: {
+      labels: {
+        formatter: (y) => {
+          y = typeof y === 'number' ? fShortenNumber(y) : y;
+          return y;
+        },
+      },
+    },
     tooltip: {
       shared: true,
       intersect: false,
       y: {
         formatter: (y) => {
-          if (typeof y !== 'undefined') {
-            return `${y.toFixed(0)} visits`;
-          }
+          y = typeof y === 'number' ? fShortenNumber(y) : y;
           return y;
         },
       },
+      x: { format: 'yyyy' },
     },
   });
 
