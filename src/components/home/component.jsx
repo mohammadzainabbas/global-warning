@@ -12,7 +12,7 @@ import {
 } from '../../sections/@dashboard/app';
 import { fetchDisasters, fetchEmissions } from "../../api/api";
 
-// const getUnique = (arr, comp) => [...new Set(arr.map(x => x[comp]))];
+const getUnique = (arr, comp) => [...new Set(arr.map(x => x[comp]))];
 
 const Home = (props) => {
 	const theme = useTheme();
