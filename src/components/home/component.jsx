@@ -195,101 +195,104 @@ const Home = (props) => {
 
 	country_wise_affected = slice(reverse(sortBy(country_wise_affected, (r) => r.value)), 0, PICK_TOP_COUNTRIES);
 
-	return (
-		<React.Fragment>
-			<Helmet>
-				<title>{`Home | Global Warning`}</title>
-			</Helmet>
+	// Disaster type wise deaths/affected
+	const disaster_type_wise = disaster_type.map((type) => {
 
-			{loading ? <Loading /> :
-				<React.Fragment>
-					<Container maxWidth="xl">
-						<Typography variant="h4" sx={{ mb: 5 }}>
-							{years.length ? `Showing stats from ${yearRange[0]} to ${yearRange[1]}` : `Hi, Welcome back`}
-						</Typography>
+		return (
+			<React.Fragment>
+				<Helmet>
+					<title>{`Home | Global Warning`}</title>
+				</Helmet>
 
-						<Grid container spacing={3}>
-							<Grid item xs={12} sm={6} md={3}>
-								<AppWidgetSummary title={`Total recorded deaths`} total={total_deaths} color={`error`} icon={'mdi:emoticon-dead'} />
-							</Grid>
+				{loading ? <Loading /> :
+					<React.Fragment>
+						<Container maxWidth="xl">
+							<Typography variant="h4" sx={{ mb: 5 }}>
+								{years.length ? `Showing stats from ${yearRange[0]} to ${yearRange[1]}` : `Hi, Welcome back`}
+							</Typography>
 
-							<Grid item xs={12} sm={6} md={3}>
-								<AppWidgetSummary title={`Total affected`} total={total_affected} color={`warning`} icon={'material-symbols:personal-injury'} />
-							</Grid>
+							<Grid container spacing={3}>
+								<Grid item xs={12} sm={6} md={3}>
+									<AppWidgetSummary title={`Total recorded deaths`} total={total_deaths} color={`error`} icon={'mdi:emoticon-dead'} />
+								</Grid>
 
-							<Grid item xs={12} sm={6} md={3}>
-								<AppWidgetSummary title={`Total natural disasters`} total={total_disasters} color={`secondary`} icon={'mdi:home-climate-outline'} />
-							</Grid>
+								<Grid item xs={12} sm={6} md={3}>
+									<AppWidgetSummary title={`Total affected`} total={total_affected} color={`warning`} icon={'material-symbols:personal-injury'} />
+								</Grid>
 
-							<Grid item xs={12} sm={6} md={3}>
-								<AppWidgetSummary title={`Countries affected`} total={affected_countries} color={`info`} icon={'ph:globe-hemisphere-west-fill'} />
-							</Grid>
+								<Grid item xs={12} sm={6} md={3}>
+									<AppWidgetSummary title={`Total natural disasters`} total={total_disasters} color={`secondary`} icon={'mdi:home-climate-outline'} />
+								</Grid>
 
-							<Grid item xs={12}>
-								<Box sx={{ height: '100%' }}>
-									<Slider
-										getAriaLabel={() => 'Years'}
-										value={yearRange}
-										onChange={onSliderChange}
-										valueLabelDisplay={`auto`}
-										getAriaValueText={(value) => `Year: ${value}`}
-										valueLabelFormat={(value) => `Year: ${value}`}
-										disableSwap
-										marks={marks}
-										min={min(years)}
-										max={max(years)}
+								<Grid item xs={12} sm={6} md={3}>
+									<AppWidgetSummary title={`Countries affected`} total={affected_countries} color={`info`} icon={'ph:globe-hemisphere-west-fill'} />
+								</Grid>
+
+								<Grid item xs={12}>
+									<Box sx={{ height: '100%' }}>
+										<Slider
+											getAriaLabel={() => 'Years'}
+											value={yearRange}
+											onChange={onSliderChange}
+											valueLabelDisplay={`auto`}
+											getAriaValueText={(value) => `Year: ${value}`}
+											valueLabelFormat={(value) => `Year: ${value}`}
+											disableSwap
+											marks={marks}
+											min={min(years)}
+											max={max(years)}
+										/>
+									</Box>
+								</Grid>
+
+								<Grid item xs={12} md={6} lg={8}>
+									<AppWebsiteVisits
+										title={`Frequency of disasters`}
+										subheader={`Total deaths per year`}
+										chartLabels={chartLabels}
+										chartData={chartData}
 									/>
-								</Box>
-							</Grid>
+								</Grid>
 
-							<Grid item xs={12} md={6} lg={8}>
-								<AppWebsiteVisits
-									title={`Frequency of disasters`}
-									subheader={`Total deaths per year`}
-									chartLabels={chartLabels}
-									chartData={chartData}
-								/>
-							</Grid>
+								<Grid item xs={12} md={6} lg={4}>
+									<AppCurrentVisits
+										title={`Deaths by continent`}
+										chartData={continent_wise_deaths}
+										chartColors={[
+											theme.palette.primary.main,
+											theme.palette.info.main,
+											theme.palette.warning.main,
+											theme.palette.error.main,
+										]}
+									/>
+								</Grid>
 
-							<Grid item xs={12} md={6} lg={4}>
-								<AppCurrentVisits
-									title={`Deaths by continent`}
-									chartData={continent_wise_deaths}
-									chartColors={[
-										theme.palette.primary.main,
-										theme.palette.info.main,
-										theme.palette.warning.main,
-										theme.palette.error.main,
-									]}
-								/>
-							</Grid>
+								<Grid item xs={12} md={6} lg={8}>
+									<AppConversionRates
+										title={`Top ${PICK_TOP_COUNTRIES} most affected countries`}
+										subheader={`Total affected per country (from ${yearRange[0]} to ${yearRange[1]})`}
+										chartData={country_wise_affected}
+									/>
+								</Grid>
 
-							<Grid item xs={12} md={6} lg={8}>
-								<AppConversionRates
-									title={`Top ${PICK_TOP_COUNTRIES} most affected countries`}
-									subheader={`Total affected per country (from ${yearRange[0]} to ${yearRange[1]})`}
-									chartData={country_wise_affected}
-								/>
+								<Grid item xs={12} md={6} lg={4}>
+									<AppCurrentSubject
+										title={`Disasters by type`}
+										chartLabels={['English', 'History', 'Physics', 'Geography', 'Chinese', 'Math']}
+										chartData={[
+											{ name: 'Series 1', data: [80, 50, 30, 40, 100, 20] },
+											{ name: 'Series 2', data: [20, 30, 40, 80, 20, 80] },
+											{ name: 'Series 3', data: [44, 76, 78, 13, 43, 10] },
+										]}
+										chartColors={[...Array(6)].map(() => theme.palette.text.secondary)}
+									/>
+								</Grid>
 							</Grid>
+						</Container>
+					</React.Fragment>
+				}
+			</React.Fragment>
+		);
+	};
 
-							<Grid item xs={12} md={6} lg={4}>
-								<AppCurrentSubject
-									title={`Disasters by type`}
-									chartLabels={['English', 'History', 'Physics', 'Geography', 'Chinese', 'Math']}
-									chartData={[
-										{ name: 'Series 1', data: [80, 50, 30, 40, 100, 20] },
-										{ name: 'Series 2', data: [20, 30, 40, 80, 20, 80] },
-										{ name: 'Series 3', data: [44, 76, 78, 13, 43, 10] },
-									]}
-									chartColors={[...Array(6)].map(() => theme.palette.text.secondary)}
-								/>
-							</Grid>
-						</Grid>
-					</Container>
-				</React.Fragment>
-			}
-		</React.Fragment>
-	);
-};
-
-export default Home;
+	export default Home;
