@@ -186,14 +186,18 @@ const Home = (props) => {
 			result[year] += total_deaths;
 			debugger
 		})
+
+		Object.keys(result).forEach((year) => {
+			result[year] = Math.round(result[year] / 1000);
+		})
+
+
 		return {
 			...disaster_type,
 			data: result,
 			// data: Object.keys(result).map((year) => ({ year, total_deaths: result[year] }))
 		}
 	});
-
-	debugger
 
 
 	console.log(top_disasters);
