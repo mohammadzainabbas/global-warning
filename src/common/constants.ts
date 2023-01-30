@@ -1,6 +1,6 @@
 // Route Links
 export const HOME = "/home";
-export const HOME_DASHBOARD = "/#/home";
+export const HOME_DASHBOARD = `/${HOME}/dashboard`;
 export const GITHUB_REPO_LINK = "https://github.com/mohammadzainabbas/global-warning/";
 export const TASKS = "/tasks";
 export const ABOUT = "/about";
