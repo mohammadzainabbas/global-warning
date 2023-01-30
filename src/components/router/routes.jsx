@@ -19,7 +19,7 @@ import { HOME, NOT_FOUND, TASKS, DASHBOARD } from '../../common/constants';
 
 export default function Router() {
 
-  const DEFAULT_ROUTE = `${HOME}/${DASHBOARD}}`;
+  const DEFAULT_ROUTE = `${HOME}/${DASHBOARD}`;
 
   const routes = useRoutes([
     {
