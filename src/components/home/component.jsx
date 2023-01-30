@@ -81,12 +81,10 @@ const Home = (props) => {
 
 	// debugger
 
-	// console.log(disaster_type);
-
 	return (
 		<React.Fragment>
 			<Helmet>
-				<title> Home | Global Warning </title>
+				<title>{`Home | Global Warning`}</title>
 			</Helmet>
 
 			{loading ? <Loading /> :
