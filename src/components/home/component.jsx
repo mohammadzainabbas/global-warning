@@ -170,7 +170,7 @@ const Home = (props) => {
 				<React.Fragment>
 					<Container maxWidth="xl">
 						<Typography variant="h4" sx={{ mb: 5 }}>
-							{`Hi, Welcome back`}
+							{`Hi, Welcome to visualization for global warming`}
 						</Typography>
 
 						<Grid container spacing={3}>
