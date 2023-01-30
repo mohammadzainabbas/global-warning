@@ -176,16 +176,16 @@ const Home = (props) => {
 	debugger
 	top_disasters = top_disasters.map((disaster_type) => {
 		const result = {};
-		disaster_type.data.forEach(({ year, total_affected }) => {
+		disaster_type.data.forEach(({ year, total_deaths }) => {
 			if (!result[year]) {
 				result[year] = 0;
 			}
-			result[year] += total_affected;
+			result[year] += total_deaths;
 			debugger
 		})
 		return {
 			...disaster_type,
-			data: Object.keys(result).map((year) => ({ year, total_affected: result[year] }))
+			data: Object.keys(result).map((year) => ({ year, total_deaths: result[year] }))
 		}
 	});
 
