@@ -176,12 +176,12 @@ const Home = (props) => {
 	debugger
 	top_disasters = top_disasters.map((disaster_type) => {
 		const result = {};
-		debugger
 		disaster_type.data.forEach(({ year, total_affected }) => {
 			if (!result[year]) {
 				result[year] = 0;
 			}
 			result[year] += total_affected;
+			debugger
 		})
 		return {
 			...disaster_type,
