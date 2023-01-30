@@ -79,7 +79,7 @@ const Home = (props) => {
 	const onSliderChange = (e, newValue, activeThumb) => {
 		if (!Array.isArray(newValue)) { return; }
 		const min_year = min(years);
-		const min_year = max(years);
+		const max_year = max(years);
 		let _min_year = yearRange[0];
 		let _max_year = yearRange[1];
 
