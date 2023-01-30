@@ -47,6 +47,7 @@ export default function AppCurrentSubject({ title, subheader, chartData, chartCo
     legend: { floating: true, horizontalAlign: 'center' },
     yaxis: [
       {
+        logarithmic: false,
       },
       {
         logarithmic: true,
