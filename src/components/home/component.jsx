@@ -20,6 +20,7 @@ const getUnique = (arr, comp) => uniqBy(arr, comp);
 const Home = (props) => {
 	const theme = useTheme();
 
+	const [loading, setLoading] = useState(true);
 	const [disasters, setDisasters] = useState([]);
 	const [emissions, setEmissions] = useState([]);
 	const [years, setYears] = useState([]);
