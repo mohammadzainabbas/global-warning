@@ -68,6 +68,8 @@ const Home = (props) => {
 		});
 		setLoading(true);
 		setDisasters(_disasters);
+		setYearRange(yearRange);
+
 		setLoading(false);
 
 	}, [yearRange, totalDisasters]);
