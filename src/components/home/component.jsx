@@ -160,6 +160,7 @@ const Home = (props) => {
 										valueLabelDisplay="auto"
 										getAriaValueText={(value) => `${value}°C`}
 										disableSwap
+										marks
 										min={min(years)}
 										max={max(years)}
 									/>
