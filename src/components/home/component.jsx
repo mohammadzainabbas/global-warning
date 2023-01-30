@@ -159,8 +159,8 @@ const Home = (props) => {
 	const disaster_type = getUnique(disasters, "disaster_type");
 	const disaster_type_count = disaster_type.map((type) => {
 		return {
-			type,
-			count: disasters.filter((disaster) => disaster.disaster_type === type).length,
+			name: type,
+			data: disasters.filter((disaster) => disaster.disaster_type === type).length,
 		}
 	});
 	debugger
