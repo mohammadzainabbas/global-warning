@@ -17,6 +17,8 @@ const Home = ({ data }) => {
 
 	const theme = useTheme();
 
+  
+
 	const {emissions, naturalDisasters} = data;
 
   debugger
