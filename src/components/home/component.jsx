@@ -198,12 +198,10 @@ const Home = (props) => {
 	// Disaster type wise deaths/affected
 	const disaster_wise = [
 		{
-			label: "Deaths",
-			value: "total_deaths",
+			label: "Deaths", value: "total_deaths",
 		},
 		{
-			label: "Affected",
-			value: "total_affected",
+			label: "Affected", value: "total_affected",
 		}
 	]
 	const disaster_type_wise = disaster_wise.map((type) => {
