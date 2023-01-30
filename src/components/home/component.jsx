@@ -83,17 +83,14 @@ const Home = (props) => {
 		if (newValue[1] - newValue[0] < MIN_DISTANCE) {
 			if (activeThumb === 0) {
 				const clamped = Math.min(newValue[0], 100 - minDistance);
-				setValue2([clamped, clamped + minDistance]);
+				setYearRange([clamped, clamped + minDistance]);
 			} else {
 				const clamped = Math.max(newValue[1], minDistance);
-				setValue2([clamped - minDistance, clamped]);
+				setYearRange([clamped - minDistance, clamped]);
 			}
 		} else {
-			setValue2(newValue as number[]);
+			setYearRange(newValue);
 		}
-
-
-		setYearRange(newValue);
 	};
 
 	const disaster_type = getUnique(disasters, "disaster_type");
