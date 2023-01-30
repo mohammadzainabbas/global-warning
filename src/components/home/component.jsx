@@ -254,8 +254,8 @@ const Home = (props) => {
 
 							<Grid item xs={12} md={6} lg={8}>
 								<AppConversionRates
-									title="Conversion Rates"
-									subheader="(+43%) than last year"
+									title={`Top 10 countries affected`}
+									subheader={`Total deaths`}
 									chartData={[
 										{ label: 'Italy', value: 400 },
 										{ label: 'Japan', value: 430 },
