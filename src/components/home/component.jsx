@@ -173,9 +173,6 @@ const Home = (props) => {
 		}
 	});
 
-
-	console.log(chartData);
-
 	return (
 		<React.Fragment>
 			<Helmet>
