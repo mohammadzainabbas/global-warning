@@ -14,8 +14,8 @@ import { fetchDisasters, fetchEmissions } from "../../api/api";
 
 import { sumBy, uniqBy, min, max } from 'lodash';
 
-// const getUnique = (arr, comp) => [...new Set(arr.map(x => x[comp]))];
-const getUnique = (arr, comp) => uniqBy(arr, comp);
+const getUnique = (arr, comp) => [...new Set(arr.map(x => x[comp]))];
+// const getUnique = (arr, comp) => uniqBy(arr, comp);
 
 export const Loading = () => {
 	return (
