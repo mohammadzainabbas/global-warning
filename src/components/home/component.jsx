@@ -12,7 +12,7 @@ import {
 import { fetchDisasters, fetchEmissions } from "../../api/api";
 import { sumBy, sortBy, reverse, min, max, slice } from 'lodash';
 
-const FILLS = ['solid', "column"];
+const FILLS = ['solid'];
 // const FILLS = ['gradient', 'solid', 'pattern', 'image'];
 
 const getUnique = (arr, comp) => [...new Set(arr.map(x => x[comp]))];
