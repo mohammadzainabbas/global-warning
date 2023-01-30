@@ -94,16 +94,17 @@ const Home = (props) => {
 				const clamped = Math.max(newValue[1], MIN_DISTANCE);
 				_min_year = clamped - MIN_DISTANCE;
 				_max_year = clamped;
+				debugger
 			}
 		} else {
 			_min_year = newValue[0];
 			_max_year = newValue[1];
 		}
 
-		debugger
+		// debugger
 		_min_year = _min_year < min_year ? min_year : _min_year;
 		_max_year = _max_year > max_year ? max_year : _max_year;
-		debugger
+		// debugger
 		const _disasters = totalDisasters.filter((disaster) => {
 			return disaster.year >= _min_year && disaster.year <= _max_year;
 		});
