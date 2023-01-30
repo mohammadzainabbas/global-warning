@@ -285,7 +285,7 @@ const Home = (props) => {
 									title={`Disasters by type`}
 									chartLabels={disaster_type}
 									chartData={[
-										{ name: 'Series 1', data: generateList(0, disaster_type.length) },
+										{ name: 'Series 1', data: generateList(0, disaster_type.length - 1) },
 										// { name: 'Series 2', data: [20, 30, 40, 80, 20, 80] },
 										// { name: 'Series 3', data: [44, 76, 78, 13, 43, 10] },
 									]}
