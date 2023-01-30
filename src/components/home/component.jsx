@@ -94,19 +94,19 @@ const Home = (props) => {
 
 						<Grid container spacing={3}>
 							<Grid item xs={12} sm={6} md={3}>
-								<AppWidgetSummary title={`Total deaths`} total={714000} color={`error`} icon={'mdi:emoticon-dead'} />
+								<AppWidgetSummary title={`Total deaths`} total={total_deaths} color={`error`} icon={'mdi:emoticon-dead'} />
 							</Grid>
 
 							<Grid item xs={12} sm={6} md={3}>
-								<AppWidgetSummary title={`Total affected`} total={1352831} color={`warning`} icon={'material-symbols:personal-injury'} />
+								<AppWidgetSummary title={`Total affected`} total={total_affected} color={`warning`} icon={'material-symbols:personal-injury'} />
 							</Grid>
 
 							<Grid item xs={12} sm={6} md={3}>
-								<AppWidgetSummary title={`Total natural disasters`} total={1723315} color={`secondary`} icon={'mdi:home-climate-outline'} />
+								<AppWidgetSummary title={`Total natural disasters`} total={total_disasters} color={`secondary`} icon={'mdi:home-climate-outline'} />
 							</Grid>
 
 							<Grid item xs={12} sm={6} md={3}>
-								<AppWidgetSummary title={`Countries affected`} total={234} color={`info`} icon={'ph:globe-hemisphere-west-fill'} />
+								<AppWidgetSummary title={`Countries affected`} total={affected_countries} color={`info`} icon={'ph:globe-hemisphere-west-fill'} />
 							</Grid>
 
 							<Grid item xs={12} md={6} lg={8}>
