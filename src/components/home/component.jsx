@@ -19,6 +19,8 @@ const Home = ({ data }) => {
 
 	const {emissions, naturalDisasters} = data;
 
+  debugger
+
 	// const disaster_type = getUnique(naturalDisasters, "disaster_type");
 
 
