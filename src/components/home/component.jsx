@@ -206,6 +206,8 @@ const Home = (props) => {
 			}
 		})
 
+		debugger
+
 		return {
 			...disaster_type,
 			data: result,
