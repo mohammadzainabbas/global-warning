@@ -20,15 +20,16 @@ export default function AppWebsiteVisits({ title, subheader, chartLabels, chartD
     fill: { type: chartData.map((i) => i.fill) },
     labels: chartLabels,
     xaxis: { type: 'datetime' },
+    yaxis: {
+      labels: {
+        formatter: (y) => {
+
     tooltip: {
       shared: true,
       intersect: false,
       y: {
         formatter: (y) => {
-          if (typeof y !== 'undefined') {
-            y = typeof y === 'number' ? fShortenNumber(y) : y;
-            // return `${y.toFixed(0)}`;
-          }
+          y = typeof y === 'number' ? fShortenNumber(y) : y;
           return y;
         },
       },
