@@ -19,7 +19,7 @@ const getUnique = (arr, comp) => uniqBy(arr, comp);
 
 export const Loading = () => {
 	return (
-		// how to make this centered?
+		// q: how to make this centered?
 
 
 
