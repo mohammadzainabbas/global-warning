@@ -207,9 +207,7 @@ const Home = (props) => {
 		}
 	]
 	const disaster_type_wise = disaster_wise.map((type) => {
-		const data = disaster_type.map((disaster_type) => {
-			sumBy(disasters.filter((disaster) => disaster.disaster_type === disaster_type), type.value)
-		});
+		const data = disaster_type.map((disaster_type) => sumBy(disasters.filter((disaster) => disaster.disaster_type === disaster_type), type.value));
 
 		return {
 			label: type.label,
