@@ -157,10 +157,17 @@ const Home = (props) => {
 	const total_disasters = disasters.length || 0;
 
 	const disaster_type = getUnique(disasters, "disaster_type");
-	const disaster_type_count = disaster_type.map((type) => {
+	let disaster_type_count = disaster_type.map((type) => {
 		return {
 			name: type,
 			data: disasters.filter((disaster) => disaster.disaster_type === type).map(({ total_deaths, year }) => ({ total_deaths, year })),
+		}
+	});
+
+	disaster_type_count = disaster_type_count.map(disaster_type => {
+		return {
+			...disaster_type,
+			data: sortBy(disaster_type.data, (r) => r.year),
 		}
 	});
 
