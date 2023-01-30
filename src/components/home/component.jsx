@@ -300,7 +300,7 @@ const Home = (props) => {
 								<AppCurrentSubject
 									title={`Disasters by type`}
 									chartLabels={disaster_type}
-									chartData={disaster_type_wise}
+									chartData={reverse(disaster_type_wise)}
 									chartColors={[...Array(6)].map(() => theme.palette.text.secondary)}
 								/>
 							</Grid>
