@@ -54,12 +54,13 @@ const Home = (props) => {
 		const _disasters = totalDisasters.filter((disaster) => {
 			return disaster.year >= yearRange[0] && disaster.year <= yearRange[1];
 		});
+		setLoading(true);
 		setDisasters(_disasters);
+		setLoading(false);
 
 	}, [yearRange, totalDisasters]);
 
 	const disaster_type = getUnique(disasters, "disaster_type");
-
 	const total_deaths = sumBy(disasters, "total_deaths");
 	const total_affected = sumBy(disasters, "total_affected");
 	const affected_countries = getUnique(disasters, "disaster_type");
