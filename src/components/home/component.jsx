@@ -195,9 +195,10 @@ const Home = (props) => {
 			last_year = result[year];
 		})
 
-		debugger
+		// debugger
 
 		const data = Object.keys(result).forEach((year) => {
+			debugger
 			if (display_years.includes(parseInt(year))) {
 				debugger
 				return {
