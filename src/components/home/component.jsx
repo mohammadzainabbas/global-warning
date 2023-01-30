@@ -116,9 +116,9 @@ const Home = (props) => {
 									<Slider
 										getAriaLabel={() => 'Minimum distance shift'}
 										value={yearRange}
-										onChange={handleChange2}
+										// onChange={handleChange2}
 										valueLabelDisplay="auto"
-										getAriaValueText={() => }
+										getAriaValueText={(value) => `${value}°C`}
 										disableSwap
 									/>
 								</Box>
