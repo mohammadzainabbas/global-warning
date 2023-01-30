@@ -40,7 +40,7 @@ const StyledSlider = styled(Slider)({
 		fontSize: 12,
 		background: 'unset',
 		padding: 0,
-		width: 32,
+		width: 132,
 		height: 32,
 		borderRadius: '50% 50% 50% 0',
 		backgroundColor: '#52af77',
