@@ -25,7 +25,7 @@ AppTasks.propTypes = {
   list: PropTypes.array.isRequired,
 };
 
-export default function AppTasks({ title, subheader, list, ...other }) {
+export default function AppTasks({ title, taskCompleted, subheader, list, ...other }) {
   const { control } = useForm({
     defaultValues: {
       taskCompleted: ['2'],
