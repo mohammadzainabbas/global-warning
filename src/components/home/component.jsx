@@ -174,6 +174,15 @@ const Home = (props) => {
 		}
 	});
 
+	// Continent wise deaths
+	const continents = getUnique(disasters, "continent");
+	const continent_wise_deaths = continents.map((continent) => {
+		return {
+			name: continent,
+			data: disasters.filter((disaster) => disaster.continent === continent).map(({ total_deaths, year }) => ({ total_deaths, year })),
+		}
+	});
+
 	return (
 		<React.Fragment>
 			<Helmet>
