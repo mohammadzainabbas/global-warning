@@ -49,6 +49,10 @@ const Home = (props) => {
 		// return () => resetData();
 	}, [updateEmissions, updateNaturalDisasters]);
 
+	useEffect(() => {
+
+	}, [disasters]);
+
 	const disaster_type = getUnique(disasters, "disaster_type");
 
 	const total_deaths = sumBy(disasters, "total_deaths");
