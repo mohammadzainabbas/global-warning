@@ -39,7 +39,7 @@ export const Loading = () => {
 
 const MIN_DISTANCE = 10; // min years to show
 const PICK_TOP = 5; // top n disasters to show
-const DECAY_VALUE = 0.4; // decay value for each year
+const DECAY_VALUE = 0; // decay value for each year
 
 const Home = (props) => {
 	const theme = useTheme();
