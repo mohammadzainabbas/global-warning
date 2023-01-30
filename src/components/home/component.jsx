@@ -181,6 +181,12 @@ const Home = (props) => {
 
 	top_disasters = top_disasters.map((disaster_type) => {
 		const result = {};
+		disaster_type.data.forEach(({ year, total_affected }) => {
+			if (!result[year]) {
+				result[year] = 0;
+			}
+			result[year] += total_affected;
+		})
 		return {
 			...disaster_type,
 			data: disaster_type.data.forEach(({ year, total_affected }) => {
