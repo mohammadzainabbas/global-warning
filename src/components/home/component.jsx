@@ -159,6 +159,7 @@ const Home = (props) => {
 										onChange={onSliderChange}
 										valueLabelDisplay="auto"
 										getAriaValueText={(value) => `${value}°C`}
+										valueLabelFormat={(value) => `Year: ${value}`}
 										disableSwap
 										marks
 										min={min(years)}
