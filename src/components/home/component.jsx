@@ -164,7 +164,6 @@ const Home = (props) => {
 		}
 	});
 
-
 	const top_disasters = disasters.sort((a, b) => b.total_deaths - a.total_deaths).slice(0, 5);
 	debugger
 
