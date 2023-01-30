@@ -178,7 +178,7 @@ const Home = (props) => {
 
 	debugger
 	top_disasters = top_disasters.map((disaster_type) => {
-		const result = {};
+		let result = {};
 		disaster_type.data.forEach(({ year, total_deaths }) => {
 			if (!result[year]) {
 				result[year] = 0;
