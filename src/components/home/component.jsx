@@ -54,7 +54,7 @@ const Home = (props) => {
 			setDisasters(_disasters);
 			setEmissions(_emissions);
 			setYears(_years);
-			setYearRange([min(_years)?.year, max(_years)?.year]);
+			setYearRange([min_year, max_year]);
 
 			// updateEmissions(_emissions);
 			// updateNaturalDisasters(_disasters);
