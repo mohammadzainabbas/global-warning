@@ -196,7 +196,17 @@ const Home = (props) => {
 	country_wise_affected = slice(reverse(sortBy(country_wise_affected, (r) => r.value)), 0, PICK_TOP_COUNTRIES);
 
 	// Disaster type wise deaths/affected
-	const disaster_type_wise = disaster_type.map((type) => {
+	const disaster_wise = [
+		{
+			label: "Deaths",
+			value: "total_deaths",
+		},
+		{
+			label: "Affected",
+			value: "total_affected",
+		}
+	]
+	const disaster_type_wise = disaster_wise.map((type) => {
 		return {
 			label: type,
 			value: sumBy(disasters.filter((disaster) => disaster.disaster_type === type), "total_deaths"),
