@@ -84,9 +84,7 @@ const Home = (props) => {
 			const _emissions = await fetchEmissions();
 			const _years = getUnique(_disasters, "year");
 			const max_year = max(_years);
-			const min_year = min(_years) + parseInt((max_year - min(_years)) / 2)
-
-			// debugger
+			const min_year = min(_years) + parseInt((max_year - min(_years)) / 2);
 
 			setTotalDisasters(_disasters);
 			setDisasters(_disasters);
@@ -101,19 +99,6 @@ const Home = (props) => {
 		})();
 		// return () => resetData();
 	}, [updateEmissions, updateNaturalDisasters]);
-
-	// useEffect(() => {
-
-	// 	const _disasters = totalDisasters.filter((disaster) => {
-	// 		return disaster.year >= yearRange[0] && disaster.year <= yearRange[1];
-	// 	});
-	// 	setLoading(true);
-	// 	setDisasters(_disasters);
-	// 	setYearRange(yearRange);
-
-	// 	setLoading(false);
-
-	// }, [yearRange, totalDisasters]);
 
 	const MIN_DISTANCE = 5; // min years to show
 	const marks = [
