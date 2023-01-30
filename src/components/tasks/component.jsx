@@ -35,7 +35,7 @@ const Tasks = () => {
                     { id: '4', label: 'Scoping & Estimations' },
                     { id: '5', label: 'Sprint Showcase' },
                     ]}
-                    taskCompleted={[`2`]}
+                    taskCompleted={[`1`, `2`]}
                 />
             </Grid>
             </Grid>
