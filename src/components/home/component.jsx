@@ -73,6 +73,10 @@ const Home = (props) => {
 
 	}, [yearRange, totalDisasters]);
 
+	const onSliderChange = (event, newValue) => {
+		setYearRange(newValue);
+	};
+
 	const disaster_type = getUnique(disasters, "disaster_type");
 	const total_deaths = sumBy(disasters, "total_deaths") || 0;
 	const total_affected = sumBy(disasters, "total_affected") || 0;
