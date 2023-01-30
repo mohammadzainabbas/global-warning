@@ -26,8 +26,7 @@ export default function AppConversionRates({ title, subheader, chartData, ...oth
       y: {
         formatter: (seriesName) => fShortenNumber(seriesName),
         title: {
-          // formatter: () => '',
-          formatter: (seriesName) => `${seriesName}`,
+          formatter: () => '',
         },
       },
     },
