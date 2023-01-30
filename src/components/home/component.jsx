@@ -20,7 +20,6 @@ const Home = ({ data }) => {
   const [disasters, setDisasters] = useState([]);
   const [emissions, setEmissions] = useState([]);
 
-
   useEffect(() => {
     (async () => {
       const _disasters = await fetchDisasters();
@@ -31,7 +30,7 @@ const Home = ({ data }) => {
 
       updateEmissions(_emissions);
       updateNaturalDisasters(_disasters);
-  })();
+    })();
   return () => resetData();
 }, [updateEmissions, updateNaturalDisasters, resetData]);
 
