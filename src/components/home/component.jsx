@@ -187,14 +187,11 @@ const Home = (props) => {
 			last_year = result[year];
 		})
 
-		Object.keys(result).forEach((year) => {
-			if (!display_years.includes(parseInt(year)) && !!result[year]) { delete result[year]; }
-		})
+		Object.keys(result).forEach((year) => { if (!display_years.includes(parseInt(year)) && !!result[year]) { delete result[year]; } })
 
 		return {
 			...disaster_type,
 			data: result,
-			// data: Object.keys(result).map((year) => ({ year, total_deaths: result[year] }))
 		}
 	});
 
