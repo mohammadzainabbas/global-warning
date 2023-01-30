@@ -170,7 +170,6 @@ const Home = (props) => {
 			data: sortBy(disaster_type.data, (r) => r.year),
 		}
 	});
-
 	const PICK_TOP = 3;
 	const top_disasters = slice(reverse(sortBy(disaster_type_count, (r) => r.data.length)), 0, PICK_TOP);
 	debugger
