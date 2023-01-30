@@ -45,7 +45,7 @@ const Home = (props) => {
 			const _emissions = await fetchEmissions();
 			const _years = getUnique(_disasters, "year");
 			const max_year = max(_years);
-			const min_year = Number((max_year - min(_years)) / 2);
+			const min_year = Number((max_year - min(_years)) / 2) + min(_years);
 
 			setTotalDisasters(_disasters);
 			setDisasters(_disasters);
