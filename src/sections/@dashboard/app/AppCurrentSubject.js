@@ -47,13 +47,11 @@ export default function AppCurrentSubject({ title, subheader, chartData, chartCo
     legend: { floating: true, horizontalAlign: 'center' },
     yaxis: [
       {
-        labels: {
-          formatter: (value) => {
-            return value.toFixed(0);
-          },
-        },
       },
-      
+      {
+        logarithmic: true,
+      }
+
     ],
     xaxis: {
       categories: chartLabels,
