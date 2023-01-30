@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Helmet } from 'react-helmet-async';
 import { useTheme } from '@mui/material/styles';
-import { Grid, Container, Typography } from '@mui/material';
+import { Grid, Container, Typography, CircularProgress } from '@mui/material';
 import {
 	AppTasks,
 	AppCurrentVisits,
@@ -16,6 +16,9 @@ import { sumBy, uniqBy, min, max } from 'lodash';
 
 // const getUnique = (arr, comp) => [...new Set(arr.map(x => x[comp]))];
 const getUnique = (arr, comp) => uniqBy(arr, comp);
+
+
+
 
 const Home = (props) => {
 	const theme = useTheme();
