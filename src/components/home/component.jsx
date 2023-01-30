@@ -209,11 +209,7 @@ const Home = (props) => {
 	const disaster_type_wise = disaster_wise.map((type) => {
 		let data = disaster_type.map((disaster_type) => sumBy(disasters.filter((disaster) => disaster.disaster_type === disaster_type), type.value));
 		data = data.map(r => Math.log(r))
-
-		return {
-			name: type.label,
-			data,
-		}
+		return { name: type.label, data, }
 	});
 
 	return (
