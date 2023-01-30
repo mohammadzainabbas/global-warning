@@ -54,10 +54,9 @@ const Home = (props) => {
 		const _disasters = totalDisasters.filter((disaster) => {
 			return disaster.year >= yearRange[0] && disaster.year <= yearRange[1];
 		});
-
 		setDisasters(_disasters);
 
-	}, [yearRange]);
+	}, [yearRange, totalDisasters]);
 
 	const disaster_type = getUnique(disasters, "disaster_type");
 
