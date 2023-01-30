@@ -10,6 +10,8 @@ import Page404 from '../../pages/Page404';
 import ProductsPage from '../../pages/ProductsPage';
 import DashboardAppPage from '../../pages/DashboardAppPage';
 
+import Home from '../home/container';
+
 import { HOME, NOT_FOUND, TASKS, HOME_DASHBOARD } from '../../common/constants';
 
 // ----------------------------------------------------------------------
