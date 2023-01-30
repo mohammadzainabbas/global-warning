@@ -40,8 +40,8 @@ const StyledSlider = styled(Slider)({
 		fontSize: 12,
 		background: 'unset',
 		padding: 0,
-		width: 52,
-		height: 52,
+		width: 60,
+		height: 60,
 		borderRadius: '50% 50% 50% 0',
 		backgroundColor: '#52af77',
 		transformOrigin: 'bottom left',
@@ -55,7 +55,6 @@ const StyledSlider = styled(Slider)({
 		},
 	},
 });
-
 
 export const Loading = () => {
 	return (
