@@ -21,8 +21,9 @@ const Home = (props) => {
 	const theme = useTheme();
 
 	const [loading, setLoading] = useState(true);
-	const [disasters, setDisasters] = useState([]);
+	const [totalDisasters, setTotalDisasters] = useState([]);
 	const [emissions, setEmissions] = useState([]);
+	const [disasters, setDisasters] = useState([]);
 	const [years, setYears] = useState([]);
 	const [yearRange, setYearRange] = useState([]);
 
@@ -34,6 +35,7 @@ const Home = (props) => {
 			const _emissions = await fetchEmissions();
 			const _years = getUnique(_disasters, "year");
 
+			setTotalDisasters(_disasters);
 			setDisasters(_disasters);
 			setEmissions(_emissions);
 			setYears(_years);
