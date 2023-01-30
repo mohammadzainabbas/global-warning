@@ -111,6 +111,12 @@ const Home = (props) => {
 								<AppWidgetSummary title={`Countries affected`} total={affected_countries} color={`info`} icon={'ph:globe-hemisphere-west-fill'} />
 							</Grid>
 
+							<Grid item xs={12}>
+								<Box sx={{ height: '100%' }}>
+
+
+							</Grid>
+
 							<Grid item xs={12} md={6} lg={8}>
 								<AppWebsiteVisits
 									title="Website Visits"
