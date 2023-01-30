@@ -37,7 +37,7 @@ export const Loading = () => {
 	);
 }
 
-const MIN_DISTANCE = 5; // min years to show
+const MIN_DISTANCE = 10; // min years to show
 const PICK_TOP = 5; // top n disasters to show
 
 const Home = (props) => {
