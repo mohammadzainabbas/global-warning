@@ -15,8 +15,7 @@ import { fetchDisasters, fetchEmissions } from "../../api/api";
 // const getUnique = (arr, comp) => [...new Set(arr.map(x => x[comp]))];
 
 const Home = ( props ) => {
-
-	const theme = useTheme();
+  const theme = useTheme();
 
   const [disasters, setDisasters] = useState([]);
   const [emissions, setEmissions] = useState([]);
