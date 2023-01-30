@@ -188,7 +188,8 @@ const Home = (props) => {
 		})
 		return {
 			...disaster_type,
-			data: Object.keys(result).map((year) => ({ year, total_deaths: result[year] }))
+			...result,
+			// data: Object.keys(result).map((year) => ({ year, total_deaths: result[year] }))
 		}
 	});
 
