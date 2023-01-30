@@ -183,18 +183,18 @@ const Home = (props) => {
 		const result = {};
 		return {
 			...disaster_type,
-			data: disaster_type.data.map(({ total_deaths, year }) => ({ total_deaths, year })),
+			data: disaster_type.data.forEach(({ year, total_affected }) => {
+				if (!result[year]) {
+					result[year] = 0;
+				}
+				result[year] += total_affected;
+			}),
 		}
 	});
 
 	const result = {};
 
-	top_disasters.forEach(({ year, total_affected }) => {
-		if (!result[year]) {
-			result[year] = 0;
-		}
-		result[year] += total_affected;
-	});
+	top_disasters;
 	debugger
 
 
