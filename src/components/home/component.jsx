@@ -12,6 +12,8 @@ import {
 } from '../../sections/@dashboard/app';
 import { fetchDisasters, fetchEmissions } from "../../api/api";
 
+import { sumBy } from 'lodash';
+
 const getUnique = (arr, comp) => [...new Set(arr.map(x => x[comp]))];
 
 const Home = (props) => {
