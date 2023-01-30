@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Helmet } from 'react-helmet-async';
 import { useTheme } from '@mui/material/styles';
-import { Box, Grid, Container, Typography, CircularProgress } from '@mui/material';
+import { Box, Grid, Container, Typography, CircularProgress, Slider } from '@mui/material';
 import {
 	AppTasks,
 	AppCurrentVisits,
@@ -113,8 +113,15 @@ const Home = (props) => {
 
 							<Grid item xs={12}>
 								<Box sx={{ height: '100%' }}>
-
-
+									<Slider
+										getAriaLabel={() => 'Minimum distance shift'}
+										value={value2}
+										onChange={handleChange2}
+										valueLabelDisplay="auto"
+										getAriaValueText={valuetext}
+										disableSwap
+									/>
+								</Box>
 							</Grid>
 
 							<Grid item xs={12} md={6} lg={8}>
