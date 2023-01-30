@@ -102,7 +102,7 @@ const Home = (props) => {
 
 						<Grid container spacing={3}>
 							<Grid item xs={12} sm={6} md={3}>
-								<AppWidgetSummary title={`Total deaths`} total={total_deaths} color={`error`} icon={'mdi:emoticon-dead'} />
+								<AppWidgetSummary title={`Total recorded deaths`} total={total_deaths} color={`error`} icon={'mdi:emoticon-dead'} />
 							</Grid>
 
 							<Grid item xs={12} sm={6} md={3}>
