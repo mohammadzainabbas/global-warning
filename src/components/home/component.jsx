@@ -174,7 +174,6 @@ const Home = (props) => {
 	});
 
 
-
 	console.log(chartData);
 
 	return (
