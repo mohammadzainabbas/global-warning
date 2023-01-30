@@ -27,7 +27,7 @@ export default function AppWebsiteVisits({ title, subheader, chartLabels, chartD
         formatter: (y) => {
           if (typeof y !== 'undefined') {
             y = typeof y === 'number' ? fShortenNumber(y) : y;
-            return `${y.toFixed(0)}`;
+            // return `${y.toFixed(0)}`;
           }
           return y;
         },
