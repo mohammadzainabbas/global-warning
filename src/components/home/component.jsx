@@ -126,6 +126,10 @@ const Home = (props) => {
 			label: "After first 40 years",
 		},
 		{
+			value: max(years) - 30,
+			label: "Last 30 years",
+		},
+		{
 			value: max(years),
 			label: max(years),
 		},
