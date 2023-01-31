@@ -194,7 +194,7 @@ const Emissions = (props) => {
 
 	country_wise_emissions = slice(reverse(sortBy(country_wise_emissions, (r) => r.value)), 0, PICK_TOP_COUNTRIES);
 
-	// Sector wise emissions
+	// Gas wise emissions
 	const emission_wise = [
 		{ label: "Emissions", value: "emission_value", },
 	]
