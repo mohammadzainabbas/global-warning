@@ -12,6 +12,7 @@ import DashboardAppPage from '../../pages/DashboardAppPage';
 
 import Home from '../home/container';
 import Map from '../map/container';
+import Disasters from '../disasters/container';
 import Emissions from '../emissions/container';
 import Tasks from '../tasks/component';
 
