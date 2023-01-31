@@ -60,9 +60,6 @@ const GlobalWarningMap = (props) => {
 		longitude: 30.094546,
 		latitude: 0.5219001,
 		zoom: 0.5,
-		// longitude: -122.43,
-		// latitude: 37.78,
-		// zoom: 2,
 		pitch: 30
 	});
 	const [mode, setMode] = useState('side-by-side');
@@ -181,9 +178,7 @@ const GlobalWarningMap = (props) => {
 						<Grid container spacing={3}>
 							<Grid item xs={12} sm={6} md={6}>
 								<div style={{
-									// position: 'relative',
 									height: '100%',
-									margin: `3 3 3 3`,
 								}}>
 									<Map
 										id={`left-map`}
@@ -199,9 +194,7 @@ const GlobalWarningMap = (props) => {
 							</Grid>
 							<Grid item xs={12} sm={6} md={6}>
 								<div style={{
-									// position: 'relative',
 									height: '100%',
-									margin: `3 3 3 3`,
 								}}>
 									<Map
 										id={`right-map`}
