@@ -190,7 +190,7 @@ const Emissions = (props) => {
 	let country_wise_emissions = countries.map((country) => {
 		return {
 			label: country,
-			value: sumBy(emissions.filter((r) => r.country === country), "total_affected"),
+			value: sumBy(emissions.filter((r) => r.country === country), "emission_value"),
 		}
 	});
 
