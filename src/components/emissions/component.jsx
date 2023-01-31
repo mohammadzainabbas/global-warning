@@ -115,8 +115,8 @@ const Emissions = (props) => {
 
 		_min_year = _min_year < min_year ? min_year : _min_year;
 		_max_year = _max_year > max_year ? max_year : _max_year;
-		const _disasters = totalEmissions.filter((disaster) => disaster.year >= _min_year && disaster.year <= _max_year);
-		setDisasters(_disasters);
+		const _emissions = totalEmissions.filter((emissions) => emissions.year >= _min_year && emissions.year <= _max_year);
+		setDisasters(_emissions);
 		setYearRange([_min_year, _max_year]);
 	};
 
