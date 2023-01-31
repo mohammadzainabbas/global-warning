@@ -315,6 +315,14 @@ const GlobalWarningMap = (props) => {
 	};
 
 	// for emissions
+	countries_iso = getUnique(emissions, "ISO");
+	country_wise_affected = countries_iso.map((iso) => {
+		return {
+			ISO: iso,
+			value: sumBy(emissions.filter((emission) => emission.ISO === iso), "total_affected"),
+		}
+	});
+	country_wise_affected = slice(reverse(sortBy(country_wise_affected, (r) => r.value)), 0, PICK_TOP_COUNTRIES);
 	const emissionMatchExpression = getMatchExpression(emissions, false);
 	const emissionLayerStyle = {
 		id: 'countries-join',
