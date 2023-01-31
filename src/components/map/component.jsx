@@ -8,7 +8,8 @@ import { sumBy, sortBy, reverse, min, max, slice } from 'lodash';
 
 import { MAPGL_TOKEN_PUBLIC } from "../../common/constants";
 
-import Map, { Source, Layer } from 'react-map-gl';
+// eslint-disable-next-line import/no-webpack-loader-syntax
+import Map, { Source, Layer } from '!react-map-gl';
 import ControlPanel, { Mode } from './control-panel';
 
 const getUnique = (arr, comp) => [...new Set(arr.map(x => x[comp]))];
