@@ -112,6 +112,8 @@ const getMatchExpression = (data, isDisaster) => {
 	const min_color = isDisaster ? 'rgb(255, 0, 0)' : 'rgb(0, 255, 0)';
 	const max_color = isDisaster ? 'rgb(0, 0, 255)' : 'rgb(255, 0, 0)';
 
+
+
 	for (const row of data) {
 		// Convert the range of data values to a suitable color
 		const green = row['hdi'] * 255;
