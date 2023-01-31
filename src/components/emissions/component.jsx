@@ -160,10 +160,10 @@ const Emissions = (props) => {
 	debugger
 
 	const chartLabels = display_years.map((year) => `${year}`);
-	const chartData = top_sectors.map((disaster_type) => {
+	const chartData = top_sectors.map((sector) => {
 		return {
-			name: disaster_type.name,
-			data: chartLabels.map((year) => disaster_type.data[year]),
+			name: sector.name,
+			data: chartLabels.map((year) => sector.data[year]),
 			fill: getRandomElement(FILLS),
 			backgroundColor: getRandomColor(),
 			borderColor: getRandomColor(),
