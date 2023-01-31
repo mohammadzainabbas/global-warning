@@ -266,15 +266,15 @@ const Emissions = (props) => {
 								<AppConversionRates
 									title={`Top ${PICK_TOP_COUNTRIES} most affected countries`}
 									subheader={`Total affected per country (from ${yearRange[0]} to ${yearRange[1]})`}
-									chartData={country_wise_affected}
+									chartData={[]}
 								/>
 							</Grid>
 
 							<Grid item xs={12} md={6} lg={4}>
 								<AppCurrentSubject
 									title={`Disasters by type`}
-									chartLabels={disaster_type}
-									chartData={disaster_type_wise}
+									chartLabels={[]}
+									chartData={[]}
 									chartColors={[...Array(6)].map(() => theme.palette.text.secondary)}
 								/>
 							</Grid>
