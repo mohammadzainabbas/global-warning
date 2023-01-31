@@ -46,13 +46,10 @@ const Home = (props) => {
 	const theme = useTheme();
 
 	const [loading, setLoading] = useState(true);
-	const [totalDisasters, setTotalDisasters] = useState([]);
 	const [emissions, setEmissions] = useState([]);
 	const [disasters, setDisasters] = useState([]);
 	const [years, setYears] = useState([]);
 	const [yearRange, setYearRange] = useState([]);
-
-	const { updateEmissions, updateNaturalDisasters } = props;
 
 	useEffect(() => {
 		(async () => {
@@ -70,13 +67,9 @@ const Home = (props) => {
 			setYears(_years);
 			setYearRange([min_year, max_year]);
 
-			// updateEmissions(_emissions);
-			// updateNaturalDisasters(_disasters);
-
 			setLoading(false);
 		})();
-		// return () => resetData();
-	}, [updateEmissions, updateNaturalDisasters]);
+	}, []);
 
 	const marks = [
 		{
