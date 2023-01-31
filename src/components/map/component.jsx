@@ -55,8 +55,6 @@ const DATA = [
 	{ 'code': 'GBR', 'hdi': 0.922 }
 ];
 
-
-
 const FILLS = ['solid'];
 // const FILLS = ['gradient', 'solid', 'pattern', 'image'];
 
@@ -344,65 +342,3 @@ const GlobalWarningMap = (props) => {
 };
 
 export default GlobalWarningMap;
-
-
-// import React, { useState } from 'react';
-// import MapGL, { MapboxLayer } from 'react-map-gl';
-// import { MAPGL_TOKEN } from '../../common/constants';
-
-// const Map = () => {
-// 	const [viewport, setViewport] = useState({
-// 		latitude: 37.7577,
-// 		longitude: -122.4376,
-// 		zoom: 8
-// 	});
-
-// 	const data = [{ "country": "USA", "latitude": 37.0902, "longitude": -95.7129, "intensity": 10 }, { "country": "Canada", "latitude": 56.1304, "longitude": -106.3468, "intensity": 7 }, { "country": "Mexico", "latitude": 23.6345, "longitude": -102.5528, "intensity": 5 }, { "country": "Brazil", "latitude": -14.2350, "longitude": -51.9253, "intensity": 8 }];
-
-// 	return (
-// 		<MapGL
-// 			{...viewport}
-// 			onViewportChange={setViewport}
-// 			mapStyle="mapbox://styles/mapbox/light-v9"
-// 			mapboxApiAccessToken={MAPGL_TOKEN}
-// 		>
-// 			<MapboxLayer
-// 				type="heatmap"
-// 				id="heatmap"
-// 				options={{
-// 					source: {
-// 						data,
-// 					},
-// 					color: [
-// 						'interpolate',
-// 						['linear'],
-// 						['heatmap-density'],
-// 						0,
-// 						'rgba(33,102,172,0)',
-// 						0.2,
-// 						'rgb(103,169,207)',
-// 						0.4,
-// 						'rgb(209,229,240)',
-// 						0.6,
-// 						'rgb(253,219,199)',
-// 						0.8,
-// 						'rgb(239,138,98)',
-// 						1,
-// 						'rgb(178,24,43)'
-// 					],
-// 					intensity: [
-// 						'interpolate',
-// 						['linear'],
-// 						['zoom'],
-// 						0,
-// 						1,
-// 						9,
-// 						3
-// 					]
-// 				}}
-// 			/>
-// 		</MapGL>
-// 	);
-// };
-
-// export default Map;
