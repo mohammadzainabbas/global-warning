@@ -11,50 +11,6 @@ import { MAPGL_TOKEN_PUBLIC } from "../../common/constants";
 import Map, { Source, Layer } from 'react-map-gl';
 import ControlPanel, { Mode } from './control-panel';
 
-const DATA = [
-	{ 'code': 'ROU', 'hdi': 0.811 },
-	{ 'code': 'RUS', 'hdi': 0.816 },
-	{ 'code': 'SRB', 'hdi': 0.787 },
-	{ 'code': 'SVK', 'hdi': 0.855 },
-	{ 'code': 'SVN', 'hdi': 0.896 },
-	{ 'code': 'ESP', 'hdi': 0.891 },
-	{ 'code': 'SWE', 'hdi': 0.933 },
-	{ 'code': 'CHE', 'hdi': 0.944 },
-	{ 'code': 'HRV', 'hdi': 0.831 },
-	{ 'code': 'CZE', 'hdi': 0.888 },
-	{ 'code': 'DNK', 'hdi': 0.929 },
-	{ 'code': 'EST', 'hdi': 0.871 },
-	{ 'code': 'FIN', 'hdi': 0.92 },
-	{ 'code': 'FRA', 'hdi': 0.901 },
-	{ 'code': 'DEU', 'hdi': 0.936 },
-	{ 'code': 'GRC', 'hdi': 0.87 },
-	{ 'code': 'ALB', 'hdi': 0.785 },
-	{ 'code': 'AND', 'hdi': 0.858 },
-	{ 'code': 'AUT', 'hdi': 0.908 },
-	{ 'code': 'BLR', 'hdi': 0.808 },
-	{ 'code': 'BEL', 'hdi': 0.916 },
-	{ 'code': 'BIH', 'hdi': 0.768 },
-	{ 'code': 'BGR', 'hdi': 0.813 },
-	{ 'code': 'MKD', 'hdi': 0.757 },
-	{ 'code': 'MLT', 'hdi': 0.878 },
-	{ 'code': 'MDA', 'hdi': 0.7 },
-	{ 'code': 'MNE', 'hdi': 0.814 },
-	{ 'code': 'NLD', 'hdi': 0.931 },
-	{ 'code': 'NOR', 'hdi': 0.953 },
-	{ 'code': 'POL', 'hdi': 0.865 },
-	{ 'code': 'PRT', 'hdi': 0.847 },
-	{ 'code': 'HUN', 'hdi': 0.838 },
-	{ 'code': 'ISL', 'hdi': 0.935 },
-	{ 'code': 'IRL', 'hdi': 0.938 },
-	{ 'code': 'ITA', 'hdi': 0.88 },
-	{ 'code': 'LVA', 'hdi': 0.847 },
-	{ 'code': 'LIE', 'hdi': 0.916 },
-	{ 'code': 'LTU', 'hdi': 0.858 },
-	{ 'code': 'LUX', 'hdi': 0.904 },
-	{ 'code': 'UKR', 'hdi': 0.751 },
-	{ 'code': 'GBR', 'hdi': 0.922 }
-];
-
 const getUnique = (arr, comp) => [...new Set(arr.map(x => x[comp]))];
 const generateList = (a, b) => Array.from({ length: b - a + 1 }, (_, i) => a + i);
 const getRandomColor = () => {
@@ -123,19 +79,6 @@ const getMatchExpression = (data, isDisaster) => {
 	return matchExpression;
 }
 
-const matchExpression = ['match', ['get', 'iso_3166_1_alpha_3']];
-
-for (const row of DATA) {
-	// Convert the range of data values to a suitable color
-	const green = row['hdi'] * 255;
-	const color = `rgb(0, ${green}, 0)`;
-
-	// matchExpression.push(row['code'], color);
-	matchExpression.push(row['code'], getRandomColor());
-}
-
-matchExpression.push('rgba(0, 0, 0, 0)');
-
 export const Loading = () => {
 	return (
 		<Box sx={{ display: 'flex' }}>
@@ -147,7 +90,6 @@ export const Loading = () => {
 }
 
 const MIN_DISTANCE = 10; // min years to show
-
 
 const LeftMapStyle = {
 	position: 'absolute',
