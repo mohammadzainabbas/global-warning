@@ -271,7 +271,7 @@ const Emissions = (props) => {
 							<Grid item xs={12} md={6} lg={8}>
 								<AppConversionRates
 									title={`Top ${PICK_TOP_COUNTRIES} countries with highest emissions`}
-									subheader={`Total emissions per country (from ${yearRange[0]} to ${yearRange[1]})`}
+									subheader={`Total emissions per country (from ${yearRange[0]} to ${yearRange[1]}) - MtCO2e`}
 									chartData={country_wise_emissions}
 									chartData={[]}
 								/>
