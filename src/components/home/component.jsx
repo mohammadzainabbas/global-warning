@@ -141,7 +141,7 @@ const Home = (props) => {
 				<React.Fragment>
 					<Container maxWidth="xl">
 						<Typography variant="subtitle2" sx={{ mb: 5 }}>
-							{`Hi, let's explore together the devastating impact of climate change through the lens of natural disasters and emissions. Join us on a journey to uncover the connections and take action for a sustainable future`}
+							{`Hi, let's explore together the devastating impact of climate change through the lens of natural disasters and emissions.`}
 						</Typography>
 						<Typography variant="subtitle" sx={{ mb: 5 }}>
 							{years.length ? `Showing stats from ${yearRange[0]} to ${yearRange[1]}` : ``}
