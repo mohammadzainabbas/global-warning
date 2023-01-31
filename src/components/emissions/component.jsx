@@ -46,7 +46,7 @@ const Emissions = (props) => {
 	const theme = useTheme();
 
 	const [loading, setLoading] = useState(true);
-	const [totalDisasters, setTotalDisasters] = useState([]);
+	const [totalEmissions, setTotalEmissions] = useState([]);
 	const [emissions, setEmissions] = useState([]);
 	const [disasters, setDisasters] = useState([]);
 	const [years, setYears] = useState([]);
@@ -58,7 +58,7 @@ const Emissions = (props) => {
 		(async () => {
 			const _disasters = await fetchDisasters();
 			const _emissions = await fetchEmissions();
-			const _years = getUnique(_disasters, "year");
+			const _years = getUnique(_emissions, "year");
 			const max_year = max(_years);
 			const min_year = min(_years) + parseInt((max_year - min(_years)) / 2);
 
