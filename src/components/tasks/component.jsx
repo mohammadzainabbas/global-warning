@@ -2,8 +2,6 @@ import React from 'react';
 
 import { Helmet } from 'react-helmet-async';
 
-import { useTheme } from '@mui/material/styles';
-
 import { Grid, Container, Typography } from '@mui/material';
 
 import { AppTasks } from '../../sections/@dashboard/app';
@@ -29,7 +27,7 @@ const Tasks = () => {
             </Helmet>
 
             <Container maxWidth="xl">
-                <Typography variant="h5" sx={{ mb: 5, alignContent: "center" }}>
+                <Typography variant="h5" sx={{ mb: 5 }}>
                     {`List of tasks to be completed`}
                 </Typography>
 
