@@ -47,6 +47,32 @@ git clone https://github.com/mohammadzainabbas/global-warning.git
 cd global-warning/
 ```
 
+2. Install dependencies
+
+```bash
+npm install
+```
+
+or if you are using `yarn`
+
+```bash
+yarn install
+```
+
+3. Run the project
+
+```bash
+npm start
+```
+
+or if you are using `yarn`
+
+```bash
+yarn start
+```
+
+
+
 
 # Getting Started with Create React App
 
