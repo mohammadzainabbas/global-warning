@@ -72,7 +72,7 @@ const GlobalWarningMap = (props) => {
 	// It is set to the map that received user input last ('movestart')
 	const [activeMap, setActiveMap] = useState < 'left' | 'right' > ('left');
 
-	const onLeftMoveStart = useCallback(() => setActiveMap('left'), []);
+	const onLeftMoveStart = useCallback(() => setActiveMap('left'));
 	const onRightMoveStart = useCallback(() => setActiveMap('right'), []);
 	const onMove = useCallback(evt => setViewState(evt.viewState), []);
 
