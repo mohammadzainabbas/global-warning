@@ -124,9 +124,9 @@ const Emissions = (props) => {
 	const affected_countries = getUnique(emissions, "country")?.length || 0;
 
 	const display_years = generateList(yearRange[0], yearRange[1]);
-	const disaster_type = getUnique(disasters, "disaster_type");
+	const sectors = getUnique(emissions, "sector");
 
-	let disaster_type_count = disaster_type.map((type) => {
+	let sector_count = sectors.map((sector) => {
 		return {
 			name: type,
 			data: disasters.filter((disaster) => disaster.disaster_type === type).map(({ total_deaths, year }) => ({ total_deaths, year })),
