@@ -34,7 +34,7 @@ const Tasks = () => {
                                 { id: '4', label: 'Develop and deploy webpage for the project' },
                                 { id: '5', label: 'Presentation and Demo' },
                                 { id: '6', label: '' },
-                                { id: '7', label: '' },
+                                { id: '7', label: 'Demo with interactive Maps' },
                             ]}
                             taskCompleted={generateList(1, 5).map(i => `${i}`)}
                         />
