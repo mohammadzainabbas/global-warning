@@ -259,7 +259,7 @@ const Home = (props) => {
 							</Grid>
 
 							<Grid item xs={12} sm={6} md={6}>
-								<AppWidgetSummary title={`Countries involved`} total={affected_countries} color={`info`} icon={'ph:globe-hemisphere-west-fill'} />
+								<AppWidgetSummary title={`Countries involved`} total={emissions_by_countries} color={`info`} icon={'ph:globe-hemisphere-west-fill'} />
 							</Grid>
 						</Grid>
 					</Container>
