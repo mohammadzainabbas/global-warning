@@ -295,8 +295,8 @@ const GlobalWarningMap = (props) => {
 	const display_years = generateList(yearRange[0], yearRange[1]);
 
 	// for disasters
-	const countries = getUnique(disasters, "country");
-	let country_wise_affected = countries.map((country) => {
+	let countries_iso = getUnique(disasters, "ISO");
+	let country_wise_affected = countries_iso.map((iso) => {
 		return {
 			label: country,
 			value: sumBy(disasters.filter((disaster) => disaster.country === country), "total_affected"),
