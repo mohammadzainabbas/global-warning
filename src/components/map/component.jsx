@@ -2,13 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Helmet } from 'react-helmet-async';
 import { useTheme } from '@mui/material/styles';
 import { Box, Grid, Container, Typography, CircularProgress, Slider } from '@mui/material';
-import {
-	AppCurrentVisits,
-	AppWebsiteVisits,
-	AppWidgetSummary,
-	AppCurrentSubject,
-	AppConversionRates,
-} from '../../sections/@dashboard/app';
 import { fetchDisasters, fetchEmissions } from "../../api/api";
 import { sumBy, sortBy, reverse, min, max, slice } from 'lodash';
 
