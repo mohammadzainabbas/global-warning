@@ -252,7 +252,8 @@ const Emissions = (props) => {
 							<Grid item xs={12} md={6} lg={4}>
 								<AppCurrentVisits
 									title={`Deaths by continent`}
-									chartData={continent_wise_deaths}
+									// chartData={continent_wise_deaths}
+									chartData={[]}
 									chartColors={[
 										theme.palette.primary.main,
 										theme.palette.info.main,
