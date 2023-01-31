@@ -37,15 +37,7 @@ const Tasks = () => {
                     <Grid item xs={12}>
                         <AppTasks
                             title="Tasks"
-                            list={[
-                                { id: '1', label: 'Collect and clean datasets' },
-                                { id: '2', label: 'Perform exploratory data analysis (EDA)' },
-                                { id: '3', label: 'Brainstorm different visualisation ideas' },
-                                { id: '4', label: 'Develop and deploy webpage for the project' },
-                                { id: '5', label: 'Presentation and Demo' },
-                                { id: '6', label: 'Public awareness' },
-                                { id: '7', label: 'Demo with interactive Maps' },
-                            ]}
+                            list={tasks}
                             taskCompleted={generateList(1, 5).map(i => `${i}`)}
                         />
                     </Grid>
