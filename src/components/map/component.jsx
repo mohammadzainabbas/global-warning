@@ -114,6 +114,8 @@ const getMatchExpression = (data, isDisaster) => {
 
 	const gradients = generateGradient(min_color, max_color, data.length);
 
+	debugger
+
 	const _data = reverse(sortBy(data, 'value'))
 
 	_data.forEach((row, index) => {
