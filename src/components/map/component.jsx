@@ -162,6 +162,15 @@ const GlobalWarningMap = (props) => {
 		}
 	};
 
+	const layerStyle2 = {
+		id: 'point',
+		type: 'circle',
+		paint: {
+			'circle-radius': 10,
+			'circle-color': '#007cbf'
+		}
+	};
+
 	useEffect(() => {
 		(async () => {
 
