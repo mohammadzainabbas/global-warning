@@ -165,6 +165,7 @@ const GlobalWarningMap = (props) => {
 	const layerStyle2 = {
 		id: 'countries-join',
 		type: 'fill',
+		source: 'countries',
 		paint: {
 			'circle-radius': 10,
 			'circle-color': '#007cbf'
@@ -321,7 +322,7 @@ const GlobalWarningMap = (props) => {
 										mapboxAccessToken={MAPGL_TOKEN_PUBLIC}
 									>
 										<Source
-											id="my-data"
+											id={`countries`}
 											name={`countries`}
 											type={`vector`}
 											url={`mapbox://mapbox.country-boundaries-v1`}
