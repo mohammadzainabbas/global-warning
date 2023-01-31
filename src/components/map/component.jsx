@@ -5,7 +5,7 @@ import { Box, Grid, Container, Typography, CircularProgress, Slider } from '@mui
 import { fetchDisasters, fetchEmissions } from "../../api/api";
 import { sumBy, sortBy, reverse, min, max, slice } from 'lodash';
 
-
+import Map from 'react-map-gl';
 
 
 
