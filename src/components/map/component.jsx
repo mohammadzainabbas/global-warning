@@ -55,18 +55,7 @@ const DATA = [
 	{ 'code': 'GBR', 'hdi': 0.922 }
 ];
 
-const matchExpression = ['match', ['get', 'iso_3166_1_alpha_3']];
 
-for (const row of DATA) {
-	// Convert the range of data values to a suitable color
-	const green = row['hdi'] * 255;
-	const color = `rgb(0, ${green}, 0)`;
-
-	// matchExpression.push(row['code'], color);
-	matchExpression.push(row['code'], getRandomColor());
-}
-
-matchExpression.push('rgba(0, 0, 0, 0)');
 
 const FILLS = ['solid'];
 // const FILLS = ['gradient', 'solid', 'pattern', 'image'];
@@ -82,6 +71,19 @@ const getRandomColor = () => {
 	}
 	return color;
 }
+
+const matchExpression = ['match', ['get', 'iso_3166_1_alpha_3']];
+
+for (const row of DATA) {
+	// Convert the range of data values to a suitable color
+	const green = row['hdi'] * 255;
+	const color = `rgb(0, ${green}, 0)`;
+
+	// matchExpression.push(row['code'], color);
+	matchExpression.push(row['code'], getRandomColor());
+}
+
+matchExpression.push('rgba(0, 0, 0, 0)');
 
 export const Loading = () => {
 	return (
