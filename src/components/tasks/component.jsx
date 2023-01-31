@@ -29,7 +29,7 @@ const Tasks = () => {
             </Helmet>
 
             <Container maxWidth="xl">
-                <Typography variant="h5" sx={{ mb: 5 }}>
+                <Typography variant="h5" sx={{ mb: 5, alignContent: "center" }}>
                     {`List of tasks to be completed`}
                 </Typography>
 
