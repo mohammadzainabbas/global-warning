@@ -298,8 +298,8 @@ const GlobalWarningMap = (props) => {
 	let countries_iso = getUnique(disasters, "ISO");
 	let country_wise_affected = countries_iso.map((iso) => {
 		return {
-			label: country,
-			value: sumBy(disasters.filter((disaster) => disaster.country === country), "total_affected"),
+			ISO: iso,
+			value: sumBy(disasters.filter((disaster) => disaster.ISO === iso), "total_affected"),
 		}
 	});
 
