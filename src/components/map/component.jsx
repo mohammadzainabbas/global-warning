@@ -119,7 +119,8 @@ const getMatchExpression = (data, isDisaster) => {
 
 	debugger
 
-	const _data = reverse(sortBy(data, 'value'))
+	// const _data = reverse(sortBy(data, 'value'))
+	const _data = sortBy(data, 'value');
 
 	_data.forEach((row, index) => {
 		matchExpression.push(row['ISO'], `#${gradients[index]}`);
