@@ -83,16 +83,12 @@ function generateGradient(minColor, maxColor, numElements) {
 	stepG = parseInt(stepG);
 	stepB = parseInt(stepB);
 
-	debugger
-
 	for (let i = 0; i < numElements; i++) {
 		let color = {
 			r: minRgb.r + stepR * i,
 			g: minRgb.g + stepG * i,
 			b: minRgb.b + stepB * i,
 		};
-
-		debugger
 		gradient.push(rgbToHex(color));
 	}
 
@@ -103,7 +99,6 @@ function hexToRgb(hex) {
 	let r = parseInt(hex.substring(0, 2), 16);
 	let g = parseInt(hex.substring(2, 4), 16);
 	let b = parseInt(hex.substring(4, 6), 16);
-	debugger
 	return { r, g, b };
 }
 
@@ -111,7 +106,6 @@ function rgbToHex(rgb) {
 	let r = rgb.r.toString(16).padStart(2, "0");
 	let g = rgb.g.toString(16).padStart(2, "0");
 	let b = rgb.b.toString(16).padStart(2, "0");
-	debugger
 	return `${r}${g}${b}`;
 }
 
