@@ -196,9 +196,9 @@ const Emissions = (props) => {
 
 	country_wise_emissions = slice(reverse(sortBy(country_wise_emissions, (r) => r.value)), 0, PICK_TOP_COUNTRIES);
 
-	// Disaster type wise deaths/affected
+	// Sector wise emissions
 	const disaster_wise = [
-		{ label: "Deaths", value: "total_deaths", },
+		{ label: "Emissions", value: "total_deaths", },
 		{ label: "Affected", value: "total_affected", }
 	]
 	const disaster_type_wise = disaster_wise.map((type) => {
