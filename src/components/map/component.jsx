@@ -284,7 +284,7 @@ const GlobalWarningMap = (props) => {
 								</Box>
 							</Grid>
 							<Grid item xs={12} sm={4} md={4}>
-								<Typography variant={`subtitle2`} sx={{ mb: 0 }}>
+								<Typography variant={`subtitle2`} sx={{ mb: 0, pb: 0, ml: 3 }}>
 									{`Top ${PICK_TOP_COUNTRIES} most affected countries`}
 								</Typography>
 							</Grid>
