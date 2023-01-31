@@ -36,12 +36,18 @@ Welcome to the `Global Warning`, a visual analytics project, where we aim to rai
 
 ### 3. 🚀 Run locally 🖲️
 
+> This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Follow the steps below to run the project locally on your machine:
+
+1. Clone the repository
+
+```bash
+git clone 
 
 
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
