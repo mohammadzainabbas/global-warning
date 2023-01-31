@@ -245,8 +245,9 @@ const GlobalWarningMap = (props) => {
 			'fill-color': matchExpression,
 		}
 	};
-	// for disasters
-	const disasterLayerStyle = {
+
+	// for emissions
+	const emissionLayerStyle = {
 		id: 'countries-join',
 		type: 'fill',
 		source: 'countries',
