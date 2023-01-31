@@ -319,7 +319,7 @@ const GlobalWarningMap = (props) => {
 	country_wise_affected = countries_iso.map((iso) => {
 		return {
 			ISO: iso,
-			value: sumBy(emissions.filter((emission) => emission.ISO === iso), "total_affected"),
+			value: sumBy(emissions.filter((emission) => emission.ISO === iso), "emission_value"),
 		}
 	});
 	country_wise_affected = slice(reverse(sortBy(country_wise_affected, (r) => r.value)), 0, PICK_TOP_COUNTRIES);
