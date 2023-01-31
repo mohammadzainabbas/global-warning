@@ -163,6 +163,7 @@ const RightMapStyle = {
 	height: '100%'
 };
 
+const PICK_TOP_COUNTRIES = 10;
 const GlobalWarningMap = (props) => {
 	const theme = useTheme();
 
