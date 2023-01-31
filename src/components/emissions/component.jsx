@@ -198,8 +198,9 @@ const Emissions = (props) => {
 	const emission_wise = [
 		{ label: "Emissions", value: "emission_value", },
 	]
+	const gases = getUnique(emissions, "gas");
 	const sector_wise_emissions = emission_wise.map((type) => {
-		let data = sectors.map((sector) => sumBy(emissions.filter((e) => e.sector === sector), type.value));
+		let data = gases.map((gas) => sumBy(emissions.filter((e) => e.gas === gas), type.value));
 		data = data.map(r => Math.log(r))
 		return { name: type.label, data, }
 	});
