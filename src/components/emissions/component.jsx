@@ -142,8 +142,6 @@ const Emissions = (props) => {
 	// let top_disasters = slice(reverse(sortBy(sector_count, (r) => r.data.length)), 0, PICK_TOP);
 	let top_sectors = reverse(sortBy(sector_count, (r) => r.data.length));
 
-	debugger
-
 	top_sectors = top_sectors.map((sector) => {
 		let result = {};
 		sector.data.forEach(({ year, emission_value }) => {
@@ -158,6 +156,8 @@ const Emissions = (props) => {
 		Object.keys(result).forEach((year) => { if (!display_years.includes(parseInt(year)) && !!result[year]) { delete result[year]; } })
 		return { ...sector, data: result, }
 	});
+
+	debugger
 
 	const chartLabels = display_years.map((year) => `${year}`);
 	const chartData = top_sectors.map((disaster_type) => {
