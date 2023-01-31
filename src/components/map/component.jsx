@@ -59,7 +59,7 @@ const GlobalWarningMap = (props) => {
 	const [viewState, setViewState] = useState({
 		longitude: -122.43,
 		latitude: 37.78,
-		zoom: 12,
+		zoom: 2,
 		pitch: 30
 	});
 	const [mode, setMode] = useState('side-by-side');
