@@ -144,9 +144,9 @@ const Emissions = (props) => {
 
 	debugger
 
-	top_sectors = top_sectors.map((disaster_type) => {
+	top_sectors = top_sectors.map((sector) => {
 		let result = {};
-		disaster_type.data.forEach(({ year, total_deaths }) => {
+		sector.data.forEach(({ year, total_deaths }) => {
 			if (!result[year]) { result[year] = 0; }
 			result[year] += total_deaths;
 		})
@@ -156,7 +156,7 @@ const Emissions = (props) => {
 			last_year = result[year];
 		})
 		Object.keys(result).forEach((year) => { if (!display_years.includes(parseInt(year)) && !!result[year]) { delete result[year]; } })
-		return { ...disaster_type, data: result, }
+		return { ...sector, data: result, }
 	});
 
 	const chartLabels = display_years.map((year) => `${year}`);
