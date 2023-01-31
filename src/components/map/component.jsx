@@ -297,9 +297,18 @@ const GlobalWarningMap = (props) => {
 										mapStyle={`mapbox://styles/mapbox/light-v9`}
 										mapboxAccessToken={MAPGL_TOKEN_PUBLIC}
 									>
-										<Source id="my-data" type="geojson" data={geojson}>
+										{/* <Source id="my-data" type="geojson" data={geojson}>
 											<Layer {...layerStyle} />
+										</Source> */}
+										<Source
+											id={`countries`}
+											name={`countries`}
+											type={`vector`}
+											url={`mapbox://mapbox.country-boundaries-v1`}
+										>
+											<Layer {...disasterLayerStyle} />
 										</Source>
+
 									</Map>
 								</div>
 							</Grid>
