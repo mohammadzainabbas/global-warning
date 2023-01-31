@@ -292,6 +292,8 @@ const GlobalWarningMap = (props) => {
 	};
 
 	const display_years = generateList(yearRange[0], yearRange[1]);
+
+	// for disasters
 	const countries = getUnique(disasters, "country");
 	let country_wise_affected = countries.map((country) => {
 		return {
@@ -301,9 +303,6 @@ const GlobalWarningMap = (props) => {
 	});
 
 	country_wise_affected = slice(reverse(sortBy(country_wise_affected, (r) => r.value)), 0, PICK_TOP_COUNTRIES);
-
-
-	// for disasters
 
 
 	const disasterLayerStyle = {
