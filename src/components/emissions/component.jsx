@@ -238,7 +238,7 @@ const Emissions = (props) => {
 
 							<Grid item xs={12} md={6} lg={8}>
 								<AppWebsiteVisits
-									title={`Frequency of disasters`}
+									title={`Emissions by sector`}
 									subheader={`Total deaths per year`}
 									chartLabels={chartLabels}
 									chartData={chartData}
