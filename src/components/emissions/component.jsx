@@ -121,9 +121,7 @@ const Emissions = (props) => {
 	};
 
 	const total_MTCO2e = Number(sumBy(emissions, "emission_value")) || 0;
-	const total_affected = sumBy(emissions, "total_affected") || 0;
 	const affected_countries = getUnique(emissions, "country")?.length || 0;
-	const total_emissions = emissions.length || 0;
 
 	const display_years = generateList(yearRange[0], yearRange[1]);
 	const disaster_type = getUnique(disasters, "disaster_type");
