@@ -199,7 +199,7 @@ const Emissions = (props) => {
 		{ label: "Emissions", value: "emission_value", },
 	]
 	const gases = getUnique(emissions, "gas");
-	const sector_wise_emissions = emission_wise.map((type) => {
+	const gases_wise_emissions = emission_wise.map((type) => {
 		let data = gases.map((gas) => sumBy(emissions.filter((e) => e.gas === gas), type.value));
 		data = data.map(r => Math.log(r))
 		return { name: type.label, data, }
@@ -278,9 +278,9 @@ const Emissions = (props) => {
 
 							<Grid item xs={12} md={6} lg={4}>
 								<AppCurrentSubject
-									title={`Emissions per sector`}
-									chartLabels={sectors.map(getSectorName)}
-									chartData={sector_wise_emissions}
+									title={`Emissions by gas`}
+									chartLabels={gases}
+									chartData={gases_wise_emissions}
 									chartColors={[...Array(6)].map(() => theme.palette.text.secondary)}
 								/>
 							</Grid>
