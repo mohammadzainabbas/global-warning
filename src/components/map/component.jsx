@@ -293,7 +293,7 @@ const GlobalWarningMap = (props) => {
 							</Grid>
 							<Grid item xs={12} sm={4} md={4}>
 								<Typography variant={`subtitle2`} sx={{ mb: 0, pb: 0, ml: 3, textAlign: "center" }}>
-									{`Top ${PICK_TOP_COUNTRIES} most affected countries`}
+									{`Top ${PICK_TOP_COUNTRIES} countries with highest emissions`}
 								</Typography>
 							</Grid>
 							<Grid item xs={12} sm={6} md={6}>
