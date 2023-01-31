@@ -62,7 +62,8 @@ for (const row of DATA) {
 	const green = row['hdi'] * 255;
 	const color = `rgb(0, ${green}, 0)`;
 
-	matchExpression.push(row['code'], color);
+	// matchExpression.push(row['code'], color);
+	matchExpression.push(row['code'], getRandomColor());
 }
 
 matchExpression.push('rgba(0, 0, 0, 0)');
