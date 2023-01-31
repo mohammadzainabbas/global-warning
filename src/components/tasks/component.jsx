@@ -16,8 +16,8 @@ const Tasks = () => {
         'Brainstorm different visualisation ideas',
         'Develop and deploy webpage for the project',
         'Presentation and Demo',
-        'Public awareness',
         'Demo with interactive Maps',
+        'Public awareness',
     ].map((el, idx) => ({ id: `${idx + 1}`, label: el }));
 
     return (
