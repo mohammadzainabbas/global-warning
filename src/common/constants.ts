@@ -1,5 +1,5 @@
 // Route Links
-export const HOME = "/home";
+export const HOME = "/global-warning/home";
 export const DASHBOARD = `dashboard`;
 export const TASKS = "tasks";
 export const MAP = "map";
