@@ -191,16 +191,18 @@ const GlobalWarningMap = (props) => {
 								</div>
 							</Grid>
 							<Grid item xs={12} sm={6} md={6}>
-								<Map
-									id={`right-map`}
-									{...viewState}
-									padding={rightMapPadding}
-									onMoveStart={onRightMoveStart}
-									onMove={activeMap === `right` && onMove}
-									style={RightMapStyle}
-									mapStyle={`mapbox://styles/mapbox/dark-v9`}
-									mapboxAccessToken={MAPGL_TOKEN_PUBLIC}
-								/>
+								<div style={{ position: 'relative', height: '100%' }}>
+									<Map
+										id={`right-map`}
+										{...viewState}
+										padding={rightMapPadding}
+										onMoveStart={onRightMoveStart}
+										onMove={activeMap === `right` && onMove}
+										style={RightMapStyle}
+										mapStyle={`mapbox://styles/mapbox/dark-v9`}
+										mapboxAccessToken={MAPGL_TOKEN_PUBLIC}
+									/>
+								</div>
 							</Grid>
 
 							<Grid item xs={12}>
