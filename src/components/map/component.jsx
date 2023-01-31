@@ -115,7 +115,7 @@ const getMatchExpression = (data, isDisaster) => {
 	const gradients = generateGradient(min_color, max_color, data.length);
 
 	gradients.forEach((color, index) => {
-		matchExpression.push(data[index]['value'], color);
+		matchExpression.push(data[index]['ISO'], color);
 	});
 
 
