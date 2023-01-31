@@ -1,6 +1,6 @@
 // component
 import SvgColor from '../../../components/svg-color';
-import { HOME, GITHUB_REPO_LINK, TASKS, MAP, EMISSIONS } from '../../../common/constants';
+import { HOME, GITHUB_REPO_LINK, TASKS, MAP, EMISSIONS, DISASTERS } from '../../../common/constants';
 import HomeIcon from '@mui/icons-material/Home';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import TaskIcon from '@mui/icons-material/Task';
@@ -16,6 +16,11 @@ const navConfig = [
     title: 'Home',
     path: HOME,
     icon: <HomeIcon />,
+  },
+  {
+    title: 'Disasters',
+    path: `${HOME}/${DISASTERS}`,
+    icon: <FloodIcon />,
   },
   {
     title: 'Emissions',
