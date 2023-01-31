@@ -138,20 +138,11 @@ const Map = (props) => {
 						</Typography>
 
 						<Grid container spacing={3}>
-							<Grid item xs={12} sm={6} md={3}>
-								<AppWidgetSummary title={`Total recorded deaths`} total={total_deaths} color={`error`} icon={'mdi:emoticon-dead'} />
-							</Grid>
+							<Grid item xs={12} sm={6} md={6}>
 
-							<Grid item xs={12} sm={6} md={3}>
-								<AppWidgetSummary title={`Total affected`} total={total_affected} color={`warning`} icon={'material-symbols:personal-injury'} />
 							</Grid>
+							<Grid item xs={12} sm={6} md={6}>
 
-							<Grid item xs={12} sm={6} md={3}>
-								<AppWidgetSummary title={`Total natural disasters`} total={total_disasters} color={`secondary`} icon={'mdi:home-climate-outline'} />
-							</Grid>
-
-							<Grid item xs={12} sm={6} md={3}>
-								<AppWidgetSummary title={`Countries affected`} total={affected_countries} color={`info`} icon={'ph:globe-hemisphere-west-fill'} />
 							</Grid>
 
 							<Grid item xs={12}>
@@ -171,44 +162,6 @@ const Map = (props) => {
 								</Box>
 							</Grid>
 
-							<Grid item xs={12} md={6} lg={8}>
-								<AppWebsiteVisits
-									title={`Frequency of disasters`}
-									subheader={`Total deaths per year`}
-									chartLabels={chartLabels}
-									chartData={chartData}
-								/>
-							</Grid>
-
-							<Grid item xs={12} md={6} lg={4}>
-								<AppCurrentVisits
-									title={`Deaths by continent`}
-									chartData={continent_wise_deaths}
-									chartColors={[
-										theme.palette.primary.main,
-										theme.palette.info.main,
-										theme.palette.warning.main,
-										theme.palette.error.main,
-									]}
-								/>
-							</Grid>
-
-							<Grid item xs={12} md={6} lg={8}>
-								<AppConversionRates
-									title={`Top ${PICK_TOP_COUNTRIES} most affected countries`}
-									subheader={`Total affected per country (from ${yearRange[0]} to ${yearRange[1]})`}
-									chartData={country_wise_affected}
-								/>
-							</Grid>
-
-							<Grid item xs={12} md={6} lg={4}>
-								<AppCurrentSubject
-									title={`Disasters by type`}
-									chartLabels={disaster_type}
-									chartData={disaster_type_wise}
-									chartColors={[...Array(6)].map(() => theme.palette.text.secondary)}
-								/>
-							</Grid>
 						</Grid>
 					</Container>
 				</React.Fragment>
