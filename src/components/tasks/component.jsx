@@ -31,8 +31,8 @@ const Tasks = () => {
                                 { id: '2', label: 'Perform exploratory data analysis (EDA)' },
                                 { id: '3', label: 'Brainstorm different visualisation ideas' },
                                 { id: '4', label: 'Develop and deploy webpage for the project' },
-                                { id: '5', label: 'Scoping & Estimations' },
-                                { id: '6', label: 'Sprint Showcase' },
+                                { id: '5', label: 'Presentation and Demo' },
+                                { id: '6', label: '' },
                                 { id: '7', label: 'Sprint Showcase' },
                             ]}
                             taskCompleted={[`1`, `2`]}
