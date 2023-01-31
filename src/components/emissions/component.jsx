@@ -201,7 +201,7 @@ const Emissions = (props) => {
 		{ label: "Emissions", value: "emissions_value", },
 	]
 	const disaster_type_wise = emission_wise.map((type) => {
-		let data = sectors.map((disaster_type) => sumBy(disasters.filter((disaster) => disaster.disaster_type === disaster_type), type.value));
+		let data = sectors.map((sector) => sumBy(disasters.filter((disaster) => disaster.sector === sector), type.value));
 		data = data.map(r => Math.log(r))
 		return { name: type.label, data, }
 	});
