@@ -14,37 +14,7 @@ import { sumBy, sortBy, reverse, min, max, slice, uniqBy } from 'lodash';
 
 const FILLS = ['solid'];
 
-const getSectorName = (sector) => {
-	switch (sector) {
-		case "1.A.1":
-			return "Agriculture";
-		case "1.B.1":
-			return "Forestry";
-		case "1.C.1":
-			return "Fishing and aquaculture";
-		case "2.A.1":
-			return "Energy";
-		case "2.B.1":
-			return "Manufacturing industries and construction";
-		case "2.C.1":
-			return "Mining and quarrying";
-		case "3.A.1":
-			return "Other sectors";
-		case "3.B.1":
-			return "Waste";
-		case "4.A.1":
-			return "Land use, land-use change and forestry";
-		case "4.B.1":
-			return "Other sectors";
-		case "5.A.1":
-			return "Agriculture";
-		case "5.B.1":
-			return "Forestry";
-
-		default:
-			return "Unknown";
-	}
-}
+const getSectorName = (sector) => sector === "Industrial Processes and Product Use" ? "Industrial Processes" : sector;
 
 // const FILLS = ['gradient', 'solid', 'pattern', 'image'];
 
