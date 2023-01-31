@@ -202,9 +202,9 @@ const GlobalWarningMap = (props) => {
 							</Grid>
 
 							<Grid item xs={12}>
-								<Box sx={{ height: '100%' }}>
+								<Box sx={{ height: `100%` }}>
 									<Slider
-										getAriaLabel={() => 'Years'}
+										getAriaLabel={() => `Years`}
 										value={yearRange}
 										onChange={onSliderChange}
 										valueLabelDisplay={`auto`}
