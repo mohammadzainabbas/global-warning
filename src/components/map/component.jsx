@@ -117,7 +117,7 @@ const getMatchExpression = (data, isDisaster) => {
 	const _data = reverse(sortBy(data, 'value'))
 
 	_data.forEach((row, index) => {
-		matchExpression.push(row['code'], gradients[index]);
+		matchExpression.push(row['ISO'], gradients[index]);
 	});
 
 	matchExpression.push('rgba(0, 0, 0, 0)');
