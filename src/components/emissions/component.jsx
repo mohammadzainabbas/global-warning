@@ -279,7 +279,7 @@ const Emissions = (props) => {
 							<Grid item xs={12} md={6} lg={4}>
 								<AppCurrentSubject
 									title={`Emissions per sector`}
-									chartLabels={sectors}
+									chartLabels={sectors.map(getSectorName)}
 									chartData={sector_wise_emissions}
 									chartColors={[...Array(6)].map(() => theme.palette.text.secondary)}
 								/>
