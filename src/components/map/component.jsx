@@ -180,7 +180,7 @@ const GlobalWarningMap = (props) => {
 								<div style={{
 									// position: 'relative',
 									height: '100%',
-									padding: 3,
+									padding: `3 3 3 3`,
 								}}>
 									<Map
 										id={`left-map`}
@@ -198,7 +198,7 @@ const GlobalWarningMap = (props) => {
 								<div style={{
 									// position: 'relative',
 									height: '100%',
-									padding: 3,
+									padding: `3 3 3 3`,
 								}}>
 									<Map
 										id={`right-map`}
