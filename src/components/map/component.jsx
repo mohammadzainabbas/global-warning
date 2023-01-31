@@ -12,7 +12,6 @@ import Map from 'react-map-gl';
 import ControlPanel, { Mode } from './control-panel';
 
 
-
 const FILLS = ['solid'];
 // const FILLS = ['gradient', 'solid', 'pattern', 'image'];
 
