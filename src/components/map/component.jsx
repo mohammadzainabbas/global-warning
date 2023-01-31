@@ -187,7 +187,16 @@ const GlobalWarningMap = (props) => {
 								/>
 							</Grid>
 							<Grid item xs={12} sm={6} md={6}>
-
+								<Map
+									id="right-map"
+									{...viewState}
+									padding={rightMapPadding}
+									onMoveStart={onRightMoveStart}
+									onMove={activeMap === 'right' && onMove}
+									style={RightMapStyle}
+									mapStyle="mapbox://styles/mapbox/dark-v9"
+									mapboxAccessToken={TOKEN}
+								/>
 							</Grid>
 
 							<Grid item xs={12}>
