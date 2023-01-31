@@ -129,17 +129,17 @@ const Emissions = (props) => {
 	let sector_count = sectors.map((sector) => {
 		return {
 			name: sector,
-			data: emissions.filter((emission) => emission.sector === sector).map(({ total_deaths, year }) => ({ total_deaths, year })),
+			data: emissions.filter((emission) => emission.sector === sector).map(({ emission_value, year }) => ({ emission_value, year })),
 		}
 	});
 
-	disaster_type_count = disaster_type_count.map(disaster_type => {
+	sector_count = sector_count.map(disaster_type => {
 		return {
 			...disaster_type,
 			data: sortBy(disaster_type.data, (r) => r.year),
 		}
 	});
-	let top_disasters = slice(reverse(sortBy(disaster_type_count, (r) => r.data.length)), 0, PICK_TOP);
+	let top_disasters = slice(reverse(sortBy(sector_count, (r) => r.data.length)), 0, PICK_TOP);
 	top_disasters = top_disasters.map((disaster_type) => {
 		let result = {};
 		disaster_type.data.forEach(({ year, total_deaths }) => {
