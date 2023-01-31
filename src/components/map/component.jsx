@@ -134,6 +134,22 @@ const GlobalWarningMap = (props) => {
 
 	const { updateEmissions, updateNaturalDisasters } = props;
 
+	const geojson = {
+		type: 'FeatureCollection',
+		features: [
+			{ type: 'Feature', geometry: { type: 'Point', coordinates: [-122.4, 37.8] } }
+		]
+	};
+
+	const layerStyle = {
+		id: 'point',
+		type: 'circle',
+		paint: {
+			'circle-radius': 10,
+			'circle-color': '#007cbf'
+		}
+	};
+
 	useEffect(() => {
 		(async () => {
 
