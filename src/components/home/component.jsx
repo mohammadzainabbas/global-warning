@@ -140,10 +140,10 @@ const Home = (props) => {
 			{loading ? <Loading /> :
 				<React.Fragment>
 					<Container maxWidth="xl">
-						<Typography variant="subtitle2" sx={{ mb: 5 }}>
+						<Typography variant="subtitle2" sx={{ mb: 2 }}>
 							{`Hi, let's explore together the devastating impact of climate change through the lens of natural disasters and emissions.`}
 						</Typography>
-						<Typography variant="subtitle" sx={{ mb: 5 }}>
+						<Typography variant="subtitle2" sx={{ mb: 5 }}>
 							{years.length ? `Showing stats from ${yearRange[0]} to ${yearRange[1]}` : ``}
 						</Typography>
 
