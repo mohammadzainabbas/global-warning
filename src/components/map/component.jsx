@@ -59,7 +59,7 @@ const GlobalWarningMap = (props) => {
 	const [viewState, setViewState] = useState({
 		// 30.094546,0.4219001,3z
 		longitude: 30.094546,
-		latitude: 0.4219001,
+		latitude: 0.5219001,
 		zoom: 0.5,
 		// longitude: -122.43,
 		// latitude: 37.78,
