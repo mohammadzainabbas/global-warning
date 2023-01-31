@@ -163,8 +163,8 @@ const GlobalWarningMap = (props) => {
 	};
 
 	const layerStyle2 = {
-		id: 'point',
-		type: 'circle',
+		id: 'countries-join',
+		type: 'fill',
 		paint: {
 			'circle-radius': 10,
 			'circle-color': '#007cbf'
