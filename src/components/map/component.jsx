@@ -48,7 +48,7 @@ const LeftMapStyle = {
 };
 const RightMapStyle = {
 	position: 'absolute',
-	left: '51%',
+	left: '50%',
 	width: '50%',
 	height: '100%'
 };
@@ -60,7 +60,7 @@ const GlobalWarningMap = (props) => {
 		longitude: 30.094546,
 		latitude: 0.5219001,
 		zoom: 0.5,
-		pitch: 30
+		pitch: 10
 	});
 	const [mode, setMode] = useState('side-by-side');
 
