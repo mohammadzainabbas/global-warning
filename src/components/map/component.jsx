@@ -55,12 +55,8 @@ const DATA = [
 	{ 'code': 'GBR', 'hdi': 0.922 }
 ];
 
-const FILLS = ['solid'];
-// const FILLS = ['gradient', 'solid', 'pattern', 'image'];
-
 const getUnique = (arr, comp) => [...new Set(arr.map(x => x[comp]))];
 const generateList = (a, b) => Array.from({ length: b - a + 1 }, (_, i) => a + i);
-const getRandomElement = (list) => list[Math.floor(Math.random() * list.length)];
 const getRandomColor = () => {
 	const letters = '0123456789ABCDEF';
 	let color = '#';
