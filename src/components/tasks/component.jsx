@@ -30,7 +30,7 @@ const Tasks = () => {
                                 { id: '1', label: 'Collect and clean datasets' },
                                 { id: '2', label: 'Perform exploratory data analysis (EDA)' },
                                 { id: '3', label: 'Brainstorm different visualisation ideas' },
-                                { id: '3', label: 'Develop and deploy webpage' },
+                                { id: '3', label: 'Develop and deploy webpage for the project' },
                                 { id: '4', label: 'Scoping & Estimations' },
                                 { id: '5', label: 'Sprint Showcase' },
                             ]}
