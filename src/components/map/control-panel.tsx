@@ -18,7 +18,7 @@ function ControlPanel(props: { mode: Mode; onModeChange: (newMode: Mode) => void
 		<div className="control-panel">
 			<Box sx={{ minWidth: 120 }}>
 				<FormControl fullWidth>
-					<InputLabel id="demo-simple-select-label">Age</InputLabel>
+					<InputLabel id="demo-simple-select-label">{`Select mode`}</InputLabel>
 					<Select labelId="demo-simple-select-label" id="demo-simple-select" value={props.mode} label="Age" onChange={onModeChange}>
 						<MenuItem value={`side-by-side`}>{`Side by side`}</MenuItem>
 						<MenuItem value={`split-screen`}>{`Split screen`}</MenuItem>
@@ -26,16 +26,16 @@ function ControlPanel(props: { mode: Mode; onModeChange: (newMode: Mode) => void
 				</FormControl>
 			</Box>
 
-			<h3>{`Select mode`}</h3>
+			{/* <h3>{`Select mode`}</h3> */}
 			{/* <p>Synchronize two maps.</p> */}
 
-			<div>
+			{/* <div>
 				<label>Mode: </label>
 				<select value={props.mode} onChange={onModeChange}>
 					<option value="side-by-side">{`Side by side`}</option>
 					<option value="split-screen">{`Split screen`}</option>
 				</select>
-			</div>
+			</div> */}
 		</div>
 	);
 }
