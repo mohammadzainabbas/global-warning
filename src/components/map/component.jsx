@@ -299,7 +299,7 @@ const GlobalWarningMap = (props) => {
 										mapStyle={`mapbox://styles/mapbox/dark-v9`}
 										mapboxAccessToken={MAPGL_TOKEN_PUBLIC}
 									>
-										<Source id="my-data" type="geojson" data={geojson}>
+										<Source id="my-data" type={`vector`} data={geojson}>
 											<Layer {...layerStyle} />
 										</Source>
 									</Map>
