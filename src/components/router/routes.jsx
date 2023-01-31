@@ -11,6 +11,7 @@ import ProductsPage from '../../pages/ProductsPage';
 import DashboardAppPage from '../../pages/DashboardAppPage';
 
 import Home from '../home/container';
+import Map from '../map/container';
 import Tasks from '../tasks/component';
 
 import { HOME, NOT_FOUND, TASKS, DASHBOARD } from '../../common/constants';
@@ -29,6 +30,7 @@ export default function Router() {
         { element: <Navigate to={`${DEFAULT_ROUTE}`} />, index: true },
         { path: DASHBOARD, element: <Home /> },
         { path: TASKS, element: <Tasks /> },
+        { path: TASKS, element: <Map /> },
         // { path: 'products', element: <ProductsPage /> },
         // { path: 'blog', element: <BlogPage /> },
       ],
