@@ -254,7 +254,7 @@ const GlobalWarningMap = (props) => {
 	};
 
 	const onHover = (e) => {
-
+		console.log(e);
 		debugger
 	};
 
