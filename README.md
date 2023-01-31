@@ -43,7 +43,9 @@ Follow the steps below to run the project locally on your machine:
 1. Clone the repository
 
 ```bash
-git clone 
+git clone https://github.com/mohammadzainabbas/global-warning.git
+cd global-warning/
+```
 
 
 # Getting Started with Create React App
