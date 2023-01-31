@@ -157,8 +157,6 @@ const Emissions = (props) => {
 		return { ...sector, data: result, }
 	});
 
-	debugger
-
 	const chartLabels = display_years.map((year) => `${year}`);
 	const chartData = top_sectors.map((sector) => {
 		return {
