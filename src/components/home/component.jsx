@@ -1,28 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Helmet } from 'react-helmet-async';
-import { useTheme } from '@mui/material/styles';
 import { Box, Grid, Container, Typography, CircularProgress, Slider } from '@mui/material';
 import {
-	AppCurrentVisits,
-	AppWebsiteVisits,
 	AppWidgetSummary,
-	AppCurrentSubject,
-	AppConversionRates,
 } from '../../sections/@dashboard/app';
 import { fetchDisasters, fetchEmissions } from "../../api/api";
 import { sumBy, min, max } from 'lodash';
 
 const getUnique = (arr, comp) => [...new Set(arr.map(x => x[comp]))];
-const generateList = (a, b) => Array.from({ length: b - a + 1 }, (_, i) => a + i);
-const getRandomElement = (list) => list[Math.floor(Math.random() * list.length)];
-const getRandomColor = () => {
-	const letters = '0123456789ABCDEF';
-	let color = '#';
-	for (let i = 0; i < 6; i++) {
-		color += letters[Math.floor(Math.random() * 16)];
-	}
-	return color;
-}
 
 export const Loading = () => {
 	return (
@@ -37,7 +22,6 @@ export const Loading = () => {
 const MIN_DISTANCE = 5; // min years to show
 
 const Home = (props) => {
-	const theme = useTheme();
 
 	const [loading, setLoading] = useState(true);
 	const [totalEmissions, setTotalEmissions] = useState([]);
