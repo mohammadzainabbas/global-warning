@@ -301,6 +301,7 @@
 
 import React, { useState } from 'react';
 import MapGL, { MapboxLayer } from 'react-map-gl';
+import { MAPGL_TOKEN } from '../../common/constants';
 
 const Map = () => {
 	const [viewport, setViewport] = useState({
@@ -316,7 +317,7 @@ const Map = () => {
 			{...viewport}
 			onViewportChange={setViewport}
 			mapStyle="mapbox://styles/mapbox/light-v9"
-			mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_ACCESS_TOKEN}
+			mapboxApiAccessToken={MAPGL_TOKEN}
 		>
 			<MapboxLayer
 				type="heatmap"
