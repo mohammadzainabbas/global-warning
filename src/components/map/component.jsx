@@ -254,9 +254,8 @@ const GlobalWarningMap = (props) => {
 	};
 
 	const onHover = (e) => {
-		const { features, srcEvent: { offsetX, offsetY } } = e;
-		const hoveredFeature = features && features.find(f => f.layer.id === 'countries-join');
-		debugger;
+
+		debugger
 	};
 
 	return (
