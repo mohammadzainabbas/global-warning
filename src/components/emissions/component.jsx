@@ -139,8 +139,9 @@ const Emissions = (props) => {
 			data: sortBy(sector.data, (r) => r.year),
 		}
 	});
-	let top_disasters = slice(reverse(sortBy(sector_count, (r) => r.data.length)), 0, PICK_TOP);
-	top_disasters = top_disasters.map((disaster_type) => {
+	// let top_disasters = slice(reverse(sortBy(sector_count, (r) => r.data.length)), 0, PICK_TOP);
+	let top_sectors = reverse(sortBy(sector_count, (r) => r.data.length));
+	top_sectors = top_sectors.map((disaster_type) => {
 		let result = {};
 		disaster_type.data.forEach(({ year, total_deaths }) => {
 			if (!result[year]) { result[year] = 0; }
