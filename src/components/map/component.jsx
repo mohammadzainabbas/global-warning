@@ -301,6 +301,7 @@ const GlobalWarningMap = (props) => {
 									>
 										<Source
 											id="my-data"
+											name={`countries`}
 											type={`vector`}
 											url={`mapbox://mapbox.country-boundaries-v1`}
 											data={geojson}>
