@@ -14,6 +14,17 @@ function ControlPanel(props: { mode: Mode; onModeChange: (newMode: Mode) => void
 
 	return (
 		<div className="control-panel">
+			<Box sx={{ minWidth: 120 }}>
+				<FormControl fullWidth>
+					<InputLabel id="demo-simple-select-label">Age</InputLabel>
+					<Select labelId="demo-simple-select-label" id="demo-simple-select" value={age} label="Age" onChange={handleChange}>
+						<MenuItem value={10}>Ten</MenuItem>
+						<MenuItem value={20}>Twenty</MenuItem>
+						<MenuItem value={30}>Thirty</MenuItem>
+					</Select>
+				</FormControl>
+			</Box>
+
 			<h3>{`Select mode`}</h3>
 			{/* <p>Synchronize two maps.</p> */}
 
