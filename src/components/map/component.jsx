@@ -161,7 +161,6 @@ const Map = (props) => {
 									/>
 								</Box>
 							</Grid>
-
 						</Grid>
 					</Container>
 				</React.Fragment>
