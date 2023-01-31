@@ -191,7 +191,7 @@ const GlobalWarningMap = (props) => {
 									/>
 								</Box>
 							</Grid>
-							<Grid item xs={12} sx={{ m: 0 }}>
+							<Grid item xs={12} >
 								<ControlPanel mode={mode} onModeChange={setMode} />
 							</Grid>
 							<Grid item xs={12} sm={6} md={6}>
