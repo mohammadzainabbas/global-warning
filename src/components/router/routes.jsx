@@ -12,9 +12,10 @@ import DashboardAppPage from '../../pages/DashboardAppPage';
 
 import Home from '../home/container';
 import Map from '../map/container';
+import Emissions from '../emissions/container';
 import Tasks from '../tasks/component';
 
-import { HOME, NOT_FOUND, TASKS, DASHBOARD, MAP } from '../../common/constants';
+import { HOME, NOT_FOUND, TASKS, DASHBOARD, MAP, EMISSIONS } from '../../common/constants';
 
 // ----------------------------------------------------------------------
 
@@ -31,6 +32,7 @@ export default function Router() {
         { path: DASHBOARD, element: <Home /> },
         { path: TASKS, element: <Tasks /> },
         { path: MAP, element: <Map /> },
+        { path: EMISSIONS, element: <Emissions /> },
         // { path: 'products', element: <ProductsPage /> },
         // { path: 'blog', element: <BlogPage /> },
       ],
