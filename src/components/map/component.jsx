@@ -112,6 +112,12 @@ const getMatchExpression = (data, isDisaster) => {
 	const min_color = isDisaster ? 'rgb(255, 0, 0)' : 'rgb(0, 255, 0)';
 	const max_color = isDisaster ? 'rgb(0, 0, 255)' : 'rgb(255, 0, 0)';
 
+	const gradients = generateGradient(min_color, max_color, data.length);
+
+	gradients.forEach((color, index) => {
+		matchExpression.push(data[index]['value'], color);
+	});
+
 
 
 	for (const row of data) {
