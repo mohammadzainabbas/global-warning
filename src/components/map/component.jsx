@@ -45,7 +45,6 @@ const LeftMapStyle = {
 	position: 'absolute',
 	width: '50%',
 	height: '100%',
-	right: '49%'
 };
 const RightMapStyle = {
 	position: 'absolute',
