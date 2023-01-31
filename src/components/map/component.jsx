@@ -153,15 +153,7 @@ const GlobalWarningMap = (props) => {
 		}
 	};
 
-	const layerStyle2 = {
-		id: 'countries-join',
-		type: 'fill',
-		source: 'countries',
-		'source-layer': 'country_boundaries',
-		paint: {
-			'fill-color': matchExpression,
-		}
-	};
+
 
 	const [loading, setLoading] = useState(true);
 	const [totalEmissions, setTotalEmissions] = useState([]);
@@ -242,6 +234,21 @@ const GlobalWarningMap = (props) => {
 		setDisasters(_disasters);
 		setYearRange([_min_year, _max_year]);
 	};
+
+	// for disasters
+	const disasterLayerStyle = {
+		id: 'countries-join',
+
+
+		type: 'fill',
+		source: 'countries',
+		'source-layer': 'country_boundaries',
+		paint: {
+			'fill-color': matchExpression,
+		}
+	};
+
+
 
 	return (
 		<React.Fragment>
