@@ -1,8 +1,41 @@
 ### Global Warning @ Visual Analysis Project
 
-> Stay tune for further details!
+See the live demo [here](http://mohammadzainabbas.tech/global-warning/).
 
 #
+
+### Table of contents
+
+- [🚀 Quickstart 💻](#quickstart)
+- [💻 Introduction 👨🏻‍💻](#introduction)
+- [🌊 Physics Simulation Engines 🦿](#physics-simulation-engines)
+- [🌪 Environment 🦾](#environment)
+	* [🔭 `Observations` 🔍](#observations)
+	* [🏄‍♂️ `Actions` 🤸‍♂️](#actions)
+	* [🏆 `Reward` 🥇](#reward)
+- [🔬 Algorithms 💻](#algorithms)
+	* [💡 `Proximal policy optimization (PPO)` 👨🏻‍💻](#ppo)
+	* [💡 `Evolution Strategy (ES)` 👨🏻‍💻](#es)
+	* [💡 `Augmented Random Search (ARS)` 👨🏻‍💻](#ars)
+	* [💡 `Soft Actor-Critic (SAC)` 👨🏻‍💻](#sac)
+- [🚀 Run locally 🖲️](#run-locally)
+
+#
+
+<a id="quickstart" />
+
+### 1. 🚀 Quickstart 💻
+
+Scan below QR code to see the project on your device
+
+<p align="center">
+  <img src="https://github.com/mohammadzainabbas/global-warning/blob/main/public/assets/qr-code.png?raw=true" width="auto" height="225">
+</p>
+
+#
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
