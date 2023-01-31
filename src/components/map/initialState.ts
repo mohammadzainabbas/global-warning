@@ -1,5 +1,5 @@
-export const HOME = {
+export const MAP = {
 	data: {},
 };
 
-export default HOME;
+export default MAP;
