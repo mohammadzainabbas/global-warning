@@ -182,19 +182,18 @@ const GlobalWarningMap = (props) => {
 
 			const _disasters = await fetchDisasters();
 			const _emissions = await fetchEmissions();
-			const _years = getUnique(_disasters, "year");
+			const disasters_years = getUnique(_disasters, "year");
+			const emissions_years = getUnique(_emissions, "year");
+			const _years = disasters_years.filter((year) => emissions_years.includes(year));
 			const max_year = max(_years);
 			const min_year = min(_years) + parseInt((max_year - min(_years)) / 2);
 
-			setTotalEmissions(_emissions);
 			setTotalDisasters(_disasters);
+			setTotalEmissions(_emissions);
 			setDisasters(_disasters);
 			setEmissions(_emissions);
 			setYears(_years);
 			setYearRange([min_year, max_year]);
-
-			// updateEmissions(_emissions);
-			// updateNaturalDisasters(_disasters);
 
 			setLoading(false);
 		})();
