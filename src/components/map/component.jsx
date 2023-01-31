@@ -213,8 +213,6 @@ const GlobalWarningMap = (props) => {
 		setYearRange([_min_year, _max_year]);
 	};
 
-	const display_years = generateList(yearRange[0], yearRange[1]);
-
 	// for disasters
 	const disaster_countries_iso = getUnique(disasters, "ISO");
 	let disaster_country_wise_affected = disaster_countries_iso.map((iso) => {
@@ -234,8 +232,6 @@ const GlobalWarningMap = (props) => {
 			'fill-color': disasterMatchExpression,
 		}
 	};
-
-	debugger
 
 	// for emissions
 	const emission_countries_iso = getUnique(emissions, "ISO");
@@ -308,9 +304,6 @@ const GlobalWarningMap = (props) => {
 										mapStyle={`mapbox://styles/mapbox/light-v9`}
 										mapboxAccessToken={MAPGL_TOKEN_PUBLIC}
 									>
-										{/* <Source id="my-data" type="geojson" data={geojson}>
-											<Layer {...layerStyle} />
-										</Source> */}
 										<Source
 											id={`countries`}
 											name={`countries`}
