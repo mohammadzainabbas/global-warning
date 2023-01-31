@@ -242,7 +242,7 @@ const GlobalWarningMap = (props) => {
 		source: 'countries',
 		'source-layer': 'country_boundaries',
 		paint: {
-			'fill-color': diasterMatchExpression,
+			'fill-color': matchExpression,
 		}
 	};
 
@@ -323,7 +323,7 @@ const GlobalWarningMap = (props) => {
 											type={`vector`}
 											url={`mapbox://mapbox.country-boundaries-v1`}
 										>
-											<Layer {...layerStyle2} />
+											<Layer {...disasterLayerStyle} />
 										</Source>
 									</Map>
 								</div>
