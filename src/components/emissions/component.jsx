@@ -168,7 +168,7 @@ const Emissions = (props) => {
 		}
 	});
 
-	// Continent wise deaths
+	// Continent wise emissions
 	const continents = getUnique(disasters, "continent");
 	const countries_with_continent = uniqBy(disasters, "country").map(({ country, continent }) => ({ [country]: continent }));
 	const emissions_with_continent = emissions.map((emission) => {
@@ -178,10 +178,10 @@ const Emissions = (props) => {
 
 	debugger
 
-	const continent_wise_deaths = continents.map((continent) => {
+	const continent_wise_emissions = continents.map((continent) => {
 		return {
 			label: continent,
-			value: sumBy(disasters.filter((disaster) => disaster.continent === continent), "total_deaths"),
+			value: sumBy(emissions_with_continent.filter((r) => r.continent === continent), "emission_value"),
 		}
 	});
 
