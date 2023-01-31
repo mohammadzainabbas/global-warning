@@ -18,8 +18,8 @@ function ControlPanel(props: { mode: Mode; onModeChange: (newMode: Mode) => void
 		<div className="control-panel">
 			<Box sx={{ minWidth: 120 }}>
 				<FormControl fullWidth>
-					<InputLabel id="demo-simple-select-label">{`Select mode`}</InputLabel>
-					<Select labelId="demo-simple-select-label" id="demo-simple-select" value={props.mode} label="Age" onChange={onModeChange}>
+					<InputLabel id={`"select-label`}>{`Select mode`}</InputLabel>
+					<Select labelId={`select-label`} id={`select`} value={props.mode} label="Age" onChange={onModeChange}>
 						<MenuItem value={`side-by-side`}>{`Side by side`}</MenuItem>
 						<MenuItem value={`split-screen`}>{`Split screen`}</MenuItem>
 					</Select>
