@@ -314,6 +314,8 @@ const GlobalWarningMap = (props) => {
 		}
 	};
 
+	debugger
+
 	// for emissions
 	const emission_countries_iso = getUnique(emissions, "ISO");
 	let emission_country_wise_affected = emission_countries_iso.map((iso) => {
