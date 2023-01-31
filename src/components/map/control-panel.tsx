@@ -2,6 +2,8 @@
 import * as React from "react";
 import { useCallback } from "react";
 
+import { Box, FormControl, InputLabel, MenuItem, Select } from "@mui/material";
+
 export type Mode = "side-by-side" | "split-screen";
 
 function ControlPanel(props: { mode: Mode; onModeChange: (newMode: Mode) => void }) {
