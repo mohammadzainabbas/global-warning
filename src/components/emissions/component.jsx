@@ -169,6 +169,7 @@ const Emissions = (props) => {
 	});
 
 	// Continent wise deaths
+	const continents = getUnique(disasters, "continent");
 	const countries_with_continent = uniqBy(disasters, "country").map(({ country, continent }) => ({ [country]: continent }));
 
 	const continent_wise_deaths = continents.map((continent) => {
