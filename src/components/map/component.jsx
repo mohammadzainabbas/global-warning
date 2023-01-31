@@ -70,7 +70,7 @@ const getRandomColor = () => {
 	return color;
 }
 
-const getMatchExpression = (data) => {
+const getMatchExpression = (data, isDisaster) => {
 	const matchExpression = ['match', ['get', 'iso_3166_1_alpha_3']];
 
 	for (const row of data) {
