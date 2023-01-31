@@ -2,6 +2,7 @@
 export const HOME = "/home";
 export const DASHBOARD = `dashboard`;
 export const TASKS = "tasks";
+export const MAP = "map";
 export const GITHUB_REPO_LINK = "https://github.com/mohammadzainabbas/global-warning/";
 export const ABOUT = "/about";
 export const NOT_FOUND = "/404";
