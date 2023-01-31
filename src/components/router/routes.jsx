@@ -31,10 +31,10 @@ export default function Router() {
       children: [
         { element: <Navigate to={`${DEFAULT_ROUTE}`} />, index: true },
         { path: DASHBOARD, element: <Home /> },
-        { path: TASKS, element: <Tasks /> },
-        { path: MAP, element: <Map /> },
         { path: DISASTERS, element: <Disasters /> },
         { path: EMISSIONS, element: <Emissions /> },
+        { path: MAP, element: <Map /> },
+        { path: TASKS, element: <Tasks /> },
         // { path: 'products', element: <ProductsPage /> },
         // { path: 'blog', element: <BlogPage /> },
       ],
