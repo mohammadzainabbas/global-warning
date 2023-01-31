@@ -20,7 +20,7 @@ const Tasks = () => {
         'Presentation and Demo',
         'Public awareness',
         'Demo with interactive Maps',
-    ]
+    ].map((el, idx) => ({ id: `${idx + 1}`, label: el }));
 
     return (
         <React.Fragment>
