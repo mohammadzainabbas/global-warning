@@ -93,6 +93,14 @@ const GlobalWarningMap = (props) => {
 
 	useEffect(() => {
 		(async () => {
+
+			let _countries = await fetch(`https://raw.githubusercontent.com/eesur/country-codes-lat-long/master/country-codes-lat-long-alpha3.json`)
+				.then(response => response.json())
+				.then(data => data);
+
+			debugger;
+
+
 			const _disasters = await fetchDisasters();
 			const _emissions = await fetchEmissions();
 			const _years = getUnique(_disasters, "year");
