@@ -5,6 +5,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import TaskIcon from '@mui/icons-material/Task';
 import MapIcon from '@mui/icons-material/Map';
+import FloodIcon from '@mui/icons-material/Flood';
 import Co2Icon from '@mui/icons-material/Co2';
 // ----------------------------------------------------------------------
 
