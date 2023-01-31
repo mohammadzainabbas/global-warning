@@ -198,7 +198,7 @@ const Emissions = (props) => {
 
 	// Sector wise emissions
 	const disaster_wise = [
-		{ label: "Emissions", value: "total_deaths", },
+		{ label: "Emissions", value: "emissions_value", },
 	]
 	const disaster_type_wise = disaster_wise.map((type) => {
 		let data = disaster_type.map((disaster_type) => sumBy(disasters.filter((disaster) => disaster.disaster_type === disaster_type), type.value));
