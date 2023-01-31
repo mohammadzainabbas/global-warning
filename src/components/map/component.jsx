@@ -253,11 +253,6 @@ const GlobalWarningMap = (props) => {
 		setYearRange([_min_year, _max_year]);
 	};
 
-	const onHover = (e) => {
-		console.log(e);
-		debugger
-	};
-
 	return (
 		<React.Fragment>
 			<Helmet>
@@ -328,7 +323,6 @@ const GlobalWarningMap = (props) => {
 										style={RightMapStyle}
 										mapStyle={`mapbox://styles/mapbox/dark-v9`}
 										mapboxAccessToken={MAPGL_TOKEN_PUBLIC}
-										onMouseMove={onHover}
 									>
 										<Source
 											id={`countries`}
