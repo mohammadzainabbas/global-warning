@@ -169,13 +169,13 @@ const Emissions = (props) => {
 	});
 
 	// Continent wise deaths
-	// const continents = getUnique(disasters, "continent");
-	// const continent_wise_deaths = continents.map((continent) => {
-	// 	return {
-	// 		label: continent,
-	// 		value: sumBy(disasters.filter((disaster) => disaster.continent === continent), "total_deaths"),
-	// 	}
-	// });
+	const continents = getUnique(disasters, "continent");
+	const continent_wise_deaths = continents.map((continent) => {
+		return {
+			label: continent,
+			value: sumBy(disasters.filter((disaster) => disaster.continent === continent), "total_deaths"),
+		}
+	});
 
 	// // Country wise most affected
 	// const countries = getUnique(disasters, "country");
