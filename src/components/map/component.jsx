@@ -8,7 +8,7 @@ import { sumBy, sortBy, reverse, min, max, slice } from 'lodash';
 
 import { MAPGL_TOKEN_PUBLIC } from "../../common/constants";
 
-import Map from 'react-map-gl';
+import Map, { Source, Layer } from 'react-map-gl';
 import ControlPanel, { Mode } from './control-panel';
 
 const DATA = [
