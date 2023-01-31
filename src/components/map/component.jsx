@@ -79,6 +79,10 @@ function generateGradient(minColor, maxColor, numElements) {
 	let stepG = (maxRgb.g - minRgb.g) / (numElements - 1);
 	let stepB = (maxRgb.b - minRgb.b) / (numElements - 1);
 
+	stepR = parseInt(stepR)
+	stepG = parseInt(stepG)
+	stepB = parseInt(stepB)
+
 	debugger
 
 	for (let i = 0; i < numElements; i++) {
