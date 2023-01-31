@@ -1,9 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback, useMemo } from "react";
 import { Helmet } from 'react-helmet-async';
 import { useTheme } from '@mui/material/styles';
 import { Box, Grid, Container, Typography, CircularProgress, Slider } from '@mui/material';
 import { fetchDisasters, fetchEmissions } from "../../api/api";
 import { sumBy, sortBy, reverse, min, max, slice } from 'lodash';
+
+
+
+
+
 
 const FILLS = ['solid'];
 // const FILLS = ['gradient', 'solid', 'pattern', 'image'];
