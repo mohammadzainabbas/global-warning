@@ -64,7 +64,7 @@ const Emissions = (props) => {
 
 			debugger
 
-			setTotalDisasters(_disasters);
+			setTotalEmissions(_emissions);
 			setDisasters(_disasters);
 			setEmissions(_emissions);
 			setYears(_years);
