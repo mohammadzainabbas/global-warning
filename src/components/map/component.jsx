@@ -323,7 +323,7 @@ const GlobalWarningMap = (props) => {
 		}
 	});
 	country_wise_affected = slice(reverse(sortBy(country_wise_affected, (r) => r.value)), 0, PICK_TOP_COUNTRIES);
-	const emissionMatchExpression = getMatchExpression(emissions, false);
+	const emissionMatchExpression = getMatchExpression(country_wise_affected, false);
 	const emissionLayerStyle = {
 		id: 'countries-join',
 		type: 'fill',
