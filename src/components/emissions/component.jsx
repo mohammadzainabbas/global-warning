@@ -185,16 +185,16 @@ const Emissions = (props) => {
 
 	debugger
 
-	// // Country wise most affected
-	// const countries = getUnique(disasters, "country");
-	// let country_wise_affected = countries.map((country) => {
-	// 	return {
-	// 		label: country,
-	// 		value: sumBy(disasters.filter((disaster) => disaster.country === country), "total_affected"),
-	// 	}
-	// });
+	// Country wise most affected
+	const countries = getUnique(disasters, "country");
+	let country_wise_affected = countries.map((country) => {
+		return {
+			label: country,
+			value: sumBy(disasters.filter((disaster) => disaster.country === country), "total_affected"),
+		}
+	});
 
-	// country_wise_affected = slice(reverse(sortBy(country_wise_affected, (r) => r.value)), 0, PICK_TOP_COUNTRIES);
+	country_wise_affected = slice(reverse(sortBy(country_wise_affected, (r) => r.value)), 0, PICK_TOP_COUNTRIES);
 
 	// // Disaster type wise deaths/affected
 	// const disaster_wise = [
