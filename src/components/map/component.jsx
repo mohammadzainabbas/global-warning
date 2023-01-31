@@ -291,6 +291,8 @@ const GlobalWarningMap = (props) => {
 		setYearRange([_min_year, _max_year]);
 	};
 
+	const display_years = generateList(yearRange[0], yearRange[1]);
+
 	// for disasters
 
 
