@@ -49,7 +49,7 @@ const LeftMapStyle = {
 };
 const RightMapStyle = {
 	position: 'absolute',
-	left: '50%',
+	left: '51%',
 	width: '50%',
 	height: '100%'
 };
