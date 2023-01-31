@@ -106,7 +106,6 @@ function rgbToHex(rgb) {
 	return `${r}${g}${b}`;
 }
 
-
 const getMatchExpression = (data, isDisaster) => {
 	const matchExpression = ['match', ['get', 'iso_3166_1_alpha_3']];
 
