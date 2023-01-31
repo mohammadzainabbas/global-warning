@@ -274,8 +274,10 @@ const Emissions = (props) => {
 							<Grid item xs={12} md={6} lg={4}>
 								<AppCurrentSubject
 									title={`Disasters by type`}
-									chartLabels={disaster_type}
-									chartData={disaster_type_wise}
+									// chartLabels={disaster_type}
+									// chartData={disaster_type_wise}
+									chartLabels={[]}
+									chartData={[]}
 									chartColors={[...Array(6)].map(() => theme.palette.text.secondary)}
 								/>
 							</Grid>
