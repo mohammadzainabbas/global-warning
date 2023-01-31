@@ -210,23 +210,6 @@ const GlobalWarningMap = (props) => {
 									/>
 								</div>
 							</Grid>
-
-							<Grid item xs={12}>
-								<Box sx={{ height: `100%` }}>
-									<Slider
-										getAriaLabel={() => `Years`}
-										value={yearRange}
-										onChange={onSliderChange}
-										valueLabelDisplay={`auto`}
-										getAriaValueText={(value) => `Year: ${value}`}
-										valueLabelFormat={(value) => `Year: ${value}`}
-										disableSwap
-										marks={marks}
-										min={min(years)}
-										max={max(years)}
-									/>
-								</Box>
-							</Grid>
 						</Grid>
 					</Container>
 				</React.Fragment>
