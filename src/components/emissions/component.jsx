@@ -60,8 +60,6 @@ const Emissions = (props) => {
 			const max_year = max(_years);
 			const min_year = min(_years) + parseInt((max_year - min(_years)) / 2);
 
-			debugger
-
 			setTotalEmissions(_emissions);
 			setDisasters(_disasters);
 			setEmissions(_emissions);
@@ -183,8 +181,6 @@ const Emissions = (props) => {
 		}
 	});
 
-	debugger
-
 	// Most emissions by Country
 	const countries = getUnique(emissions, "country");
 	let country_wise_emissions = countries.map((country) => {
@@ -205,6 +201,8 @@ const Emissions = (props) => {
 		data = data.map(r => Math.log(r))
 		return { name: type.label, data, }
 	});
+
+	debugger
 
 	return (
 		<React.Fragment>
