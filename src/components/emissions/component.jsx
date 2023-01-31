@@ -239,7 +239,7 @@ const Emissions = (props) => {
 							<Grid item xs={12} md={6} lg={8}>
 								<AppWebsiteVisits
 									title={`Emissions by sector`}
-									subheader={`Total deaths per year`}
+									subheader={`Total GHG emissions (MtCO2e) per year`}
 									chartLabels={chartLabels}
 									chartData={chartData}
 								/>
