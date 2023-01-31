@@ -146,9 +146,9 @@ const Emissions = (props) => {
 
 	top_sectors = top_sectors.map((sector) => {
 		let result = {};
-		sector.data.forEach(({ year, total_deaths }) => {
+		sector.data.forEach(({ year, emission_value }) => {
 			if (!result[year]) { result[year] = 0; }
-			result[year] += total_deaths;
+			result[year] += emission_value;
 		})
 		let last_year = 0;
 		display_years.forEach((year) => {
