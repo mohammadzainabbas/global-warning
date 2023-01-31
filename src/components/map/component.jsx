@@ -166,7 +166,7 @@ const GlobalWarningMap = (props) => {
 		id: 'countries-join',
 		type: 'fill',
 		source: 'countries',
-		'source-layer': 'countries',
+		'source-layer': 'country_boundaries',
 		paint: {
 			'circle-radius': 10,
 			'circle-color': '#007cbf'
