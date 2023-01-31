@@ -309,6 +309,8 @@ const Map = () => {
 		zoom: 8
 	});
 
+	const data = [{ "country": "USA", "latitude": 37.0902, "longitude": -95.7129, "intensity": 10 }, { "country": "Canada", "latitude": 56.1304, "longitude": -106.3468, "intensity": 7 }, { "country": "Mexico", "latitude": 23.6345, "longitude": -102.5528, "intensity": 5 }, { "country": "Brazil", "latitude": -14.2350, "longitude": -51.9253, "intensity": 8 }];
+
 	return (
 		<MapGL
 			{...viewport}
@@ -321,7 +323,7 @@ const Map = () => {
 				id="heatmap"
 				options={{
 					source: {
-						data: 'https://your-data-source.com/data.geojson'
+						data,
 					},
 					color: [
 						'interpolate',
