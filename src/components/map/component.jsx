@@ -112,8 +112,8 @@ function rgbToHex(rgb) {
 const getMatchExpression = (data, isDisaster) => {
 	const matchExpression = ['match', ['get', 'iso_3166_1_alpha_3']];
 
-	const min_color = isDisaster ? 'ce93d8' : '00ff00';
-	const max_color = isDisaster ? '4a148c' : 'ff0000';
+	const min_color = isDisaster ? 'ce93d8' : 'ffe0b2';
+	const max_color = isDisaster ? '4a148c' : 'e65100';
 
 	const gradients = generateGradient(min_color, max_color, data.length);
 
