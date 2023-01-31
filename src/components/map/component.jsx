@@ -176,6 +176,22 @@ const GlobalWarningMap = (props) => {
 
 						<Grid container spacing={3}>
 							<Grid item xs={12}>
+								<Box sx={{ height: `100%`, mb: 0 }}>
+									<Slider
+										getAriaLabel={() => `Years`}
+										value={yearRange}
+										onChange={onSliderChange}
+										valueLabelDisplay={`auto`}
+										getAriaValueText={(value) => `Year: ${value}`}
+										valueLabelFormat={(value) => `Year: ${value}`}
+										disableSwap
+										marks={marks}
+										min={min(years)}
+										max={max(years)}
+									/>
+								</Box>
+							</Grid>
+							<Grid item xs={12}>
 								<ControlPanel mode={mode} onModeChange={setMode} />
 							</Grid>
 							<Grid item xs={12} sm={6} md={6}>
