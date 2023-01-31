@@ -43,6 +43,8 @@ const Home = (props) => {
 	const theme = useTheme();
 
 	const [loading, setLoading] = useState(true);
+	const [totalEmissions, setTotalEmissions] = useState([]);
+	const [totalDisasters, setTotalDisasters] = useState([]);
 	const [emissions, setEmissions] = useState([]);
 	const [disasters, setDisasters] = useState([]);
 	const [years, setYears] = useState([]);
@@ -58,6 +60,8 @@ const Home = (props) => {
 			const max_year = max(_years);
 			const min_year = min(_years) + parseInt((max_year - min(_years)) / 2);
 
+			setTotalDisasters(_disasters);
+			setTotalEmissions(_emissions);
 			setDisasters(_disasters);
 			setEmissions(_emissions);
 			setYears(_years);
