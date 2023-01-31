@@ -238,13 +238,11 @@ const GlobalWarningMap = (props) => {
 	// for disasters
 	const disasterLayerStyle = {
 		id: 'countries-join',
-
-
 		type: 'fill',
 		source: 'countries',
 		'source-layer': 'country_boundaries',
 		paint: {
-			'fill-color': matchExpression,
+			'fill-color': diasterMatchExpression,
 		}
 	};
 
