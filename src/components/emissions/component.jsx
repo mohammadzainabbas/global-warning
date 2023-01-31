@@ -186,7 +186,7 @@ const Emissions = (props) => {
 	debugger
 
 	// Country wise most affected
-	const countries = getUnique(disasters, "country");
+	const countries = getUnique(emissions, "country");
 	let country_wise_affected = countries.map((country) => {
 		return {
 			label: country,
