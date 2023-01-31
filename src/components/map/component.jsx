@@ -1,30 +1,72 @@
-import React, { useState, useEffect } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useState, useEffect, useCallback, useMemo } from "react";
 import { Helmet } from 'react-helmet-async';
 import { useTheme } from '@mui/material/styles';
 import { Box, Grid, Container, Typography, CircularProgress, Slider } from '@mui/material';
-import {
-	AppCurrentVisits,
-	AppWebsiteVisits,
-	AppWidgetSummary,
-	AppCurrentSubject,
-	AppConversionRates,
-} from '../../sections/@dashboard/app';
 import { fetchDisasters, fetchEmissions } from "../../api/api";
 import { sumBy, sortBy, reverse, min, max, slice } from 'lodash';
 
-const FILLS = ['solid'];
-// const FILLS = ['gradient', 'solid', 'pattern', 'image'];
+import { MAPGL_TOKEN_PUBLIC } from "../../common/constants";
+
+import Map, { Source, Layer } from 'react-map-gl';
+import ControlPanel, { Mode } from './control-panel';
 
 const getUnique = (arr, comp) => [...new Set(arr.map(x => x[comp]))];
-const generateList = (a, b) => Array.from({ length: b - a + 1 }, (_, i) => a + i);
-const getRandomElement = (list) => list[Math.floor(Math.random() * list.length)];
-const getRandomColor = () => {
-	const letters = '0123456789ABCDEF';
-	let color = '#';
-	for (let i = 0; i < 6; i++) {
-		color += letters[Math.floor(Math.random() * 16)];
+function generateGradient(minColor, maxColor, numElements) {
+	let gradient = [];
+	let minRgb = hexToRgb(minColor);
+	let maxRgb = hexToRgb(maxColor);
+
+	let stepR = (maxRgb.r - minRgb.r) / (numElements - 1);
+	let stepG = (maxRgb.g - minRgb.g) / (numElements - 1);
+	let stepB = (maxRgb.b - minRgb.b) / (numElements - 1);
+
+	stepR = parseInt(stepR);
+	stepG = parseInt(stepG);
+	stepB = parseInt(stepB);
+
+	for (let i = 0; i < numElements; i++) {
+		let color = {
+			r: minRgb.r + stepR * i,
+			g: minRgb.g + stepG * i,
+			b: minRgb.b + stepB * i,
+		};
+		gradient.push(rgbToHex(color));
 	}
-	return color;
+
+	return gradient;
+}
+
+function hexToRgb(hex) {
+	let r = parseInt(hex.substring(0, 2), 16);
+	let g = parseInt(hex.substring(2, 4), 16);
+	let b = parseInt(hex.substring(4, 6), 16);
+	return { r, g, b };
+}
+
+function rgbToHex(rgb) {
+	let r = rgb.r.toString(16).padStart(2, "0");
+	let g = rgb.g.toString(16).padStart(2, "0");
+	let b = rgb.b.toString(16).padStart(2, "0");
+	return `${r}${g}${b}`;
+}
+
+const getMatchExpression = (data, isDisaster) => {
+	const matchExpression = ['match', ['get', 'iso_3166_1_alpha_3']];
+
+	const min_color = isDisaster ? 'ce93d8' : 'ffe0b2';
+	const max_color = isDisaster ? '4a148c' : 'e65100';
+
+	const gradients = generateGradient(min_color, max_color, data.length);
+	const _data = sortBy(data, 'value');
+
+	_data.forEach((row, index) => {
+		matchExpression.push(row['ISO'], `#${gradients[index]}`);
+	});
+
+	matchExpression.push('rgba(0, 0, 0, 0)');
+
+	return matchExpression;
 }
 
 export const Loading = () => {
@@ -38,43 +80,78 @@ export const Loading = () => {
 }
 
 const MIN_DISTANCE = 10; // min years to show
-const PICK_TOP = 5; // top n disasters to show
-const DECAY_VALUE = 0; // decay value for each year
-const PICK_TOP_COUNTRIES = 10; // top n countries to show
 
-const Map = (props) => {
+const LeftMapStyle = {
+	position: 'absolute',
+	width: '50%',
+	height: '100%',
+};
+const RightMapStyle = {
+	position: 'absolute',
+	left: '50%',
+	width: '50%',
+	height: '100%'
+};
+
+const PICK_TOP_COUNTRIES = 10;
+const GlobalWarningMap = (props) => {
 	const theme = useTheme();
 
+	const [viewState, setViewState] = useState({
+		longitude: 30.094546,
+		latitude: 0.5219001,
+		zoom: 0.5,
+		pitch: 15
+	});
+	const [mode, setMode] = useState('side-by-side');
+
+	// Two maps could be firing 'move' events at the same time, if the user interacts with one
+	// while the other is in transition.
+	// This state specifies which map to use as the source of truth
+	// It is set to the map that received user input last ('movestart')
+	const [activeMap, setActiveMap] = useState(`left`);
+
+	const onLeftMoveStart = useCallback(() => setActiveMap(`left`), []);
+	const onRightMoveStart = useCallback(() => setActiveMap(`right`), []);
+	const onMove = useCallback(evt => setViewState(evt.viewState), []);
+
+	const width = typeof window === 'undefined' ? 100 : window.innerWidth;
+	const leftMapPadding = useMemo(() => {
+		return { left: mode === 'split-screen' ? width / 2 : 0, top: 0, right: 0, bottom: 0 };
+	}, [width, mode]);
+	const rightMapPadding = useMemo(() => {
+		return { right: mode === 'split-screen' ? width / 2 : 0, top: 0, left: 0, bottom: 0 };
+	}, [width, mode]);
+
 	const [loading, setLoading] = useState(true);
+	const [totalEmissions, setTotalEmissions] = useState([]);
 	const [totalDisasters, setTotalDisasters] = useState([]);
 	const [emissions, setEmissions] = useState([]);
 	const [disasters, setDisasters] = useState([]);
 	const [years, setYears] = useState([]);
 	const [yearRange, setYearRange] = useState([]);
 
-	const { updateEmissions, updateNaturalDisasters } = props;
-
 	useEffect(() => {
 		(async () => {
 			const _disasters = await fetchDisasters();
 			const _emissions = await fetchEmissions();
-			const _years = getUnique(_disasters, "year");
+
+			const disasters_years = getUnique(_disasters, "year");
+			const emissions_years = getUnique(_emissions, "year");
+			const _years = disasters_years.filter((year) => emissions_years.includes(year));
 			const max_year = max(_years);
 			const min_year = min(_years) + parseInt((max_year - min(_years)) / 2);
 
 			setTotalDisasters(_disasters);
+			setTotalEmissions(_emissions);
 			setDisasters(_disasters);
 			setEmissions(_emissions);
 			setYears(_years);
 			setYearRange([min_year, max_year]);
 
-			// updateEmissions(_emissions);
-			// updateNaturalDisasters(_disasters);
-
 			setLoading(false);
 		})();
-		// return () => resetData();
-	}, [updateEmissions, updateNaturalDisasters]);
+	}, []);
 
 	const marks = [
 		{
@@ -120,88 +197,51 @@ const Map = (props) => {
 		_min_year = _min_year < min_year ? min_year : _min_year;
 		_max_year = _max_year > max_year ? max_year : _max_year;
 		const _disasters = totalDisasters.filter((disaster) => disaster.year >= _min_year && disaster.year <= _max_year);
+		const _emissions = totalEmissions.filter((emission) => emission.year >= _min_year && emission.year <= _max_year);
 		setDisasters(_disasters);
+		setEmissions(_emissions);
 		setYearRange([_min_year, _max_year]);
 	};
 
-	const total_deaths = sumBy(disasters, "total_deaths") || 0;
-	const total_affected = sumBy(disasters, "total_affected") || 0;
-	const affected_countries = getUnique(disasters, "country")?.length || 0;
-	const total_disasters = disasters.length || 0;
-
-	const display_years = generateList(yearRange[0], yearRange[1]);
-	const disaster_type = getUnique(disasters, "disaster_type");
-
-	let disaster_type_count = disaster_type.map((type) => {
+	// for disasters
+	const disaster_countries_iso = getUnique(disasters, "ISO");
+	let disaster_country_wise_affected = disaster_countries_iso.map((iso) => {
 		return {
-			name: type,
-			data: disasters.filter((disaster) => disaster.disaster_type === type).map(({ total_deaths, year }) => ({ total_deaths, year })),
+			ISO: iso,
+			value: sumBy(disasters.filter((disaster) => disaster.ISO === iso), "total_affected"),
 		}
 	});
+	disaster_country_wise_affected = slice(reverse(sortBy(disaster_country_wise_affected, (r) => r.value)), 0, PICK_TOP_COUNTRIES);
+	const disasterMatchExpression = getMatchExpression(disaster_country_wise_affected, true);
+	const disasterLayerStyle = {
+		id: 'countries-join',
+		type: 'fill',
+		source: 'countries',
+		'source-layer': 'country_boundaries',
+		paint: {
+			'fill-color': disasterMatchExpression,
+		}
+	};
 
-	disaster_type_count = disaster_type_count.map(disaster_type => {
+	// for emissions
+	const emission_countries_iso = getUnique(emissions, "ISO");
+	let emission_country_wise_affected = emission_countries_iso.map((iso) => {
 		return {
-			...disaster_type,
-			data: sortBy(disaster_type.data, (r) => r.year),
+			ISO: iso,
+			value: sumBy(emissions.filter((emission) => emission.ISO === iso), "emission_value"),
 		}
 	});
-	let top_disasters = slice(reverse(sortBy(disaster_type_count, (r) => r.data.length)), 0, PICK_TOP);
-	top_disasters = top_disasters.map((disaster_type) => {
-		let result = {};
-		disaster_type.data.forEach(({ year, total_deaths }) => {
-			if (!result[year]) { result[year] = 0; }
-			result[year] += total_deaths;
-		})
-		let last_year = 0;
-		display_years.forEach((year) => {
-			if (!result[year]) { result[year] = Number(last_year * DECAY_VALUE); }
-			last_year = result[year];
-		})
-		Object.keys(result).forEach((year) => { if (!display_years.includes(parseInt(year)) && !!result[year]) { delete result[year]; } })
-		return { ...disaster_type, data: result, }
-	});
-
-	const chartLabels = display_years.map((year) => `${year}`);
-	const chartData = top_disasters.map((disaster_type) => {
-		return {
-			name: disaster_type.name,
-			data: chartLabels.map((year) => disaster_type.data[year]),
-			fill: getRandomElement(FILLS),
-			backgroundColor: getRandomColor(),
-			borderColor: getRandomColor(),
+	emission_country_wise_affected = slice(reverse(sortBy(emission_country_wise_affected, (r) => r.value)), 0, PICK_TOP_COUNTRIES);
+	const emissionMatchExpression = getMatchExpression(emission_country_wise_affected, false);
+	const emissionLayerStyle = {
+		id: 'countries-join',
+		type: 'fill',
+		source: 'countries',
+		'source-layer': 'country_boundaries',
+		paint: {
+			'fill-color': emissionMatchExpression,
 		}
-	});
-
-	// Continent wise deaths
-	const continents = getUnique(disasters, "continent");
-	const continent_wise_deaths = continents.map((continent) => {
-		return {
-			label: continent,
-			value: sumBy(disasters.filter((disaster) => disaster.continent === continent), "total_deaths"),
-		}
-	});
-
-	// Country wise most affected
-	const countries = getUnique(disasters, "country");
-	let country_wise_affected = countries.map((country) => {
-		return {
-			label: country,
-			value: sumBy(disasters.filter((disaster) => disaster.country === country), "total_affected"),
-		}
-	});
-
-	country_wise_affected = slice(reverse(sortBy(country_wise_affected, (r) => r.value)), 0, PICK_TOP_COUNTRIES);
-
-	// Disaster type wise deaths/affected
-	const disaster_wise = [
-		{ label: "Deaths", value: "total_deaths", },
-		{ label: "Affected", value: "total_affected", }
-	]
-	const disaster_type_wise = disaster_wise.map((type) => {
-		let data = disaster_type.map((disaster_type) => sumBy(disasters.filter((disaster) => disaster.disaster_type === disaster_type), type.value));
-		data = data.map(r => Math.log(r))
-		return { name: type.label, data, }
-	});
+	};
 
 	return (
 		<React.Fragment>
@@ -211,32 +251,16 @@ const Map = (props) => {
 
 			{loading ? <Loading /> :
 				<React.Fragment>
-					<Container maxWidth="xl">
-						<Typography variant="h4" sx={{ mb: 5 }}>
+					<Container maxWidth={`xl`}>
+						<Typography variant={`h5`} sx={{ mb: 5 }}>
 							{years.length ? `Showing stats from ${yearRange[0]} to ${yearRange[1]}` : `Hi, Welcome back`}
 						</Typography>
 
 						<Grid container spacing={3}>
-							<Grid item xs={12} sm={6} md={3}>
-								<AppWidgetSummary title={`Total recorded deaths`} total={total_deaths} color={`error`} icon={'mdi:emoticon-dead'} />
-							</Grid>
-
-							<Grid item xs={12} sm={6} md={3}>
-								<AppWidgetSummary title={`Total affected`} total={total_affected} color={`warning`} icon={'material-symbols:personal-injury'} />
-							</Grid>
-
-							<Grid item xs={12} sm={6} md={3}>
-								<AppWidgetSummary title={`Total natural disasters`} total={total_disasters} color={`secondary`} icon={'mdi:home-climate-outline'} />
-							</Grid>
-
-							<Grid item xs={12} sm={6} md={3}>
-								<AppWidgetSummary title={`Countries affected`} total={affected_countries} color={`info`} icon={'ph:globe-hemisphere-west-fill'} />
-							</Grid>
-
-							<Grid item xs={12}>
-								<Box sx={{ height: '100%' }}>
+							<Grid item xs={12} sx={{ mb: 0 }}>
+								<Box sx={{ height: `100%`, mb: 0 }}>
 									<Slider
-										getAriaLabel={() => 'Years'}
+										getAriaLabel={() => `Years`}
 										value={yearRange}
 										onChange={onSliderChange}
 										valueLabelDisplay={`auto`}
@@ -249,113 +273,76 @@ const Map = (props) => {
 									/>
 								</Box>
 							</Grid>
-
-							<Grid item xs={12} md={6} lg={8}>
-								<AppWebsiteVisits
-									title={`Frequency of disasters`}
-									subheader={`Total deaths per year`}
-									chartLabels={chartLabels}
-									chartData={chartData}
-								/>
+							<Grid item xs={12} sm={4} md={4}>
+								<Typography variant={`subtitle2`} sx={{ mb: 0, pb: 0, pt: 3, textAlign: "center" }}>
+									{`Top ${PICK_TOP_COUNTRIES} most affected countries`}
+								</Typography>
 							</Grid>
-
-							<Grid item xs={12} md={6} lg={4}>
-								<AppCurrentVisits
-									title={`Deaths by continent`}
-									chartData={continent_wise_deaths}
-									chartColors={[
-										theme.palette.primary.main,
-										theme.palette.info.main,
-										theme.palette.warning.main,
-										theme.palette.error.main,
-									]}
-								/>
+							<Grid item xs={12} sm={4} md={4}>
+								<ControlPanel mode={mode} onModeChange={setMode} />
 							</Grid>
-
-							<Grid item xs={12} md={6} lg={8}>
-								<AppConversionRates
-									title={`Top ${PICK_TOP_COUNTRIES} most affected countries`}
-									subheader={`Total affected per country (from ${yearRange[0]} to ${yearRange[1]})`}
-									chartData={country_wise_affected}
-								/>
+							<Grid item xs={12} sm={4} md={4}>
+								<Typography variant={`subtitle2`} sx={{ mb: 0, pb: 0, pt: 3, textAlign: "center" }}>
+									{`Top ${PICK_TOP_COUNTRIES} countries with highest emissions`}
+								</Typography>
 							</Grid>
+							<Grid item xs={12} sm={6} md={6}>
+								<div style={{
+									height: '100%',
+								}}>
+									<Map
+										id={`left-map`}
+										{...viewState}
+										padding={leftMapPadding}
+										onMoveStart={onLeftMoveStart}
+										onMove={activeMap === `left` && onMove}
+										style={LeftMapStyle}
+										mapStyle={`mapbox://styles/mapbox/light-v9`}
+										mapboxAccessToken={MAPGL_TOKEN_PUBLIC}
+									>
+										<Source
+											id={`countries`}
+											name={`countries`}
+											type={`vector`}
+											url={`mapbox://mapbox.country-boundaries-v1`}
+										>
+											<Layer {...disasterLayerStyle} />
+										</Source>
 
-							<Grid item xs={12} md={6} lg={4}>
-								<AppCurrentSubject
-									title={`Disasters by type`}
-									chartLabels={disaster_type}
-									chartData={disaster_type_wise}
-									chartColors={[...Array(6)].map(() => theme.palette.text.secondary)}
-								/>
+									</Map>
+								</div>
+							</Grid>
+							<Grid item xs={12} sm={6} md={6}>
+								<div style={{
+									height: '100%',
+								}}>
+									<Map
+										id={`right-map`}
+										{...viewState}
+										padding={rightMapPadding}
+										onMoveStart={onRightMoveStart}
+										onMove={activeMap === `right` && onMove}
+										style={RightMapStyle}
+										mapStyle={`mapbox://styles/mapbox/dark-v9`}
+										mapboxAccessToken={MAPGL_TOKEN_PUBLIC}
+									>
+										<Source
+											id={`countries`}
+											name={`countries`}
+											type={`vector`}
+											url={`mapbox://mapbox.country-boundaries-v1`}
+										>
+											<Layer {...emissionLayerStyle} />
+										</Source>
+									</Map>
+								</div>
 							</Grid>
 						</Grid>
 					</Container>
 				</React.Fragment>
 			}
-		</React.Fragment>
+		</React.Fragment >
 	);
 };
 
-export default Map;
-
-
-// import React, { useState } from 'react';
-// import MapGL, { MapboxLayer } from 'react-map-gl';
-// import { MAPGL_TOKEN } from '../../common/constants';
-
-// const Map = () => {
-// 	const [viewport, setViewport] = useState({
-// 		latitude: 37.7577,
-// 		longitude: -122.4376,
-// 		zoom: 8
-// 	});
-
-// 	const data = [{ "country": "USA", "latitude": 37.0902, "longitude": -95.7129, "intensity": 10 }, { "country": "Canada", "latitude": 56.1304, "longitude": -106.3468, "intensity": 7 }, { "country": "Mexico", "latitude": 23.6345, "longitude": -102.5528, "intensity": 5 }, { "country": "Brazil", "latitude": -14.2350, "longitude": -51.9253, "intensity": 8 }];
-
-// 	return (
-// 		<MapGL
-// 			{...viewport}
-// 			onViewportChange={setViewport}
-// 			mapStyle="mapbox://styles/mapbox/light-v9"
-// 			mapboxApiAccessToken={MAPGL_TOKEN}
-// 		>
-// 			<MapboxLayer
-// 				type="heatmap"
-// 				id="heatmap"
-// 				options={{
-// 					source: {
-// 						data,
-// 					},
-// 					color: [
-// 						'interpolate',
-// 						['linear'],
-// 						['heatmap-density'],
-// 						0,
-// 						'rgba(33,102,172,0)',
-// 						0.2,
-// 						'rgb(103,169,207)',
-// 						0.4,
-// 						'rgb(209,229,240)',
-// 						0.6,
-// 						'rgb(253,219,199)',
-// 						0.8,
-// 						'rgb(239,138,98)',
-// 						1,
-// 						'rgb(178,24,43)'
-// 					],
-// 					intensity: [
-// 						'interpolate',
-// 						['linear'],
-// 						['zoom'],
-// 						0,
-// 						1,
-// 						9,
-// 						3
-// 					]
-// 				}}
-// 			/>
-// 		</MapGL>
-// 	);
-// };
-
-// export default Map;
+export default GlobalWarningMap;

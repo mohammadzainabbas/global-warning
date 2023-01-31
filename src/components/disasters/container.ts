@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import GlobalWarningMap from "./component";
+import Disasters from "./component";
 
 const mapStateToProps = (state: any) => ({
 	data: state.HOME.data,
@@ -15,4 +15,4 @@ const mergeProps = (stateProps: any, dispatchProps: any, ownProps: any) => ({
 	...ownProps,
 });
 
-export default connect(mapStateToProps, mapDispatchToProps, mergeProps)(GlobalWarningMap);
+export default connect(mapStateToProps, mapDispatchToProps, mergeProps)(Disasters);

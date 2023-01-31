@@ -2,42 +2,45 @@ import React from 'react';
 
 import { Helmet } from 'react-helmet-async';
 
-import { useTheme } from '@mui/material/styles';
-
 import { Grid, Container, Typography } from '@mui/material';
 
 import { AppTasks } from '../../sections/@dashboard/app';
 
+const generateList = (a, b) => Array.from({ length: b - a + 1 }, (_, i) => a + i);
 
 const Tasks = () => {
 
-    const theme = useTheme();
-    
+    const tasks = [
+        'Collect and clean datasets',
+        'Perform exploratory data analysis (EDA)',
+        'Brainstorm different visualisation ideas',
+        'Develop and deploy webpage for the project',
+        'Side-by-side interactive Maps',
+        'Presentation and Demo',
+        'Country + Region level visualisation controls',
+        'Public awareness',
+    ].map((el, idx) => ({ id: `${idx + 1}`, label: el }));
+
     return (
         <React.Fragment>
             <Helmet>
                 <title> {`Tasks | Global Warning`} </title>
             </Helmet>
-        
+
             <Container maxWidth="xl">
-                <Typography variant="h4" sx={{ mb: 5 }}>
-                {`List of tasks to be completed`}
+                <Typography variant="h5" sx={{ mb: 5 }}>
+                    {`List of tasks to be completed`}
                 </Typography>
-        
+
                 <Grid container spacing={3}>
-                <Grid item xs={12}>
-                    <AppTasks
-                        title="Tasks"
-                        list={[
-                        { id: '1', label: 'Create FireStone Logo' },
-                        { id: '2', label: 'Add SCSS and JS files if required' },
-                        { id: '3', label: 'Stakeholder Meeting' },
-                        { id: '4', label: 'Scoping & Estimations' },
-                        { id: '5', label: 'Sprint Showcase' },
-                        ]}
-                        taskCompleted={[`1`, `2`]}
-                    />
-                </Grid>
+                    <Grid item xs={12}>
+                        <AppTasks
+                            title={`Tasks`}
+                            // subheader={`List of tasks to be completed`}
+                            list={tasks}
+                            taskCompleted={generateList(1, 5).map(i => `${i}`)}
+                        />
+                    </Grid>
                 </Grid>
             </Container>
         </React.Fragment>
