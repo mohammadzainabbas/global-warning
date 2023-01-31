@@ -323,6 +323,7 @@ const GlobalWarningMap = (props) => {
 										style={RightMapStyle}
 										mapStyle={`mapbox://styles/mapbox/dark-v9`}
 										mapboxAccessToken={MAPGL_TOKEN_PUBLIC}
+										onMouseMove={onHover}
 									>
 										<Source
 											id={`countries`}
