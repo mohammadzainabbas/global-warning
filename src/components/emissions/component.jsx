@@ -197,11 +197,11 @@ const Emissions = (props) => {
 	country_wise_emissions = slice(reverse(sortBy(country_wise_emissions, (r) => r.value)), 0, PICK_TOP_COUNTRIES);
 
 	// Sector wise emissions
-	const disaster_wise = [
+	const emission_wise = [
 		{ label: "Emissions", value: "emissions_value", },
 	]
-	const disaster_type_wise = disaster_wise.map((type) => {
-		let data = disaster_type.map((disaster_type) => sumBy(disasters.filter((disaster) => disaster.disaster_type === disaster_type), type.value));
+	const disaster_type_wise = emission_wise.map((type) => {
+		let data = sectors.map((disaster_type) => sumBy(disasters.filter((disaster) => disaster.disaster_type === disaster_type), type.value));
 		data = data.map(r => Math.log(r))
 		return { name: type.label, data, }
 	});
