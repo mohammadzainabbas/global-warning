@@ -302,19 +302,15 @@ const GlobalWarningMap = (props) => {
 			value: sumBy(disasters.filter((disaster) => disaster.ISO === iso), "total_affected"),
 		}
 	});
-
 	country_wise_affected = slice(reverse(sortBy(country_wise_affected, (r) => r.value)), 0, PICK_TOP_COUNTRIES);
-
-	debugger
-
-
+	const disasterMatchExpression = getMatchExpression(country_wise_affected, true);
 	const disasterLayerStyle = {
 		id: 'countries-join',
 		type: 'fill',
 		source: 'countries',
 		'source-layer': 'country_boundaries',
 		paint: {
-			'fill-color': matchExpression,
+			'fill-color': disasterMatchExpression,
 		}
 	};
 
