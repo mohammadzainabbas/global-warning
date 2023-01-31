@@ -16,7 +16,7 @@ function ControlPanel(props: { mode: Mode; onModeChange: (newMode: Mode) => void
 
 	return (
 		<div className="control-panel">
-			<Box sx={{}}>
+			<Box sx={{ minWidth: 120 }}>
 				<FormControl fullWidth>
 					<InputLabel id={`"select-label`}>{`Select mode`}</InputLabel>
 					<Select labelId={`select-label`} id={`select`} value={props.mode} label={`Mode`} onChange={onModeChange}>
