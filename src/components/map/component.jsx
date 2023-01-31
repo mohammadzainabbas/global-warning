@@ -118,16 +118,6 @@ const getMatchExpression = (data, isDisaster) => {
 		matchExpression.push(data[index]['ISO'], color);
 	});
 
-
-
-	for (const row of data) {
-		// Convert the range of data values to a suitable color
-		const green = row['hdi'] * 255;
-		const color = `rgb(0, ${green}, 0)`;
-
-		matchExpression.push(row['code'], color);
-	}
-
 	matchExpression.push('rgba(0, 0, 0, 0)');
 
 	return matchExpression;
