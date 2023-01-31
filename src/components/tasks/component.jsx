@@ -36,7 +36,7 @@ const Tasks = () => {
                                 { id: '6', label: '' },
                                 { id: '7', label: 'Sprint Showcase' },
                             ]}
-                            taskCompleted={[`1`, `2`]}
+                            taskCompleted={generateList(1, 5).map(i => i.toString())}
                         />
                     </Grid>
                 </Grid>
