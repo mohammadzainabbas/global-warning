@@ -160,7 +160,7 @@ const Emissions = (props) => {
 	});
 
 	const chartLabels = display_years.map((year) => `${year}`);
-	const chartData = top_disasters.map((disaster_type) => {
+	const chartData = top_sectors.map((disaster_type) => {
 		return {
 			name: disaster_type.name,
 			data: chartLabels.map((year) => disaster_type.data[year]),
@@ -171,35 +171,35 @@ const Emissions = (props) => {
 	});
 
 	// Continent wise deaths
-	const continents = getUnique(disasters, "continent");
-	const continent_wise_deaths = continents.map((continent) => {
-		return {
-			label: continent,
-			value: sumBy(disasters.filter((disaster) => disaster.continent === continent), "total_deaths"),
-		}
-	});
+	// const continents = getUnique(disasters, "continent");
+	// const continent_wise_deaths = continents.map((continent) => {
+	// 	return {
+	// 		label: continent,
+	// 		value: sumBy(disasters.filter((disaster) => disaster.continent === continent), "total_deaths"),
+	// 	}
+	// });
 
-	// Country wise most affected
-	const countries = getUnique(disasters, "country");
-	let country_wise_affected = countries.map((country) => {
-		return {
-			label: country,
-			value: sumBy(disasters.filter((disaster) => disaster.country === country), "total_affected"),
-		}
-	});
+	// // Country wise most affected
+	// const countries = getUnique(disasters, "country");
+	// let country_wise_affected = countries.map((country) => {
+	// 	return {
+	// 		label: country,
+	// 		value: sumBy(disasters.filter((disaster) => disaster.country === country), "total_affected"),
+	// 	}
+	// });
 
-	country_wise_affected = slice(reverse(sortBy(country_wise_affected, (r) => r.value)), 0, PICK_TOP_COUNTRIES);
+	// country_wise_affected = slice(reverse(sortBy(country_wise_affected, (r) => r.value)), 0, PICK_TOP_COUNTRIES);
 
-	// Disaster type wise deaths/affected
-	const disaster_wise = [
-		{ label: "Deaths", value: "total_deaths", },
-		{ label: "Affected", value: "total_affected", }
-	]
-	const disaster_type_wise = disaster_wise.map((type) => {
-		let data = disaster_type.map((disaster_type) => sumBy(disasters.filter((disaster) => disaster.disaster_type === disaster_type), type.value));
-		data = data.map(r => Math.log(r))
-		return { name: type.label, data, }
-	});
+	// // Disaster type wise deaths/affected
+	// const disaster_wise = [
+	// 	{ label: "Deaths", value: "total_deaths", },
+	// 	{ label: "Affected", value: "total_affected", }
+	// ]
+	// const disaster_type_wise = disaster_wise.map((type) => {
+	// 	let data = disaster_type.map((disaster_type) => sumBy(disasters.filter((disaster) => disaster.disaster_type === disaster_type), type.value));
+	// 	data = data.map(r => Math.log(r))
+	// 	return { name: type.label, data, }
+	// });
 
 	return (
 		<React.Fragment>
