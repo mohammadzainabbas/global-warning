@@ -175,6 +175,9 @@ const GlobalWarningMap = (props) => {
 						</Typography>
 
 						<Grid container spacing={3}>
+							<Grid item xs={12}>
+								<ControlPanel mode={mode} onModeChange={setMode} />
+							</Grid>
 							<Grid item xs={12} sm={6} md={6}>
 								<div style={{
 									height: '100%',
