@@ -300,8 +300,7 @@ const GlobalWarningMap = (props) => {
 	};
 
 	// for emissions
-
-	const emissionMatchExpression = getMatchExpression(emissions, false);
+	const emissionMatchExpression = getMatchExpression(emissions_data, false);
 	const emissionLayerStyle = {
 		id: 'countries-join',
 		type: 'fill',
