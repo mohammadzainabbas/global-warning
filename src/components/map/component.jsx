@@ -177,7 +177,10 @@ const GlobalWarningMap = (props) => {
 
 						<Grid container spacing={3}>
 							<Grid item xs={12} sm={6} md={6}>
-								<div style={{ position: 'relative', height: '100%' }}>
+								<div style={{
+									// position: 'relative',
+									height: '100%'
+								}}>
 									<Map
 										id={`left-map`}
 										{...viewState}
@@ -191,7 +194,10 @@ const GlobalWarningMap = (props) => {
 								</div>
 							</Grid>
 							<Grid item xs={12} sm={6} md={6}>
-								<div style={{ position: 'relative', height: '100%' }}>
+								<div style={{
+									// position: 'relative',
+									height: '100%'
+								}}>
 									<Map
 										id={`right-map`}
 										{...viewState}
