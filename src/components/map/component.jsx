@@ -253,6 +253,12 @@ const GlobalWarningMap = (props) => {
 		setYearRange([_min_year, _max_year]);
 	};
 
+	const onHover = (e) => {
+		const { features, srcEvent: { offsetX, offsetY } } = e;
+		const hoveredFeature = features && features.find(f => f.layer.id === 'countries-join');
+		debugger;
+	};
+
 	return (
 		<React.Fragment>
 			<Helmet>
