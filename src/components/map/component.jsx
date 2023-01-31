@@ -55,6 +55,10 @@ const DATA = [
 	{ 'code': 'GBR', 'hdi': 0.922 }
 ];
 
+const matchExpression = ['match', ['get', 'iso_3166_1_alpha_3']];
+
+
+
 const FILLS = ['solid'];
 // const FILLS = ['gradient', 'solid', 'pattern', 'image'];
 
