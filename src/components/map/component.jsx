@@ -246,8 +246,6 @@ const GlobalWarningMap = (props) => {
 		}
 	};
 
-
-
 	return (
 		<React.Fragment>
 			<Helmet>
