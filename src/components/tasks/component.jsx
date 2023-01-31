@@ -37,7 +37,7 @@ const Tasks = () => {
                     <Grid item xs={12}>
                         <AppTasks
                             title={`Tasks`}
-                            subheader={`List of tasks to be completed`}
+                            // subheader={`List of tasks to be completed for this project`}
                             list={tasks}
                             taskCompleted={generateList(1, 4).map(i => `${i}`)}
                         />
