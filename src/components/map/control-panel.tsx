@@ -5,7 +5,7 @@ export type Mode = "side-by-side" | "split-screen";
 
 function ControlPanel(props: { mode: Mode; onModeChange: (newMode: Mode) => void }) {
 	const onModeChange = useCallback(
-		(evt) => {
+		(evt: any) => {
 			props.onModeChange(evt.target.value as Mode);
 		},
 		[props.onModeChange]
