@@ -292,6 +292,8 @@ const GlobalWarningMap = (props) => {
 	};
 
 	// for disasters
+
+
 	const disasterLayerStyle = {
 		id: 'countries-join',
 		type: 'fill',
