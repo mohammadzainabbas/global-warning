@@ -36,9 +36,24 @@ export const Loading = () => {
 }
 
 const MIN_DISTANCE = 10; // min years to show
-const PICK_TOP = 5; // top n disasters to show
-const DECAY_VALUE = 0; // decay value for each year
-const PICK_TOP_COUNTRIES = 10; // top n countries to show
+
+
+const LeftMapStyle = {
+	position: 'absolute',
+	width: '50%',
+	height: '100%'
+};
+const RightMapStyle = {
+	position: 'absolute',
+	left: '50%',
+	width: '50%',
+	height: '100%'
+};
+
+
+
+
+
 
 const GlobalWarningMap = (props) => {
 	const theme = useTheme();
