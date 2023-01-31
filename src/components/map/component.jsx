@@ -114,8 +114,10 @@ const getMatchExpression = (data, isDisaster) => {
 
 	const gradients = generateGradient(min_color, max_color, data.length);
 
-	gradients.forEach((color, index) => {
-		matchExpression.push(data[index]['ISO'], color);
+	const _data = reverse(sortBy(data, 'value'))
+
+	_data.forEach((row, index) => {
+		matchExpression.push(row['code'], gradients[index]);
 	});
 
 	matchExpression.push('rgba(0, 0, 0, 0)');
