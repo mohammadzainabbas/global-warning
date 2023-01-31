@@ -133,22 +133,6 @@ const GlobalWarningMap = (props) => {
 		return { right: mode === 'split-screen' ? width / 2 : 0, top: 0, left: 0, bottom: 0 };
 	}, [width, mode]);
 
-	const geojson = {
-		type: 'FeatureCollection',
-		features: [
-			{ type: 'Feature', geometry: { type: 'Point', coordinates: [-122.4, 37.8] } }
-		]
-	};
-
-	const layerStyle = {
-		id: 'point',
-		type: 'circle',
-		paint: {
-			'circle-radius': 10,
-			'circle-color': '#007cbf'
-		}
-	};
-
 	const [loading, setLoading] = useState(true);
 	const [totalEmissions, setTotalEmissions] = useState([]);
 	const [totalDisasters, setTotalDisasters] = useState([]);
@@ -159,9 +143,6 @@ const GlobalWarningMap = (props) => {
 
 	useEffect(() => {
 		(async () => {
-			// let _countries = await fetch(`https://raw.githubusercontent.com/eesur/country-codes-lat-long/master/country-codes-lat-long-alpha3.json`)
-			// 	.then(response => response.json())
-			// 	.then(data => data['ref_country_codes']);
 			const _disasters = await fetchDisasters();
 			const _emissions = await fetchEmissions();
 
