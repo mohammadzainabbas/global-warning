@@ -295,15 +295,15 @@ const GlobalWarningMap = (props) => {
 	const display_years = generateList(yearRange[0], yearRange[1]);
 
 	// for disasters
-	let countries_iso = getUnique(disasters, "ISO");
-	let country_wise_affected = countries_iso.map((iso) => {
+	const disaster_countries_iso = getUnique(disasters, "ISO");
+	let disaster_country_wise_affected = disaster_countries_iso.map((iso) => {
 		return {
 			ISO: iso,
 			value: sumBy(disasters.filter((disaster) => disaster.ISO === iso), "total_affected"),
 		}
 	});
-	country_wise_affected = slice(reverse(sortBy(country_wise_affected, (r) => r.value)), 0, PICK_TOP_COUNTRIES);
-	const disasterMatchExpression = getMatchExpression(country_wise_affected, true);
+	disaster_country_wise_affected = slice(reverse(sortBy(disaster_country_wise_affected, (r) => r.value)), 0, PICK_TOP_COUNTRIES);
+	const disasterMatchExpression = getMatchExpression(disaster_country_wise_affected, true);
 	const disasterLayerStyle = {
 		id: 'countries-join',
 		type: 'fill',
