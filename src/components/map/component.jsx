@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect, useCallback, useMemo } from "react";
 import { Helmet } from 'react-helmet-async';
 import { useTheme } from '@mui/material/styles';
@@ -49,11 +50,6 @@ const RightMapStyle = {
 	width: '50%',
 	height: '100%'
 };
-
-
-
-
-
 
 const GlobalWarningMap = (props) => {
 	const theme = useTheme();
