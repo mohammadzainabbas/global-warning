@@ -216,7 +216,7 @@ const Home = (props) => {
 							{`Hi, Let's explore together the devastating impact of climate change through the lens of natural disasters and emissions. Join us on a journey to uncover the connections and take action for a sustainable future`}
 						</Typography>
 						<Typography variant="h4" sx={{ mb: 5 }}>
-							{years.length ? `Showing stats from ${yearRange[0]} to ${yearRange[1]}` : `Hi, Welcome back`}
+							{years.length ? `Showing stats from ${yearRange[0]} to ${yearRange[1]}` : ``}
 						</Typography>
 
 						<Grid container spacing={3}>
