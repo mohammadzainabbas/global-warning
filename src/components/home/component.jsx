@@ -10,10 +10,7 @@ import {
 	AppConversionRates,
 } from '../../sections/@dashboard/app';
 import { fetchDisasters, fetchEmissions } from "../../api/api";
-import { sumBy, sortBy, reverse, min, max, slice } from 'lodash';
-
-const FILLS = ['solid'];
-// const FILLS = ['gradient', 'solid', 'pattern', 'image'];
+import { sumBy, min, max } from 'lodash';
 
 const getUnique = (arr, comp) => [...new Set(arr.map(x => x[comp]))];
 const generateList = (a, b) => Array.from({ length: b - a + 1 }, (_, i) => a + i);
