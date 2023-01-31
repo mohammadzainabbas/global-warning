@@ -15,8 +15,9 @@ const Tasks = () => {
         'Perform exploratory data analysis (EDA)',
         'Brainstorm different visualisation ideas',
         'Develop and deploy webpage for the project',
+        'Side-by-side interactive Maps',
         'Presentation and Demo',
-        'Demo with interactive Maps',
+        'Country + Region level visualisation controls',
         'Public awareness',
     ].map((el, idx) => ({ id: `${idx + 1}`, label: el }));
 
@@ -37,7 +38,7 @@ const Tasks = () => {
                             title={`Tasks`}
                             // subheader={`List of tasks to be completed`}
                             list={tasks}
-                            taskCompleted={generateList(1, 4).map(i => `${i}`)}
+                            taskCompleted={generateList(1, 5).map(i => `${i}`)}
                         />
                     </Grid>
                 </Grid>
