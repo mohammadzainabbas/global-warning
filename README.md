@@ -8,16 +8,6 @@ See the live demo [here](http://mohammadzainabbas.tech/global-warning/).
 
 - [🚀 Quickstart 💻](#quickstart)
 - [💻 Introduction 👨🏻‍💻](#introduction)
-- [🌊 Physics Simulation Engines 🦿](#physics-simulation-engines)
-- [🌪 Environment 🦾](#environment)
-	* [🔭 `Observations` 🔍](#observations)
-	* [🏄‍♂️ `Actions` 🤸‍♂️](#actions)
-	* [🏆 `Reward` 🥇](#reward)
-- [🔬 Algorithms 💻](#algorithms)
-	* [💡 `Proximal policy optimization (PPO)` 👨🏻‍💻](#ppo)
-	* [💡 `Evolution Strategy (ES)` 👨🏻‍💻](#es)
-	* [💡 `Augmented Random Search (ARS)` 👨🏻‍💻](#ars)
-	* [💡 `Soft Actor-Critic (SAC)` 👨🏻‍💻](#sac)
 - [🚀 Run locally 🖲️](#run-locally)
 
 #
