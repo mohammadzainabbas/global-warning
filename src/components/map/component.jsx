@@ -96,7 +96,7 @@ const GlobalWarningMap = (props) => {
 
 			let _countries = await fetch(`https://raw.githubusercontent.com/eesur/country-codes-lat-long/master/country-codes-lat-long-alpha3.json`)
 				.then(response => response.json())
-				.then(data => data);
+				.then(data => data['ref_country_codes']);
 
 			debugger;
 
