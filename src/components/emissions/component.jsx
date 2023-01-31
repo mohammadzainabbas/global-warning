@@ -218,7 +218,7 @@ const Emissions = (props) => {
 							</Grid>
 
 							<Grid item xs={12} sm={6} md={6}>
-								<AppWidgetSummary title={`Emissions by countries`} total={affected_countries} color={`info`} icon={'ph:globe-hemisphere-west-fill'} />
+								<AppWidgetSummary title={`Countries involved`} total={affected_countries} color={`info`} icon={'ph:globe-hemisphere-west-fill'} />
 							</Grid>
 
 							<Grid item xs={12}>
