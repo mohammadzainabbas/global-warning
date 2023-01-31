@@ -194,7 +194,7 @@ const Emissions = (props) => {
 		}
 	});
 
-	country_wise_affected = slice(reverse(sortBy(country_wise_affected, (r) => r.value)), 0, PICK_TOP_COUNTRIES);
+	country_wise_emissions = slice(reverse(sortBy(country_wise_emissions, (r) => r.value)), 0, PICK_TOP_COUNTRIES);
 
 	// // Disaster type wise deaths/affected
 	// const disaster_wise = [
