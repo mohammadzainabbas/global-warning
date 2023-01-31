@@ -245,6 +245,16 @@ const GlobalWarningMap = (props) => {
 			'fill-color': matchExpression,
 		}
 	};
+	// for disasters
+	const disasterLayerStyle = {
+		id: 'countries-join',
+		type: 'fill',
+		source: 'countries',
+		'source-layer': 'country_boundaries',
+		paint: {
+			'fill-color': matchExpression,
+		}
+	};
 
 	return (
 		<React.Fragment>
