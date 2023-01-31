@@ -29,10 +29,11 @@ See the live demo [here](http://mohammadzainabbas.tech/global-warning/).
 Scan below QR code to see the project on your device
 
 <p align="center">
-  <img src="https://github.com/mohammadzainabbas/global-warning/blob/main/public/assets/qr-code.png?raw=true" width="auto" height="225">
+  <img src="https://github.com/mohammadzainabbas/global-warning/blob/dev/public/assets/qr-code.png?raw=true" width="auto" height="225">
 </p>
 
 #
+
 
 
 
