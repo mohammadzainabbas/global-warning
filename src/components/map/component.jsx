@@ -284,6 +284,10 @@ const GlobalWarningMap = (props) => {
 								</Box>
 							</Grid>
 							<Grid item xs={12} sm={4} md={4}>
+								<Typography variant={`h5`} sx={{ mb: 5 }}>
+									{years.length ? `Showing stats from ${yearRange[0]} to ${yearRange[1]}` : `Hi, Welcome back`}
+								</Typography>
+
 							</Grid>
 							<Grid item xs={12} sm={4} md={4}>
 								<ControlPanel mode={mode} onModeChange={setMode} />
