@@ -57,7 +57,6 @@ const GlobalWarningMap = (props) => {
 	const theme = useTheme();
 
 	const [viewState, setViewState] = useState({
-		// 30.094546,0.4219001,3z
 		longitude: 30.094546,
 		latitude: 0.5219001,
 		zoom: 0.5,
