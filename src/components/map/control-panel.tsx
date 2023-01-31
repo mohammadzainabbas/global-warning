@@ -8,7 +8,7 @@ function ControlPanel(props: { mode: Mode; onModeChange: (newMode: Mode) => void
 		(evt: any) => {
 			props.onModeChange(evt.target.value as Mode);
 		},
-		[props.onModeChange]
+		[props.onModeChange, props]
 	);
 
 	return (
