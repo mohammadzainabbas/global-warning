@@ -163,6 +163,13 @@ const GlobalWarningMap = (props) => {
 		}
 	};
 
+	const [loading, setLoading] = useState(true);
+	const [totalDisasters, setTotalDisasters] = useState([]);
+	const [emissions, setEmissions] = useState([]);
+	const [disasters, setDisasters] = useState([]);
+	const [years, setYears] = useState([]);
+	const [yearRange, setYearRange] = useState([]);
+
 	useEffect(() => {
 		(async () => {
 
