@@ -120,7 +120,7 @@ const Emissions = (props) => {
 		setYearRange([_min_year, _max_year]);
 	};
 
-	const total_deaths = sumBy(disasters, "total_deaths") || 0;
+	const total_MTCO2e = sumBy(disasters, "emission_value") || 0;
 	const total_affected = sumBy(disasters, "total_affected") || 0;
 	const affected_countries = getUnique(disasters, "country")?.length || 0;
 	const total_disasters = disasters.length || 0;
