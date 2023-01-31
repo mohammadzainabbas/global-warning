@@ -315,15 +315,15 @@ const GlobalWarningMap = (props) => {
 	};
 
 	// for emissions
-	countries_iso = getUnique(emissions, "ISO");
-	country_wise_affected = countries_iso.map((iso) => {
+	const emission_countries_iso = getUnique(emissions, "ISO");
+	let emission_country_wise_affected = emission_countries_iso.map((iso) => {
 		return {
 			ISO: iso,
 			value: sumBy(emissions.filter((emission) => emission.ISO === iso), "emission_value"),
 		}
 	});
-	country_wise_affected = slice(reverse(sortBy(country_wise_affected, (r) => r.value)), 0, PICK_TOP_COUNTRIES);
-	const emissionMatchExpression = getMatchExpression(country_wise_affected, false);
+	emission_country_wise_affected = slice(reverse(sortBy(emission_country_wise_affected, (r) => r.value)), 0, PICK_TOP_COUNTRIES);
+	const emissionMatchExpression = getMatchExpression(emission_country_wise_affected, false);
 	const emissionLayerStyle = {
 		id: 'countries-join',
 		type: 'fill',
