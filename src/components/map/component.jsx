@@ -42,7 +42,7 @@ const PICK_TOP = 5; // top n disasters to show
 const DECAY_VALUE = 0; // decay value for each year
 const PICK_TOP_COUNTRIES = 10; // top n countries to show
 
-const Map = (props) => {
+const GlobalWarningMap = (props) => {
 	const theme = useTheme();
 
 	const [loading, setLoading] = useState(true);
@@ -178,7 +178,7 @@ const Map = (props) => {
 	);
 };
 
-export default Map;
+export default GlobalWarningMap;
 
 
 // import React, { useState } from 'react';
