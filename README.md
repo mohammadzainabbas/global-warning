@@ -1,51 +1,74 @@
 ### Global Warning @ Visual Analysis Project
 
-> Stay tune for further details!
+See the live demo [here](http://mohammadzainabbas.tech/global-warning/).
 
 #
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Table of contents
 
-## Available Scripts
+- [🚀 Quickstart 💻](#quickstart)
+- [💻 Introduction 👨🏻‍💻](#introduction)
+- [🚀 Run locally 🖲️](#run-locally)
 
-In the project directory, you can run:
+#
 
-### `npm start`
+<a id="quickstart" />
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 1. 🚀 Quickstart 💻
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Scan below QR code to see the project on your device
 
-### `npm test`
+<p align="center">
+  <img src="https://github.com/mohammadzainabbas/global-warning/blob/dev/public/assets/qr-code.jpeg?raw=true" width="auto" height="225">
+</p>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#
 
-### `npm run build`
+<a id="introduction" />
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 2. 💻 Introduction 👨🏻‍💻
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Welcome to the `Global Warning`, a visual analytics project, where we aim to raise awareness about the impact of human activities on the planet. Our project focuses on the relationship between natural disasters and emissions, providing an in-depth look at the increasing frequency and severity of events such as hurricanes, droughts, and wildfires, and how they are connected to the emission of greenhouse gases. With interactive graphics and data-driven insights, we aim to shed light on the urgent need for action to mitigate the effects of climate change and promote a sustainable future.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#
 
-### `npm run eject`
+<a id="run-locally" />
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### 3. 🚀 Run locally 🖲️
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+> This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Follow the steps below to run the project locally on your machine:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+1. Clone the repository
 
-## Learn More
+```bash
+git clone https://github.com/mohammadzainabbas/global-warning.git
+cd global-warning/
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. Install dependencies
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+npm install
+```
+
+or if you are using `yarn`
+
+```bash
+yarn install
+```
+
+3. Run the project
+
+```bash
+npm start
+```
+
+or if you are using `yarn`
+
+```bash
+yarn start
+```
+
+#
