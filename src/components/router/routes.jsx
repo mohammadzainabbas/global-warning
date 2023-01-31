@@ -3,15 +3,10 @@ import { Navigate, useRoutes } from 'react-router-dom';
 import DashboardLayout from '../../layouts/dashboard';
 import SimpleLayout from '../../layouts/simple';
 //
-import BlogPage from '../../pages/BlogPage';
-import UserPage from '../../pages/UserPage';
-import LoginPage from '../../pages/LoginPage';
 import Page404 from '../../pages/Page404';
-import ProductsPage from '../../pages/ProductsPage';
-import DashboardAppPage from '../../pages/DashboardAppPage';
 
 import Home from '../home/container';
-import Map from '../map/container';
+import GlobalWarningMap from '../map/container';
 import Disasters from '../disasters/container';
 import Emissions from '../emissions/container';
 import Tasks from '../tasks/component';
@@ -33,7 +28,7 @@ export default function Router() {
         { path: DASHBOARD, element: <Home /> },
         { path: DISASTERS, element: <Disasters /> },
         { path: EMISSIONS, element: <Emissions /> },
-        { path: MAP, element: <Map /> },
+        { path: MAP, element: <GlobalWarningMap /> },
         { path: TASKS, element: <Tasks /> },
         // { path: 'products', element: <ProductsPage /> },
         // { path: 'blog', element: <BlogPage /> },
