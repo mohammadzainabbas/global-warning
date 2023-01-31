@@ -176,8 +176,6 @@ const Emissions = (props) => {
 		return { ...emission, continent: continent ? Object.values(continent)[0] : "Unknown" }
 	});
 
-	debugger
-
 	const continent_wise_emissions = continents.map((continent) => {
 		return {
 			label: continent,
@@ -260,8 +258,7 @@ const Emissions = (props) => {
 							<Grid item xs={12} md={6} lg={4}>
 								<AppCurrentVisits
 									title={`Deaths by continent`}
-									// chartData={continent_wise_deaths}
-									chartData={[]}
+									chartData={continent_wise_emissions}
 									chartColors={[
 										theme.palette.primary.main,
 										theme.palette.info.main,
