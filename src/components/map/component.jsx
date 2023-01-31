@@ -170,7 +170,7 @@ const GlobalWarningMap = (props) => {
 			{loading ? <Loading /> :
 				<React.Fragment>
 					<Container maxWidth={`xl`}>
-						<Typography variant={`h4`} sx={{ mb: 5 }}>
+						<Typography variant={`subtitle2`} sx={{ mb: 5 }}>
 							{years.length ? `Showing stats from ${yearRange[0]} to ${yearRange[1]}` : `Hi, Welcome back`}
 						</Typography>
 
