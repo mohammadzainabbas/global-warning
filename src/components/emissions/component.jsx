@@ -185,12 +185,12 @@ const Emissions = (props) => {
 
 	debugger
 
-	// Country wise most affected
+	// Most emissions by Country
 	const countries = getUnique(emissions, "country");
-	let country_wise_affected = countries.map((country) => {
+	let country_wise_emissions = countries.map((country) => {
 		return {
 			label: country,
-			value: sumBy(disasters.filter((disaster) => disaster.country === country), "total_affected"),
+			value: sumBy(emissions.filter((r) => r.country === country), "total_affected"),
 		}
 	});
 
