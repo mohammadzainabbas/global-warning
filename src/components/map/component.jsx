@@ -6,7 +6,7 @@ import { Box, Grid, Container, Typography, CircularProgress, Slider } from '@mui
 import { fetchDisasters, fetchEmissions } from "../../api/api";
 import { sumBy, sortBy, reverse, min, max, slice } from 'lodash';
 
-import { MAPGL_TOKEN } from "../../common/constants";
+import { MAPGL_TOKEN_PUBLIC } from "../../common/constants";
 
 import Map from 'react-map-gl';
 
@@ -185,7 +185,7 @@ const GlobalWarningMap = (props) => {
 									onMove={activeMap === `left` && onMove}
 									style={LeftMapStyle}
 									mapStyle={`mapbox://styles/mapbox/light-v9`}
-									mapboxAccessToken={MAPGL_TOKEN}
+									mapboxAccessToken={MAPGL_TOKEN_PUBLIC}
 								/>
 							</Grid>
 							<Grid item xs={12} sm={6} md={6}>
@@ -197,7 +197,7 @@ const GlobalWarningMap = (props) => {
 									onMove={activeMap === `right` && onMove}
 									style={RightMapStyle}
 									mapStyle={`mapbox://styles/mapbox/dark-v9`}
-									mapboxAccessToken={MAPGL_TOKEN}
+									mapboxAccessToken={MAPGL_TOKEN_PUBLIC}
 								/>
 							</Grid>
 
