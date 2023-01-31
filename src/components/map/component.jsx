@@ -68,10 +68,10 @@ const GlobalWarningMap = (props) => {
 	// while the other is in transition.
 	// This state specifies which map to use as the source of truth
 	// It is set to the map that received user input last ('movestart')
-	const [activeMap, setActiveMap] = useState < 'left' | 'right' > ('left');
+	const [activeMap, setActiveMap] = useState(`left`);
 
-	const onLeftMoveStart = useCallback(() => setActiveMap('left'), []);
-	const onRightMoveStart = useCallback(() => setActiveMap('right'), []);
+	const onLeftMoveStart = useCallback(() => setActiveMap(`left`), []);
+	const onRightMoveStart = useCallback(() => setActiveMap(`right`), []);
 	const onMove = useCallback(evt => setViewState(evt.viewState), []);
 
 	const width = typeof window === 'undefined' ? 100 : window.innerWidth;
