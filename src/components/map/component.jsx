@@ -223,6 +223,9 @@ const GlobalWarningMap = (props) => {
 			// 	.then(data => data['ref_country_codes']);
 			const _disasters = await fetchDisasters();
 			const _emissions = await fetchEmissions();
+
+			debugger
+
 			const disasters_years = getUnique(_disasters, "year");
 			const emissions_years = getUnique(_emissions, "year");
 			const _years = disasters_years.filter((year) => emissions_years.includes(year));
