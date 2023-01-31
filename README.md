@@ -38,7 +38,7 @@ Scan below QR code to see the project on your device
 
 ### 2. 💻 Introduction 👨🏻‍💻
 
-
+Welcome to the `Global Warning`, a visual analytics project, where we aim to raise awareness about the impact of human activities on the planet. Our project focuses on the relationship between natural disasters and emissions, providing an in-depth look at the increasing frequency and severity of events such as hurricanes, droughts, and wildfires, and how they are connected to the emission of greenhouse gases. With interactive graphics and data-driven insights, we aim to shed light on the urgent need for action to mitigate the effects of climate change and promote a sustainable future.
 
 
 # Getting Started with Create React App
