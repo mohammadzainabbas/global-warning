@@ -10,7 +10,7 @@ import {
 	AppConversionRates,
 } from '../../sections/@dashboard/app';
 import { fetchDisasters, fetchEmissions } from "../../api/api";
-import { sumBy, sortBy, reverse, min, max, slice } from 'lodash';
+import { sumBy, sortBy, reverse, min, max, slice, uniqBy } from 'lodash';
 
 const FILLS = ['solid'];
 // const FILLS = ['gradient', 'solid', 'pattern', 'image'];
