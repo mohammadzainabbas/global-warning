@@ -133,10 +133,10 @@ const Emissions = (props) => {
 		}
 	});
 
-	sector_count = sector_count.map(disaster_type => {
+	sector_count = sector_count.map(sector => {
 		return {
-			...disaster_type,
-			data: sortBy(disaster_type.data, (r) => r.year),
+			...sector,
+			data: sortBy(sector.data, (r) => r.year),
 		}
 	});
 	let top_disasters = slice(reverse(sortBy(sector_count, (r) => r.data.length)), 0, PICK_TOP);
