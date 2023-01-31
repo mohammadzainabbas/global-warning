@@ -305,6 +305,8 @@ const GlobalWarningMap = (props) => {
 
 	country_wise_affected = slice(reverse(sortBy(country_wise_affected, (r) => r.value)), 0, PICK_TOP_COUNTRIES);
 
+	debugger
+
 
 	const disasterLayerStyle = {
 		id: 'countries-join',
