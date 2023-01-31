@@ -128,8 +128,8 @@ const Emissions = (props) => {
 
 	let sector_count = sectors.map((sector) => {
 		return {
-			name: type,
-			data: disasters.filter((disaster) => disaster.disaster_type === type).map(({ total_deaths, year }) => ({ total_deaths, year })),
+			name: sector,
+			data: emissions.filter((emission) => emission.sector === sector).map(({ total_deaths, year }) => ({ total_deaths, year })),
 		}
 	});
 
