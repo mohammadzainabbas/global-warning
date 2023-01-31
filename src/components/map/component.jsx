@@ -285,7 +285,9 @@ const GlobalWarningMap = (props) => {
 		_min_year = _min_year < min_year ? min_year : _min_year;
 		_max_year = _max_year > max_year ? max_year : _max_year;
 		const _disasters = totalDisasters.filter((disaster) => disaster.year >= _min_year && disaster.year <= _max_year);
+		const _emissions = totalEmissions.filter((emission) => emission.year >= _min_year && emission.year <= _max_year);
 		setDisasters(_disasters);
+		setEmissions(_emissions);
 		setYearRange([_min_year, _max_year]);
 	};
 
