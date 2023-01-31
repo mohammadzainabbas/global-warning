@@ -215,16 +215,8 @@ const Emissions = (props) => {
 								<AppWidgetSummary title={`Total GHG emissions (MtCO2e)`} total={total_MTCO2e} color={`error`} icon={'mdi:gas-co2'} />
 							</Grid>
 
-							<Grid item xs={12} sm={6} md={3}>
-								<AppWidgetSummary title={`Total affected`} total={total_affected} color={`warning`} icon={'material-symbols:personal-injury'} />
-							</Grid>
-
-							<Grid item xs={12} sm={6} md={3}>
-								<AppWidgetSummary title={`Total natural disasters`} total={total_disasters} color={`secondary`} icon={'mdi:home-climate-outline'} />
-							</Grid>
-
-							<Grid item xs={12} sm={6} md={3}>
-								<AppWidgetSummary title={`Countries affected`} total={affected_countries} color={`info`} icon={'ph:globe-hemisphere-west-fill'} />
+							<Grid item xs={12} sm={6} md={6}>
+								<AppWidgetSummary title={`Emissions by countries`} total={affected_countries} color={`info`} icon={'ph:globe-hemisphere-west-fill'} />
 							</Grid>
 
 							<Grid item xs={12}>
