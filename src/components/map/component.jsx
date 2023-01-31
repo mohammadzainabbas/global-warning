@@ -42,7 +42,7 @@ const PICK_TOP = 5; // top n disasters to show
 const DECAY_VALUE = 0; // decay value for each year
 const PICK_TOP_COUNTRIES = 10; // top n countries to show
 
-const Home = (props) => {
+const Map = (props) => {
 	const theme = useTheme();
 
 	const [loading, setLoading] = useState(true);
@@ -206,7 +206,7 @@ const Home = (props) => {
 	return (
 		<React.Fragment>
 			<Helmet>
-				<title>{`Home | Global Warning`}</title>
+				<title>{`Map | Global Warning`}</title>
 			</Helmet>
 
 			{loading ? <Loading /> :
@@ -296,4 +296,4 @@ const Home = (props) => {
 	);
 };
 
-export default Home;
+export default Map;
