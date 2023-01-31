@@ -8,6 +8,7 @@ import { Grid, Container, Typography } from '@mui/material';
 
 import { AppTasks } from '../../sections/@dashboard/app';
 
+const generateList = (a, b) => Array.from({ length: b - a + 1 }, (_, i) => a + i);
 
 const Tasks = () => {
 
