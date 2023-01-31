@@ -273,7 +273,6 @@ const Emissions = (props) => {
 									title={`Top ${PICK_TOP_COUNTRIES} countries with highest emissions`}
 									subheader={`Total emissions per country (from ${yearRange[0]} to ${yearRange[1]}) - MtCO2e`}
 									chartData={country_wise_emissions}
-									chartData={[]}
 								/>
 							</Grid>
 
