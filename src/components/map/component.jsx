@@ -301,9 +301,7 @@ const GlobalWarningMap = (props) => {
 
 	// for emissions
 
-	const emissionMatchExpression = null
-
-
+	const emissionMatchExpression = getMatchExpression(emissions, false);
 	const emissionLayerStyle = {
 		id: 'countries-join',
 		type: 'fill',
