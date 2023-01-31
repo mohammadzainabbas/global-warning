@@ -206,8 +206,6 @@ const GlobalWarningMap = (props) => {
 		}
 	};
 
-
-
 	const [loading, setLoading] = useState(true);
 	const [totalEmissions, setTotalEmissions] = useState([]);
 	const [totalDisasters, setTotalDisasters] = useState([]);
