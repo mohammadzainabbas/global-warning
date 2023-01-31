@@ -168,8 +168,7 @@ const GlobalWarningMap = (props) => {
 		source: 'countries',
 		'source-layer': 'country_boundaries',
 		paint: {
-			'circle-radius': 10,
-			'circle-color': '#007cbf'
+			'fill-color': matchExpression,
 		}
 	};
 
