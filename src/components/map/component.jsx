@@ -70,6 +70,43 @@ const getRandomColor = () => {
 	return color;
 }
 
+function generateGradient(minColor, maxColor, numElements) {
+	let gradient = [];
+	let minRgb = hexToRgb(minColor);
+	let maxRgb = hexToRgb(maxColor);
+
+	let stepR = (maxRgb.r - minRgb.r) / (numElements - 1);
+	let stepG = (maxRgb.g - minRgb.g) / (numElements - 1);
+	let stepB = (maxRgb.b - minRgb.b) / (numElements - 1);
+
+	for (let i = 0; i < numElements; i++) {
+		let color = {
+			r: minRgb.r + stepR * i,
+			g: minRgb.g + stepG * i,
+			b: minRgb.b + stepB * i,
+		};
+
+		gradient.push(rgbToHex(color));
+	}
+
+	return gradient;
+}
+
+function hexToRgb(hex) {
+	let r = parseInt(hex.substring(0, 2), 16);
+	let g = parseInt(hex.substring(2, 4), 16);
+	let b = parseInt(hex.substring(4, 6), 16);
+	return { r, g, b };
+}
+
+function rgbToHex(rgb) {
+	let r = rgb.r.toString(16).padStart(2, "0");
+	let g = rgb.g.toString(16).padStart(2, "0");
+	let b = rgb.b.toString(16).padStart(2, "0");
+	return `${r}${g}${b}`;
+}
+
+
 const getMatchExpression = (data, isDisaster) => {
 	const matchExpression = ['match', ['get', 'iso_3166_1_alpha_3']];
 
