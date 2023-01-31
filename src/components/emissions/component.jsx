@@ -278,7 +278,7 @@ const Emissions = (props) => {
 
 							<Grid item xs={12} md={6} lg={4}>
 								<AppCurrentSubject
-									title={`Disasters by type`}
+									title={`Emissions by sector`}
 									// chartLabels={disaster_type}
 									// chartData={disaster_type_wise}
 									chartLabels={[]}
