@@ -164,6 +164,7 @@ const GlobalWarningMap = (props) => {
 	};
 
 	const [loading, setLoading] = useState(true);
+	const [totalEmissions, setTotalEmissions] = useState([]);
 	const [totalDisasters, setTotalDisasters] = useState([]);
 	const [emissions, setEmissions] = useState([]);
 	const [disasters, setDisasters] = useState([]);
@@ -185,6 +186,7 @@ const GlobalWarningMap = (props) => {
 			const max_year = max(_years);
 			const min_year = min(_years) + parseInt((max_year - min(_years)) / 2);
 
+			setTotalEmissions(_emissions);
 			setTotalDisasters(_disasters);
 			setDisasters(_disasters);
 			setEmissions(_emissions);
