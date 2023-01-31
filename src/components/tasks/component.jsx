@@ -38,7 +38,7 @@ const Tasks = () => {
                         <AppTasks
                             title="Tasks"
                             list={tasks}
-                            taskCompleted={generateList(1, 5).map(i => `${i}`)}
+                            taskCompleted={generateList(1, 4).map(i => `${i}`)}
                         />
                     </Grid>
                 </Grid>
