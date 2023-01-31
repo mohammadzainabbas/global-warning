@@ -278,7 +278,11 @@ const GlobalWarningMap = (props) => {
 										style={LeftMapStyle}
 										mapStyle={`mapbox://styles/mapbox/light-v9`}
 										mapboxAccessToken={MAPGL_TOKEN_PUBLIC}
-									/>
+									>
+										<Source id="my-data" type="geojson" data={geojson}>
+											<Layer {...layerStyle} />
+										</Source>
+									</Map>
 								</div>
 							</Grid>
 							<Grid item xs={12} sm={6} md={6}>
