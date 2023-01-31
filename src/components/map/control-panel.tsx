@@ -14,8 +14,8 @@ function ControlPanel(props: { mode: Mode; onModeChange: (newMode: Mode) => void
 
 	return (
 		<div className="control-panel">
-			<h3>Side by Side</h3>
-			<p>Synchronize two maps.</p>
+			<h3>{`Select mode`}</h3>
+			{/* <p>Synchronize two maps.</p> */}
 
 			<div>
 				<label>Mode: </label>
