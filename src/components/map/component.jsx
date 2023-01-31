@@ -247,13 +247,17 @@ const GlobalWarningMap = (props) => {
 	};
 
 	// for emissions
+
+	const emissionMatchExpression = null
+
+
 	const emissionLayerStyle = {
 		id: 'countries-join',
 		type: 'fill',
 		source: 'countries',
 		'source-layer': 'country_boundaries',
 		paint: {
-			'fill-color': matchExpression,
+			'fill-color': emissionMatchExpression,
 		}
 	};
 
