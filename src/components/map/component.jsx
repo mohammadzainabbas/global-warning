@@ -178,11 +178,11 @@ const GlobalWarningMap = (props) => {
 						<Grid container spacing={3}>
 							<Grid item xs={12} sm={6} md={6}>
 								<Map
-									id="left-map"
+									id={`left-map`}
 									{...viewState}
 									padding={leftMapPadding}
 									onMoveStart={onLeftMoveStart}
-									onMove={activeMap === 'left' && onMove}
+									onMove={activeMap === `left` && onMove}
 									style={LeftMapStyle}
 									mapStyle={`mapbox://styles/mapbox/light-v9`}
 									mapboxAccessToken={MAPGL_TOKEN}
@@ -194,7 +194,7 @@ const GlobalWarningMap = (props) => {
 									{...viewState}
 									padding={rightMapPadding}
 									onMoveStart={onRightMoveStart}
-									onMove={activeMap === 'right' && onMove}
+									onMove={activeMap === `right` && onMove}
 									style={RightMapStyle}
 									mapStyle={`mapbox://styles/mapbox/dark-v9`}
 									mapboxAccessToken={MAPGL_TOKEN}
