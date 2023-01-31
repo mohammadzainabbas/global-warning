@@ -175,7 +175,7 @@ const GlobalWarningMap = (props) => {
 						</Typography>
 
 						<Grid container spacing={3}>
-							<Grid item xs={12}>
+							<Grid item xs={12} sx={{ mb: 0 }}>
 								<Box sx={{ height: `100%`, mb: 0 }}>
 									<Slider
 										getAriaLabel={() => `Years`}
