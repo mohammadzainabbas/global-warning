@@ -252,44 +252,12 @@ const Home = (props) => {
 									/>
 								</Box>
 							</Grid>
-
-							<Grid item xs={12} md={6} lg={8}>
-								<AppWebsiteVisits
-									title={`Frequency of disasters`}
-									subheader={`Total deaths per year`}
-									chartLabels={chartLabels}
-									chartData={chartData}
-								/>
+							<Grid item xs={12} sm={6} md={6}>
+								<AppWidgetSummary title={`Total GHG emissions (MtCO2e)`} total={total_MTCO2e} color={`error`} icon={'mdi:gas-co2'} />
 							</Grid>
 
-							<Grid item xs={12} md={6} lg={4}>
-								<AppCurrentVisits
-									title={`Deaths by continent`}
-									chartData={continent_wise_deaths}
-									chartColors={[
-										theme.palette.primary.main,
-										theme.palette.info.main,
-										theme.palette.warning.main,
-										theme.palette.error.main,
-									]}
-								/>
-							</Grid>
-
-							<Grid item xs={12} md={6} lg={8}>
-								<AppConversionRates
-									title={`Top ${PICK_TOP_COUNTRIES} most affected countries`}
-									subheader={`Total affected per country (from ${yearRange[0]} to ${yearRange[1]})`}
-									chartData={country_wise_affected}
-								/>
-							</Grid>
-
-							<Grid item xs={12} md={6} lg={4}>
-								<AppCurrentSubject
-									title={`Disasters by type`}
-									chartLabels={disaster_type}
-									chartData={disaster_type_wise}
-									chartColors={[...Array(6)].map(() => theme.palette.text.secondary)}
-								/>
+							<Grid item xs={12} sm={6} md={6}>
+								<AppWidgetSummary title={`Countries involved`} total={affected_countries} color={`info`} icon={'ph:globe-hemisphere-west-fill'} />
 							</Grid>
 						</Grid>
 					</Container>
